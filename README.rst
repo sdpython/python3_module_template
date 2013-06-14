@@ -24,6 +24,8 @@ by your true module name. You also need to replace ``project_name`` wherever it 
     * many places in ``_doc/sphinxdoc/source/index.rst``
     * many places in ``README.rst``
     
+All theses steps were only tested on Windows. Suppot for linux will be added later.
+    
 Prerequisites
 -------------
 
