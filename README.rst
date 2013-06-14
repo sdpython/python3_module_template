@@ -17,6 +17,7 @@ This project is a skeleton for any new project. It contains:
     * a file ``setup.py`` to build and to install the module
     * a file ``make_help.py`` to build the sphinx documentation
     
+All theses steps were only tested on Windows. Suppot for linux will be added later.
 To create your own project, you need to rename the folder ``project_name`` in ``src``
 by your true module name. You also need to replace ``project_name`` wherever it is found:
     * ``project_var_name  = 'project_name'`` in ``setup.py``, ``make_help.py`` and ``_doc/sphinxdoc/source/conf.py``
@@ -24,15 +25,17 @@ by your true module name. You also need to replace ``project_name`` wherever it 
     * many places in ``_doc/sphinxdoc/source/index.rst``
     * many places in ``README.rst``
     
-All theses steps were only tested on Windows. Suppot for linux will be added later.
+The project is also hosted `here <http://www.xavierdupre.fr/site2013/index_code.html>`_ 
+where you can find a 
+`link <http://www.xavierdupre.fr/app/python_project_template/helpsphinx/index.html>`_ 
+to the generated documentation based on this template.
     
 Prerequisites
 -------------
 
 To build the documentation, you need:
-    * `numpy <http://www.numpy.org/>`_
-    * `Sphinx <http://sphinx-doc.org/>`_
-    * `pyhome3 <http://www.xavierdupre.fr/site2013/index_code.html>`_
+    * `Sphinx <http://sphinx-doc.org/>`_ and its dependencies.
+    * `pyhome3 <http://www.xavierdupre.fr/site2013/index_code.html>`_ and its dependency (`numpy <http://www.numpy.org/>`_)
     
     
 Automation
