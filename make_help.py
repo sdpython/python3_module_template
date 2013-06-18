@@ -65,7 +65,7 @@ def generate_help_sphinx () :
     """
     
     """
-    sys.path.append (os.path.join("_doc", "sphinxdoc","source"))
+    sys.path.append (os.path.abspath(os.path.join("_doc", "sphinxdoc","source")))
     import conf
     
     # modifies the version number in conf.py
@@ -83,11 +83,10 @@ def generate_help_sphinx () :
                 ".", 
                 "_doc/sphinxdoc/source/", 
                 subfolders      = [ 
-                                    ("src/__init__.py",     project_var_name + "/__init__.py"), 
-                                    ("src",                 project_var_name), 
+                                    ("src/" + project_var_name,                 project_var_name), 
                                      ],
                 silent          = True,
-                rootrep         = ("_doc.sphinxdoc.source.%s.%s." % (project_var_name,project_var_name), ""),
+                rootrep         = ("_doc.sphinxdoc.source.%s." % (project_var_name,), ""),
                 optional_dirs   = optional_dirs )
                 
     fLOG("end of prepare_file_for_sphinx_help_generation")

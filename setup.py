@@ -47,6 +47,7 @@ __rev_id__ = """setup.py,v 1.0 01/12/2009"""
 import sys,os, re, zipfile
 
 project_var_name = "project_name"
+sversion = "0.5"
 
 def get_svn_version (path = ".") :
     try :
@@ -146,14 +147,14 @@ def get_folder_files (folder, excludePyFile = False, svn = False, recursive = Fa
 # dirname is not used by sdist.py
 path = "Lib/site-packages/" + project_var_name
 data_files  = [ 
-                #(os.path.join(path, project_var_name, "subproject"), 
+                #(os.path.join(path, "subproject"), 
                 #            get_folder_files("src/" + project_var_name + "/subproject", svn = True, recursive = False) ),
                     ]
                     
 if "bdist_wininst" in sys.argv :
     # for the windows setup, we add the compiled files
     data_files += [ 
-                    #(os.path.join(path, project_var_name + "/subproject"), 
+                    #(os.path.join(path, "subproject"), 
                     #        ["src/" + project_var_name + "/subproject/file.pyd",
                     #    ] ),
                     ]
@@ -235,7 +236,7 @@ tables, sqlite3, graphviz, imagemagick, xml, ...)"""
 
 CLASSIFIERS = \
 [
-'Development Status :: 0.5 - Alpha',
+'Development Status :: ' + sversion + ' - Alpha',
 'Operating System :: any',
 'Programming Language :: Python and C++',
 'License :: GNU 2.0',
@@ -270,25 +271,15 @@ KEYWORDS = \
 project_var_name + ', first name, last name'
 
 
-packages                = find_packages ()
-package_dir             = { k : k.replace(".","/") for k in packages }
-
-if os.path.exists ("src") :
-    os.chdir ("src")
-    back = True
-    
-    packages        = [ _.replace ("src.","") for _ in packages ]
-    package_dir     = { k : k.replace(".","/") for k in packages }
-    readme          = '../README.rst'
-else :
-    back = False    
-    readme = 'README.rst'
+packages        = find_packages ()
+package_dir     = { k : k.replace(".","/") for k in packages }
+readme          = 'README.rst'
 
 
 
 setup(
     name                    = project_var_name + '-py' + versionPython,
-    version                 = 'v0.5.%d' % get_svn_version (),
+    version                 = 'v%s.%d' % (sversion, get_svn_version ()),
     author                  = 'author',
     author_email            = 'author AT something.any',
     url                     = "http://...",
@@ -306,14 +297,6 @@ setup(
     ext_modules             = EXT_MODULES,
     include_package_data    = True
     )
-    
-if back :
-    os.chdir("..")
-    if not os.path.exists ("dist") :
-        os.mkdir ("dist")
-    os.system("copy /Y src\\dist\\*.* dist")
-    os.system("rmdir /S /Q src\\dist")
-    os.system("rmdir /S /Q src\\build")
     
 if "install" in sys.argv :
     # we check the data was installed

@@ -22,17 +22,17 @@ Installation
 * Windows installation: 
     * run the setup ``project_name*.win32.exe``
 * Windows installation with source:
-    * download the file ``pyhome*.tar.gz`` and unzip it
+    * download the file ``project_name*.tar.gz`` and unzip it
     * type the following commands::
     
         set PATH=%PATH%;c:\Python33
         python.exe setup.py install    
         
 * Linux installation:
-    * download the file ``pyhome*.tar.gz``
+    * download the file ``project_name*.tar.gz``
     * type the following commands::
     
-        tar xf porject_name-py3.3.tar.gz
+        tar xf project_name-py3.3.tar.gz
         sudo su
         python3.3 setup.py install
 
@@ -59,7 +59,7 @@ About this documentation
 
     generatedoc
     glossary
-    confr_pyhome
+    confr_pyp
 
     
 Changes

@@ -113,9 +113,30 @@ On Windows, the file ``build_setup_help_on_windows.bat`` does everything for you
 Source
 ------
 
+Folders
++++++++
+
 The following folders contain:
 
 * ``_doc``: Sphinx documentation.
 * ``_unittests``: unit tests, you can run them by running the function :func:`check <__init__.check>` (as root on linux)
 * ``src``: the sources
+
+Adding a new module or subpackage
++++++++++++++++++++++++++++++++++
+
+Any new module or subpackage should be added in ``src/project_name``. Every subfolder should
+contain a file ``__init__.py``. If the new file needs an existing submodule, you need
+to add something like the following::
+
+    import os,sys
+
+    try :
+        import project_name.subproject
+    except ImportError as e :
+        path = os.path.normpath( os.path.abspath( os.path.join( os.path.split(__file__)[0], "..", "..") ))
+        if path not in sys.path : sys.path.append(path)
+        import project_name.subproject
+        
+    from project_name.subproject.myexample import myclass
 
