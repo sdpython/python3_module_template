@@ -70,6 +70,9 @@ Changes
 Indices and tables
 ==================
 
+* :ref:`l-functions`
+* :ref:`l-classes`
+* :ref:`l-methods`
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`

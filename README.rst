@@ -95,6 +95,12 @@ Just run it. It will go through the following steps:
     
 The results are stored in folder ``_doc/sphinxdoc/build``.
 
+..warning:
+    
+    The folder containing the project (here: project_template) must be different from the project name 
+    (here: project_name). Otherwise, the generation of the documentation might face some issues while 
+    importing modules. The documentation creates another folder
+
 Generation of the setup
 +++++++++++++++++++++++
 
@@ -131,12 +137,9 @@ to add something like the following::
 
     import os,sys
 
-    try :
-        import project_name.subproject
-    except ImportError as e :
-        path = os.path.normpath( os.path.abspath( os.path.join( os.path.split(__file__)[0], "..", "..") ))
-        if path not in sys.path : sys.path.append(path)
-        import project_name.subproject
-        
-    from project_name.subproject.myexample import myclass
+    from ..subproject.myexample import myclass
+    
+You should use relative imports as much as possible.
+To add a module at deeper level than the previous one, you
+should add relative imports in every ``__init__.py`` along the way.
 

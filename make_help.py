@@ -3,7 +3,13 @@ generates the documentation using Sphinx
 """
 
 import os,sys, subprocess, glob, shutil, re
-import pyhome3
+
+try:
+    import pyhome3
+except ImportError:
+    sys.path.append ( os.path.normpath (os.path.abspath("../../pyhome")))
+    import pyhome3
+    
 from pyhome3 import run_cmd, fLOG
 
 project_var_name  = "project_name"
@@ -79,7 +85,7 @@ def generate_help_sphinx () :
     # copy the files 
     optional_dirs = [ ]
             
-    pyhome3.prepare_file_for_sphinx_help_generation ( 
+    pyhome3.prepare_file_for_sphinx_help_generation ( {},
                 ".", 
                 "_doc/sphinxdoc/source/", 
                 subfolders      = [ 

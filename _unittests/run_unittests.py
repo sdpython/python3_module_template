@@ -5,7 +5,13 @@
 """
 
 import unittest, os, sys, io
-import pyhome3
+
+try:
+    import pyhome3
+except ImportError:
+    sys.path.append ( os.path.normpath (os.path.abspath("../../../pyhome")))
+    import pyhome3
+    
 from pyhome3 import fLOG
 from pyhome3.srcpyhome.utils.utils_tests import main 
 
