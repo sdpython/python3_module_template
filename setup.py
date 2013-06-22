@@ -200,8 +200,36 @@ def check_pathes() :
         if len(missing) > 0 :
             raise Exception ("following folders should be present:\n%s" % "\n".join(missing))
 
+def explore_folder (folder, pattern = None, fullname = False) :
+    """returns the list of files included in a folder and in the subfolder
+    @param          folder      folder
+    @param          pattern     if None, get all files, otherwise, it is a regular expression, 
+                                the filename must verify (with the folder is fullname is True)
+    @param          fullname    if True, include the subfolder while checking the regex (pattern)
+    @return                     a list of folders, a list of files (the folder is not included the path name)
+    """
+    if pattern != None :
+        pattern = re.compile (pattern)
+    
+    file, rep = [], { }
+    for r, d, f in os.walk (folder) :
+        for a in f : 
+            temp = os.path.join (r, a)
+            if pattern != None :
+                if fullname :
+                    if not pattern.search (temp) : continue
+                else :
+                    if not pattern.search (a) : continue
+            file.append (temp)
+            r = os.path.split (temp) [0]
+            rep [r] = None
+            
+    keys = list(rep.keys ())
+    keys.sort ()
+    return keys, file
+    
 def find_packages () :
-    from pyhome3.srcpyhome.core.file.folder import explore_folder
+    
     folders,allfiles = explore_folder ("src", project_var_name, True)
     if len(allfiles) == 0 :
         raise Exception("unable to find any packages in " + os.path.abspath(os.path.join("src", project_var_name)))
@@ -278,7 +306,7 @@ readme          = 'README.rst'
 
 
 setup(
-    name                    = project_var_name + '-py' + versionPython,
+    name                    = project_var_name,
     version                 = 'v%s.%d' % (sversion, get_svn_version ()),
     author                  = 'author',
     author_email            = 'author AT something.any',

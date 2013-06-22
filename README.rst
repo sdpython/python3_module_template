@@ -11,19 +11,17 @@ Introduction
 ------------
 
 This project is a skeleton for any new project. It contains:
-    * a source folder: ``src``
-    * a unit test folder: ``_unittests``, go to this folder and run ``run_unittests.py``
-    * a _doc folder: ``_doc``, it will contains the documentation
-    * a file ``setup.py`` to build and to install the module
-    * a file ``make_help.py`` to build the sphinx documentation
+   * a source folder: ``src``
+   * a unit test folder: ``_unittests``, go to this folder and run ``run_unittests.py``
+   * a _doc folder: ``_doc``, it will contains the documentation
+   * a file ``setup.py`` to build and to install the module
+   * a file ``make_help.py`` to build the sphinx documentation
     
-All theses steps were only tested on Windows. Suppot for linux will be added later.
-To create your own project, you need to rename the folder ``project_name`` in ``src``
-by your true module name. You also need to replace ``project_name`` wherever it is found:
-    * ``project_var_name  = 'project_name'`` in ``setup.py``, ``make_help.py`` and ``_doc/sphinxdoc/source/conf.py``
-    * ``from src.project_name.subproject.myexample import myclass`` in ``_unittests/ut_example/test_example.py``
-    * many places in ``_doc/sphinxdoc/source/index.rst``
-    * many places in ``README.rst``
+All theses steps were only tested on Windows. Suppot for linux will be added later. To create your own project, you need to rename the folder ``project_name`` in ``src`` by your true module name. You also need to replace ``project_name`` wherever it is found:
+   * ``project_var_name  = 'project_name'`` in ``setup.py``, ``make_help.py`` and ``_doc/sphinxdoc/source/conf.py``
+   * ``from src.project_name.subproject.myexample import myclass`` in ``_unittests/ut_example/test_example.py``
+   * many places in ``_doc/sphinxdoc/source/index.rst``
+   * many places in ``README.rst``
     
 The project is also hosted `here <http://www.xavierdupre.fr/site2013/index_code.html>`_ 
 where you can find a 
@@ -34,8 +32,8 @@ Prerequisites
 -------------
 
 To build the documentation, you need:
-    * `Sphinx <http://sphinx-doc.org/>`_ and its dependencies.
-    * `pyhome3 <http://www.xavierdupre.fr/site2013/index_code.html>`_ and its dependency (`numpy <http://www.numpy.org/>`_)
+   * `Sphinx <http://sphinx-doc.org/>`_ and its dependencies.
+   * `pyhome3 <http://www.xavierdupre.fr/site2013/index_code.html>`_ and its dependency (`numpy <http://www.numpy.org/>`_)
     
     
 Automation
@@ -87,8 +85,7 @@ This test file must begin by ``test_`` and must look like the following::
 Generation of the documentation
 +++++++++++++++++++++++++++++++
 
-The program ``make_help.py`` without any required change except mention in the introduction.
-Just run it. It will go through the following steps:
+The program ``make_help.py`` without any required change except mention in the introduction. Just run it. It will go through the following steps:
     * it will copy all files found in ``src`` in folder ``_doc/sphinxdoc/source/project_name``
     * it will generates a file .rst for each python file in ``_doc/sphinxdoc/source/project_name``
     * it will run the generation of the documentation using Sphinx.
@@ -142,4 +139,5 @@ to add something like the following::
 You should use relative imports as much as possible.
 To add a module at deeper level than the previous one, you
 should add relative imports in every ``__init__.py`` along the way.
+
 

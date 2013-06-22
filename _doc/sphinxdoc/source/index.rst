@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to PROJECT_NAME documentation
-================================
+=====================================
 
 .. contents::
    :depth: 3
@@ -70,6 +70,8 @@ Changes
 Indices and tables
 ==================
 
+* :ref:`l-modules`
+* :ref:`ext-tohelp`
 * :ref:`l-functions`
 * :ref:`l-classes`
 * :ref:`l-methods`
@@ -78,4 +80,13 @@ Indices and tables
 * :ref:`search`
 
 
+Table of Contents
+=================
+
+.. toctree::
+   :glob:
+   
+   project_name/*
+   *
+   
 

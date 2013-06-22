@@ -19,6 +19,7 @@ except ImportError :
 
 from pyhome3 import fLOG
 from src.project_name.subproject.myexample import myclass
+from src.project_name.subproject.myexampleb import myclassb
 from src.project_name.subproject2.myexample2 import myclass2
 
 
@@ -32,6 +33,7 @@ class TestExample (unittest.TestCase):
         ex = 20
         if r != ex : raise Exception("we expect %f, not %f" % (ex, r))
         my2 = myclass2(5)
+        my3 = myclassb(4)
 
 if __name__ == "__main__"  :
     unittest.main ()    

@@ -1,8 +1,4 @@
-IF EXIST c:\python33vir\virt2\Scripts (
-    set pythonexe="c:\python33vir\virt2\Scripts\python"
-) ELSE (
-    set pythonexe="c:\python33\python"
-)
+set pythonexe="c:\python33\python"
 copy README.rst README.txt
 %pythonexe% setup.py sdist --formats=gztar,zip
 %pythonexe% setup.py bdist_wininst

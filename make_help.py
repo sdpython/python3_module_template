@@ -10,7 +10,7 @@ except ImportError:
     sys.path.append ( os.path.normpath (os.path.abspath("../../pyhome")))
     import pyhome3
     
-from pyhome3 import run_cmd, fLOG
+from pyhome3 import run_cmd, fLOG, run_cmd_windows
 
 project_var_name  = "project_name"
 template_examples = """
@@ -85,7 +85,8 @@ def generate_help_sphinx () :
     # copy the files 
     optional_dirs = [ ]
             
-    pyhome3.prepare_file_for_sphinx_help_generation ( {},
+    pyhome3.prepare_file_for_sphinx_help_generation ( 
+                {},
                 ".", 
                 "_doc/sphinxdoc/source/", 
                 subfolders      = [ 
@@ -93,7 +94,8 @@ def generate_help_sphinx () :
                                      ],
                 silent          = True,
                 rootrep         = ("_doc.sphinxdoc.source.%s." % (project_var_name,), ""),
-                optional_dirs   = optional_dirs )
+                optional_dirs   = optional_dirs,
+                mapped_function = [ (".*[.]tohelp$", None) ] )
                 
     fLOG("end of prepare_file_for_sphinx_help_generation")
                 
@@ -135,7 +137,7 @@ def generate_help_sphinx () :
     run_cmd (cmd, wait = True)
         
     cmd = "make.bat html".split ()
-    run_cmd (cmd, wait = True, shell = True)
+    run_cmd (cmd, wait = True, shell = True, secure = None, stop_waiting_if = lambda v : "build succeeded" in v)
     os.chdir (pa)
 
 if __name__ == "__main__" :
