@@ -252,3 +252,23 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
+
+##################
+# for the autogeneration
+##################
+autoclass_content = 'both'
+
+def skip(app, what, name, obj, skip, options):
+    if name.startswith("_") and name not in \
+            [   "__qualname__", 
+                "__module__", 
+                "__dict__",
+                "__doc__",
+                "__weakref__",
+                ]:
+        return False
+    return skip
+
+def setup(app):
+    app.connect("autodoc-skip-member", skip)
+    
