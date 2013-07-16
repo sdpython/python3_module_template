@@ -34,3 +34,7 @@ Pointers:
 configuration:
     *   confr_pyp
  
+Extensions to install
++++++++++++++++++++++
+
+* `fancybox <http://spinus.github.io/sphinxcontrib-fancybox/>`_: the module is not bullet proof for Python 3.x, unicode type must be replaced by str.

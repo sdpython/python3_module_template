@@ -46,221 +46,17 @@ __rev_id__ = """setup.py,v 1.0 01/12/2009"""
 
 import sys,os, re, zipfile
 
-project_var_name = "project_name"
-sversion = "0.5"
+project_var_name    = "project_name"
+sversion            = "0.1"
+versionPython       = "%s.%s" % (sys.version_info.major, sys.version_info.minor)
+path                = "Lib/site-packages/" + project_var_name
+subversion          = 1   
 
-def get_svn_version (path = ".") :
-    try :
-        import pysvn
-        svnClient   = pysvn.Client()
-        info        = svnClient.info2(".")
-        infos       = [_[1] for _ in info ]
-        revv        = [ _["rev"].number for _ in infos]
-        revision    = max(revv)
-        with open("version.txt", "w") as f : f.write("%d" % revision)
-        return revision
-    except ImportError as e : 
-        with open("version.txt", "r") as f :
-            return int(f.read().strip(" \n\r\t"))
-    except Exception as e :
-        if "is not a working copy" in str(e) :
-            with open("version.txt", "r") as f :
-                return int(f.read().strip(" \n\r\t"))
-        else :
-            raise e
-        
-
-if len(sys.argv) == 1 and sys.argv[0] == "setup.py" :
-    try :
-        svn = get_svn_version()
-    except Exception as e:
-        svn = "unknown"
-    print ("SVN latest version ", svn)
-
-
-def ishome () :
-    return True or len(sys.argv) > 1 and sys.argv[1] in ["sdist", "bdist_wininst"]
-    
-def install() :
-    return "install" in sys.argv
-
-#############################################################
-# extra foldders
-#############################################################
-                
-def get_folder_files (folder, excludePyFile = False, svn = False, recursive = False) :
-           
-    svn = svn and not install()
-    
-    if os.path.exists (folder) : 
-        if svn :
-            try :
-                import pysvn
-                svnClient = pysvn.Client()
-                li      = svnClient.ls (folder)
-            except Exception as e :
-                if "is not a working copy" in str(e) :
-                    svn = False
-                
-        if svn :
-            import pysvn
-            svnClient = pysvn.Client()
-            li      = svnClient.ls (folder)
-            files   = [ _.name for _ in li if os.path.isfile(_.name) ]
-            if recursive : 
-                folders = [ _.name for _ in li if os.path.isdir(_.name) ]
-                while len (folders) > 0 :
-                    f  = folders.pop()
-                    li = svnClient.ls (f)
-                    f  = [ _.name for _ in li if os.path.isfile(_.name) ]
-                    if len(f) > 0 : files.extend(f)
-                    f  = [ _.name for _ in li if os.path.isdir(_.name) ]
-                    if len(f) > 0 : folders.extend(f)
-                
-        else :
-            folders = [ os.path.join(folder, _) for _ in os.listdir (folder) ]
-            files   = folders
-            if recursive : 
-                folders = [ _ for _ in files if os.path.isdir(_) ]
-                while len (folders) > 0 :
-                    f  = folders.pop()
-                    f  = [ os.path.join(f, _) for _ in os.listdir (f) ]
-                    if len(f) > 0 : files.extend(f)
-                    f  = [ _  for _ in f if os.path.isdir(_) ]
-                    if len(f) > 0 : folders.extend(f)
-            files = [ _ for _ in files if os.path.isfile(_) ]
-        if excludePyFile :
-            files = [ _ for _ in files if not _.endswith(".py") ]
-        if len(files) == 0 : 
-            raise Exception("there should be at least one file in folder: " + folder)
-            
-        files = [ _ for _ in files if "\\build\\" not in _ and \
-                                      "/build/" not in _ and  \
-                                      "__pycache__" not in _ ]
-        return files
-    elif ishome() :
-        raise Exception("folder " + folder + " is missing")
-    else :
-        return []
-        
-
-# dirname is not used by sdist.py
-path = "Lib/site-packages/" + project_var_name
-data_files  = [ 
-                #(os.path.join(path, "subproject"), 
-                #            get_folder_files("src/" + project_var_name + "/subproject", svn = True, recursive = False) ),
-                    ]
-                    
-if "bdist_wininst" in sys.argv :
-    # for the windows setup, we add the compiled files
-    data_files += [ 
-                    #(os.path.join(path, "subproject"), 
-                    #        ["src/" + project_var_name + "/subproject/file.pyd",
-                    #    ] ),
-                    ]
-    
-
-#############################################################
-# begin checking
-#############################################################
-
-versionPython = "%s.%s" % (sys.version_info.major, sys.version_info.minor)
-
-        
-def check_modules () :
-    modules_to_check = ["numpy" ]
-    notPresent = [ ]
-    for mod in modules_to_check :
-        st = "import %s" % mod
-        try :
-            exec (st)
-        except ImportError :
-            notPresent.append (mod)
-    if len(notPresent) > 0 :
-        raise ImportError ("following modules should be installed: %s" % ", ".join(notPresent))
-
-def remove_existing_build_setup() :
-    if "bdist_wininst" not in sys.argv :
-        if os.path.exists ("dist") :
-            for exe in os.listdir ("dist") :
-                if ".exe" in exe or ".zip" in exe or ".gz" in exe :
-                    print ("removing ", exe)
-                    os.remove (os.path.join("dist", exe))
-
-def check_pathes() :
-    if True or ishome() :
-        missing = [ ]
-        all     = [ ]
-        for row in data_files :
-            path,folders = row[0], row[-1]
-            for f in folders :
-                if not os.path.exists (f) :
-                    missing.append (f)
-                all.append(f)
-        if len(missing) > 0 :
-            raise Exception ("following folders should be present:\n%s" % "\n".join(missing))
-
-def explore_folder (folder, pattern = None, fullname = False) :
-    """returns the list of files included in a folder and in the subfolder
-    @param          folder      folder
-    @param          pattern     if None, get all files, otherwise, it is a regular expression, 
-                                the filename must verify (with the folder is fullname is True)
-    @param          fullname    if True, include the subfolder while checking the regex (pattern)
-    @return                     a list of folders, a list of files (the folder is not included the path name)
-    """
-    if pattern != None :
-        pattern = re.compile (pattern)
-    
-    file, rep = [], { }
-    for r, d, f in os.walk (folder) :
-        for a in f : 
-            temp = os.path.join (r, a)
-            if pattern != None :
-                if fullname :
-                    if not pattern.search (temp) : continue
-                else :
-                    if not pattern.search (a) : continue
-            file.append (temp)
-            r = os.path.split (temp) [0]
-            rep [r] = None
-            
-    keys = list(rep.keys ())
-    keys.sort ()
-    return keys, file
-    
-def find_packages () :
-    
-    folders,allfiles = explore_folder ("src", project_var_name, True)
-    if len(allfiles) == 0 :
-        raise Exception("unable to find any packages in " + os.path.abspath(os.path.join("src", project_var_name)))
-
-    folders = [ _ for _ in folders if   "\\build" not in _  and \
-                                        "/build" not in _ and \
-                                          "__pycache__" not in _ and \
-                                          "_doc\\sphinxdoc" not in _ and \
-                                          "_doc/sphinxdoc" not in _ ]
-                                        
-    folders = [ _.replace("\\",".").replace("/",".") for _ in folders ]
-    folders = { _:0 for _ in folders }
-    folders = list(folders.keys())
-    folders.sort()
-    return folders
-
-check_modules()
-check_pathes()
-remove_existing_build_setup()
-
-#############################################################
-# end checking
-#############################################################
-
-
-
+KEYWORDS = \
+project_var_name + ', first name, last name'
 
 DESCRIPTION = \
-"""This module gathers various precesses I use at home or for my teachings
-to automate some  tasks (such as updating my website, comparing folders, playing with 
-tables, sqlite3, graphviz, imagemagick, xml, ...)"""
+"""This a project template including a setup and the generation of sphinx generation."""
 
 CLASSIFIERS = \
 [
@@ -278,11 +74,45 @@ CLASSIFIERS = \
 'Python 3.3 :: Windows :: Linux',
 ]
 
+# dirname is not used by sdist.py
+data_files  = [ 
+                (os.path.join(path, "subproject"), 
+                    [ "src/" + project_var_name + "/subproject/myexample_nouse.tohelp" ]
+                ),
+            ]
+                    
+if "bdist_wininst" in sys.argv :
+    # for the windows setup, we add other files if needed
+    data_files += [ 
+                    #(os.path.join(path, "subproject"), 
+                    #        ["src/" + project_var_name + "/subproject/file.pyd",
+                    #    ] ),
+                    ]
+    
+
+#############################################################
+# begin checking
+#############################################################
+
+def remove_existing_build_setup() :
+    if "bdist_wininst" not in sys.argv :
+        for p in ["dist", "src/dist"] :
+            if os.path.exists (p) :
+                for exe in os.listdir (p) :
+                    if ".exe" in exe or ".zip" in exe or ".gz" in exe :
+                        print ("removing ", exe)
+                        os.remove (os.path.join(p, exe))
+
+remove_existing_build_setup()
+
+#############################################################
+# end checking
+#############################################################
 
 
-from distutils.core import setup, Extension
-import distutils.sysconfig as SH
 
+#import distutils.sysconfig as SH
+from setuptools import setup, find_packages, Extension
 
 
 if "bdist_wininst" not in sys.argv :
@@ -295,56 +125,30 @@ else :
     EXT_MODULES = [ ]
 
 
-KEYWORDS = \
-project_var_name + ', first name, last name'
-
-
 packages        = find_packages ()
 package_dir     = { k : k.replace(".","/") for k in packages }
 readme          = 'README.rst'
-
+with open(readme) as f : long_description = f.read()
 
 
 setup(
     name                    = project_var_name,
-    version                 = 'v%s.%d' % (sversion, get_svn_version ()),
+    version                 = 'v%s.%d' % (sversion, subversion),
     author                  = 'author',
     author_email            = 'author AT something.any',
     url                     = "http://...",
-    download_url            = "http://...",
+    download_url            = "https://github.com/...",
     description             = DESCRIPTION,
-    long_description        = open(readme).read(),
+    long_description        = long_description,
     keywords                = KEYWORDS,
     classifiers             = CLASSIFIERS,
-    packages                = packages,
-    package_dir             = package_dir,
+    packages                = find_packages('src', exclude='src'),
+    package_dir             = { '': 'src' },
     data_files              = data_files,
     requires                = [  
                                 # "numpy (>= 1.7.1)",
                                 ],
-    ext_modules             = EXT_MODULES,
-    include_package_data    = True
+    ext_modules             = EXT_MODULES
     )
     
-if "install" in sys.argv :
-    # we check the data was installed
-    import shutil
-    site_pack = [ _ for _ in sys.path if _.endswith("site-packages") ][0]
-    lookup    = os.path.join(site_pack, "_doc", "sphinx", "source", "project_ico.ico")
-    if not os.path.exists (lookup) :
-        # we have issues
-        for fold, files in data_files :
-            fol_ = fold[fold.find("site-packages") + len("site-packages"):].lstrip("/\\")
-            dest = os.path.join(site_pack, fol_)
-            if not os.path.exists (dest) : 
-                print ("create folder ", dest)
-                os.makedirs(dest)
-            for f in files :
-                print ("copy file ", f, " to ", dest)
-                shutil.copy (f, dest)
-      
-if ishome() and sys.argv[1] == "sdist" :
-    dist = os.listdir ("dist")
-    zip  = [ _ for _ in dist if ".zip" in _ ]
-    if len(zip) != 1 : raise Exception("no zip file was found in dist foler")
-            
+    

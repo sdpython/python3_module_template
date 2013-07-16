@@ -2,7 +2,7 @@
 generates the documentation using Sphinx
 """
 
-import os,sys, subprocess, glob, shutil, re
+import os,sys, subprocess, glob, shutil, re, datetime
 
 try:
     import pyhome3
@@ -45,7 +45,7 @@ def generate_changes(chan) :
     """
     # builds the changes files
     try :
-        logs = pyhome3.get_svn_log()
+        logs = pyhome3.get_repo_log()
     except :
         logs = [ ("none", 0, datetime.datetime.now(), "-") ]
         
