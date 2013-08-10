@@ -92,11 +92,12 @@ The program ``make_help.py`` without any required change except mention in the i
     
 The results are stored in folder ``_doc/sphinxdoc/build``.
 
-..warning:
+.. warning::
     
     The folder containing the project (here: project_template) must be different from the project name 
     (here: project_name). Otherwise, the generation of the documentation might face some issues while 
-    importing modules. The documentation creates another folder
+    importing modules. The documentation creates another folder, copies every source file
+    there, change the doxygen help format into rst format, adds custom summaries.
 
 Generation of the setup
 +++++++++++++++++++++++

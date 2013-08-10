@@ -13,10 +13,10 @@ Welcome to PROJECT_NAME documentation
 Introduction
 ------------
 
-* :ref:`l-README`
+This project is a template to start a new project. See :ref:`l-README`.
     
 Installation 
-++++++++++++
+------------
 
 
 * Windows installation: 
@@ -35,6 +35,10 @@ Installation
         tar xf project_name-py3.3.tar.gz
         sudo su
         python3.3 setup.py install
+        
+* Using pip::
+
+    pip install project_name
 
 
 You can check the module is working for basic functions by running::
@@ -43,16 +47,21 @@ You can check the module is working for basic functions by running::
     project_name.check()
     
         
-Interesting functionalities
----------------------------
-
+Quick overview
+--------------
 
 * **Example**
     * example:  :class:`myclass <subproject.myexample.myclass>`
 
+See :ref:`l-usecase`.
+
+Changes
+-------
+
+* :ref:`l-changes`
 
 About this documentation
-++++++++++++++++++++++++
+------------------------
 
 .. toctree::
     :maxdepth: 2
@@ -62,11 +71,6 @@ About this documentation
     confr_pyp
 
     
-Changes
-++++++++
-
-* :ref:`l-changes`
-
 Indices and tables
 ==================
 
@@ -80,15 +84,5 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
-
-Table of Contents
-=================
-
-.. toctree::
-   :glob:
-   
-   project_name/*
-   *
    
 

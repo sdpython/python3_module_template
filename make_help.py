@@ -45,7 +45,7 @@ def generate_changes(chan) :
     """
     # builds the changes files
     try :
-        logs = pyhome3.get_repo_log()
+        logs = pyhome3.get_repo_log(path = os.path.abspath(os.path.join(os.path.split(__file__)[0], "src")))
     except :
         logs = [ ("none", 0, datetime.datetime.now(), "-") ]
         

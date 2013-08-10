@@ -38,19 +38,19 @@
 #  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
 #  OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# http://docs.python.org/3.3/install/index.html
-# http://docs.python.org/3.3/distutils/sourcedist.html
-# http://docs.python.org/3.3/distutils/setupscript.html#setup-script
 
-__rev_id__ = """setup.py,v 1.0 01/12/2009"""
-
-import sys,os, re, zipfile
+import sys,os
+from distutils.core import setup, Extension
+import distutils.sysconfig as SH
+from setuptools import find_packages
 
 project_var_name    = "project_name"
 sversion            = "0.1"
 versionPython       = "%s.%s" % (sys.version_info.major, sys.version_info.minor)
 path                = "Lib/site-packages/" + project_var_name
 subversion          = 1   
+readme              = 'README.rst'
+
 
 KEYWORDS = \
 project_var_name + ', first name, last name'
@@ -60,35 +60,13 @@ DESCRIPTION = \
 
 CLASSIFIERS = \
 [
-'Development Status :: ' + sversion + ' - Alpha',
+'Development Status :: ' + sversion,
 'Operating System :: any',
-'Programming Language :: Python and C++',
-'License :: GNU 2.0',
-'Development Status :: __VERSION__',
-'Intended Audience :: Developers',
-'Topic :: SQL :: XML :: MATRIX :: TABLE :: GRAPH',
 'Programming Language :: Python',
 'Intended Audience :: Developers',
+'Topic :: template',
 'License :: Python Software Foundation License',
-'Topic :: Helpers :: GNUPlot :: ENSAE',
-'Python 3.3 :: Windows :: Linux',
 ]
-
-# dirname is not used by sdist.py
-data_files  = [ 
-                (os.path.join(path, "subproject"), 
-                    [ "src/" + project_var_name + "/subproject/myexample_nouse.tohelp" ]
-                ),
-            ]
-                    
-if "bdist_wininst" in sys.argv :
-    # for the windows setup, we add other files if needed
-    data_files += [ 
-                    #(os.path.join(path, "subproject"), 
-                    #        ["src/" + project_var_name + "/subproject/file.pyd",
-                    #    ] ),
-                    ]
-    
 
 #############################################################
 # begin checking
@@ -110,11 +88,6 @@ remove_existing_build_setup()
 #############################################################
 
 
-
-#import distutils.sysconfig as SH
-from setuptools import setup, find_packages, Extension
-
-
 if "bdist_wininst" not in sys.argv :
     EXT_MODULES = [ 
                     #Extension(project_var_name + '.subproject.sample_module', 
@@ -124,12 +97,19 @@ if "bdist_wininst" not in sys.argv :
 else :
     EXT_MODULES = [ ]
 
-
-packages        = find_packages ()
-package_dir     = { k : k.replace(".","/") for k in packages }
-readme          = 'README.rst'
+packages     = find_packages('src', exclude='src')
+package_dir  = { k: "src/" + k.replace(".","/") for k in packages }
+package_data = { project_var_name + ".subproject": ["*.tohelp"] }
+    
 with open(readme) as f : long_description = f.read()
 
+if "--verbose" in sys.argv :
+    print ("---------------------------------")
+    print ("package_dir =",package_dir)
+    print ("packages    =",packages)
+    print ("package_data=",package_data)
+    print ("current     =", os.path.abspath(os.getcwd()))
+    print ("---------------------------------")
 
 setup(
     name                    = project_var_name,
@@ -142,13 +122,14 @@ setup(
     long_description        = long_description,
     keywords                = KEYWORDS,
     classifiers             = CLASSIFIERS,
-    packages                = find_packages('src', exclude='src'),
-    package_dir             = { '': 'src' },
-    data_files              = data_files,
-    requires                = [  
-                                # "numpy (>= 1.7.1)",
-                                ],
-    ext_modules             = EXT_MODULES
+    packages                = packages,
+    package_dir             = package_dir,
+    package_data            = package_data,
+    #data_files              = data_files,
+    #requires                = [  "numpy (>= 1.7.1)", ],
+    ext_modules             = EXT_MODULES,
+    #include_package_data    = True,
     )
+
     
     
