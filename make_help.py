@@ -90,7 +90,7 @@ def generate_help_sphinx () :
                 ".", 
                 "_doc/sphinxdoc/source/", 
                 subfolders      = [ 
-                                    ("src/" + project_var_name,                 project_var_name), 
+                                    ("src/" + project_var_name, project_var_name), 
                                      ],
                 silent          = True,
                 rootrep         = ("_doc.sphinxdoc.source.%s." % (project_var_name,), ""),
