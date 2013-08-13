@@ -44,11 +44,16 @@ from distutils.core import setup, Extension
 import distutils.sysconfig as SH
 from setuptools import find_packages
 
+if os.path.exists("version.txt") :
+    with open("version.txt", "r") as f : lines = f.readlines()
+    subversion = int(lines[0].strip("\r\n "))
+else :
+    subversion = 1   
+
 project_var_name    = "project_name"
 sversion            = "0.1"
 versionPython       = "%s.%s" % (sys.version_info.major, sys.version_info.minor)
 path                = "Lib/site-packages/" + project_var_name
-subversion          = 1   
 readme              = 'README.rst'
 
 
@@ -60,12 +65,11 @@ DESCRIPTION = \
 
 CLASSIFIERS = \
 [
-'Development Status :: ' + sversion,
-'Operating System :: any',
-'Programming Language :: Python',
+'Programming Language :: Python :: 3',
 'Intended Audience :: Developers',
-'Topic :: template',
-'License :: Python Software Foundation License',
+'Topic :: Scientific/Engineering',
+'Topic :: Education',
+'License :: OSI Approved :: BSD License',
 ]
 
 #############################################################

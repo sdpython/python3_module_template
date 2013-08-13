@@ -74,15 +74,10 @@ About this documentation
 Indices and tables
 ==================
 
-* :ref:`l-modules`
-* :ref:`ext-tohelp`
-* :ref:`l-functions`
-* :ref:`l-classes`
-* :ref:`l-methods`
-* :ref:`l-staticmethods`
-* :ref:`l-properties`
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
++------------------+---------------------+------------------+------------------+------------------------+---------------------+
+| :ref:`l-modules` |  :ref:`l-functions` | :ref:`l-classes` | :ref:`l-methods` | :ref:`l-staticmethods` | :ref:`l-properties` |
++------------------+---------------------+------------------+------------------+------------------------+---------------------+
+| :ref:`genindex`  |  :ref:`modindex`    | :ref:`search`    | :ref:`l-license` |                        |                     |
++------------------+---------------------+------------------+------------------+------------------------+---------------------+
    
 
