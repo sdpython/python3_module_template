@@ -33,7 +33,7 @@ Prerequisites
 
 To build the documentation, you need:
    * `Sphinx <http://sphinx-doc.org/>`_ and its dependencies.
-   * `pyhome3 <http://www.xavierdupre.fr/site2013/index_code.html>`_ and its dependency (`numpy <http://www.numpy.org/>`_)
+   * `pyquickhelper <http://www.xavierdupre.fr/site2013/index_code.html>`_ and its dependency (`numpy <http://www.numpy.org/>`_)
     
     
 Automation
@@ -56,7 +56,7 @@ This test file must begin by ``test_`` and must look like the following::
     """
 
     import sys, os, unittest
-    from pyhome3 import fLOG  # it requires pyhome3.
+    from pyquickhelper import fLOG  # it requires pyquickhelper.
 
     # to import files from the module
     try :
