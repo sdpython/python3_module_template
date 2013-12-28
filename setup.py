@@ -117,7 +117,7 @@ if "--verbose" in sys.argv :
 
 setup(
     name                    = project_var_name,
-    version                 = 'v%s.%d' % (sversion, subversion),
+    version                 = 'py%s-v%s.%d' % (versionPython, sversion, subversion),
     author                  = 'author',
     author_email            = 'author AT something.any',
     url                     = "http://...",
