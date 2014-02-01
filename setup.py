@@ -121,7 +121,7 @@ setup(
     author                  = 'author',
     author_email            = 'author AT something.any',
     url                     = "http://...",
-    download_url            = "https://github.com/...",
+    download_url            = "https://github.com/.../",
     description             = DESCRIPTION,
     long_description        = long_description,
     keywords                = KEYWORDS,

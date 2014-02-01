@@ -9,12 +9,14 @@ import sys, os, datetime
 
 project_var_name = "project_name"
 author           = "author"
+version          = '0.1'
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.split(__file__)[0])))
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.split(__file__)[0], project_var_name)))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.split(__file__)[0], "..", "..", "..", "..", "pyquickhelper", "src")))
 
 # -- General configuration -----------------------------------------------------
 
@@ -46,14 +48,13 @@ master_doc = 'index'
 
 # General information about the project.
 project = project_var_name + ' documentation'
-copyright = '2013, ' + author
+copyright = '2014, ' + author
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = '0.5'
 # The full version, including alpha/beta/rc tags.
 version_file = os.path.abspath(os.path.join(os.path.split(__file__)[0], "..", "..", "..", "version.txt"))
 try :
@@ -106,15 +107,14 @@ modindex_common_prefix = [
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #html_theme = 'default'
-html_theme = 'sphinxdoc'
+import wild_sphinx_theme
+html_theme = 'wild'
+html_theme_path = [wild_sphinx_theme.get_theme_dir()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #html_theme_options = {}
-
-# Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
