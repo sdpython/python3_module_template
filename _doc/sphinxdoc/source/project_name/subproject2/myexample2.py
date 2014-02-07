@@ -3,8 +3,6 @@
 This the documentation of this module.
 
 """
-import os,sys
-
 
 # replace # from ..subproject.myexample import myclass
 import sys,os
