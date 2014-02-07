@@ -1,0 +1,9 @@
+tohelp
+======
+
+This file is an example of a text files added to the
+documentation. During the generation, it is possible
+to map a function to a pattern. This file will be copied
+because it follows the pattern ``.*[.]tohelp``.
+Another one ``.rst`` will be created as the output of the 
+mapped function.
