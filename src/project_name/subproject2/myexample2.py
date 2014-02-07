@@ -1,8 +1,6 @@
 """
 This the documentation of this module.
 """
-import os,sys
-
 from ..subproject.myexample import myclass
 
 class myclass2 (myclass) :

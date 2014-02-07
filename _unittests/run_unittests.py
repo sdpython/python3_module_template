@@ -18,7 +18,6 @@ except ImportError :
     import src
     import pyquickhelper
 
-import unittest, os, sys, io
 from pyquickhelper import fLOG
 from pyquickhelper.unittests.utils_tests import main 
 

@@ -40,8 +40,7 @@
 
 
 import sys,os
-from distutils.core import setup, Extension
-import distutils.sysconfig as SH
+from distutils.core import setup
 from setuptools import find_packages
 
 if os.path.exists("version.txt") :
