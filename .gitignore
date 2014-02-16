@@ -229,3 +229,4 @@ version.txt
 _doc/sphinxdoc/source/project_name/subproject2/myexample2.rst
 _doc/sphinxdoc/source/project_name/__init__.rst
 _doc/sphinxdoc/source/license.rst
+*/sphinxdoc/source/all*.rst
