@@ -5,7 +5,7 @@ README
 
 
 **Links:**
-    * `GitHub/pymyinstall <https://github.com/sdpython/python_project_template/>`_
+    * `GitHub/python_project_template <https://github.com/sdpython/python_project_template/>`_
     * `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python_project_template>`_
 
 
