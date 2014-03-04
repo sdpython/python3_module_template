@@ -223,10 +223,9 @@ out_*
 */sphinxdoc/source/LICENSE.*
 */sphinxdoc/source/filechanges.*
 version.txt
-*/sphinxdoc/source/python_template/*
-*/sphinxdoc/source/python_name/*
-*/sphinxdoc/source/project_name/*
-_doc/sphinxdoc/source/project_name/subproject2/myexample2.rst
-_doc/sphinxdoc/source/project_name/__init__.rst
+_doc/sphinxdoc/source/python_template/
+_doc/sphinxdoc/source/python_name/
+_doc/sphinxdoc/source/project_name/
 _doc/sphinxdoc/source/license.rst
 */sphinxdoc/source/all*.rst
+
