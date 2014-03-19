@@ -1,6 +1,4 @@
-# coding: utf-8
-
-#  Copyright (C) 2013 ---------------
+#  Copyright (C) 2014 ---------------
 #  All rights reserved.
 # 
 #  Redistribution and use in source and binary forms, with or without
@@ -70,26 +68,6 @@ CLASSIFIERS = \
 'Topic :: Education',
 'License :: OSI Approved :: BSD License',
 ]
-
-#############################################################
-# begin checking
-#############################################################
-
-def remove_existing_build_setup() :
-    if "bdist_wininst" not in sys.argv :
-        for p in ["dist", "src/dist"] :
-            if os.path.exists (p) :
-                for exe in os.listdir (p) :
-                    if ".exe" in exe or ".zip" in exe or ".gz" in exe :
-                        print ("removing ", exe)
-                        os.remove (os.path.join(p, exe))
-
-remove_existing_build_setup()
-
-#############################################################
-# end checking
-#############################################################
-
 
 if "bdist_wininst" not in sys.argv :
     EXT_MODULES = [ 
