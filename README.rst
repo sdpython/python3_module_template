@@ -1,4 +1,4 @@
-.. _l-README:
+﻿.. _l-README:
 
 README
 ======
@@ -18,7 +18,6 @@ This project is a skeleton for any new project. It contains:
    * a unit test folder: ``_unittests``, go to this folder and run ``run_unittests.py``
    * a _doc folder: ``_doc``, it will contains the documentation
    * a file ``setup.py`` to build and to install the module
-   * a file ``make_help.py`` to build the sphinx documentation
     
 All theses steps were only tested on Windows. Suppot for linux will be added later. To create your own project, you need to rename the folder ``project_name`` in ``src`` by your true module name. You also need to replace ``project_name`` wherever it is found:
    * ``project_var_name  = 'project_name'`` in ``setup.py``, ``make_help.py`` and ``_doc/sphinxdoc/source/conf.py``
