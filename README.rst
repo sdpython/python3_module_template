@@ -54,3 +54,9 @@ To add a module at deeper level than the previous one, you
 should add relative imports in every ``__init__.py`` along the way.
 
 
+Versions
+--------
+
+* **0.0 - 2014/??/??**
+    * **new:** first version
+    
