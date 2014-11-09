@@ -59,4 +59,5 @@ Versions
 
 * **0.0 - 2014/??/??**
     * **new:** first version
+    * **fix:** the setup does not need the file ``README.rst`` anymore
     
