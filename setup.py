@@ -61,6 +61,7 @@ project_var_name + ', first name, last name'
 DESCRIPTION = \
 """This a project template including a setup and the generation of sphinx generation."""
 
+
 CLASSIFIERS = \
 [
 'Programming Language :: Python :: 3',
@@ -68,12 +69,14 @@ CLASSIFIERS = \
 'Topic :: Scientific/Engineering',
 'Topic :: Education',
 'License :: OSI Approved :: BSD License',
+'Development Status :: 5 - Production/Stable'
 ]
 
+
 if "bdist_wininst" not in sys.argv :
-    EXT_MODULES = [ 
-                    #Extension(project_var_name + '.subproject.sample_module', 
-                    #    ['src/' + project_var_name + '/subproject/sample_module.cpp'], 
+    EXT_MODULES = [
+                    #Extension(project_var_name + '.subproject.sample_module',
+                    #    ['src/' + project_var_name + '/subproject/sample_module.cpp'],
                     #    include_dirs = ['src/' + project_var_name + '/subproject']),
                 ]
 else :
@@ -82,7 +85,7 @@ else :
 packages     = find_packages('src', exclude='src')
 package_dir  = { k: "src/" + k.replace(".","/") for k in packages }
 package_data = { project_var_name + ".subproject": ["*.tohelp"] }
-    
+
 if os.path.exists(readme):
     try:
         with open(readme, "r", encoding='utf-8') as f : long_description = f.read()
@@ -103,25 +106,95 @@ if "--verbose" in sys.argv :
     print ("current     =", os.path.abspath(os.getcwd()))
     print ("---------------------------------")
 
-setup(
-    name                    = project_var_name,
-    version                 = '%s.%s' %(sversion, subversion) if "register" in sys.argv or "bdist_msi" in sys.argv else 'py%s-%s.%s' % (versionPython, sversion, subversion),
-    author                  = 'author',
-    author_email            = 'author AT something.any',
-    url                     = "http://...",
-    download_url            = "https://github.com/.../",
-    description             = DESCRIPTION,
-    long_description        = long_description,
-    keywords                = KEYWORDS,
-    classifiers             = CLASSIFIERS,
-    packages                = packages,
-    package_dir             = package_dir,
-    package_data            = package_data,
-    #data_files              = data_files,
-    #install_requires                = [  "numpy (>= 1.7.1)", ],
-    ext_modules             = EXT_MODULES,
-    #include_package_data    = True,
-    )
+if "clean_space" in sys.argv:
+    # clean the extra space in all files
+    try:
+        import pyquickhelper
+    except ImportError:
+        sys.path.append ( os.path.normpath (os.path.abspath(os.path.join("..", "pyquickhelper", "src" ))))
+        try:
+            import pyquickhelper
+        except ImportError as e :
+            raise ImportError("module pyquickhelper is needed to build the documentation") from e
 
+    fold = os.path.dirname(__file__)
+    fold = os.path.abspath(fold)
+    rem  = pyquickhelper.remove_extra_spaces_folder(fold, extensions=[".py","rst",".bat",".sh"])
+    print("number of impacted files", len(rem))
+
+elif "build_sphinx" in sys.argv:
+    # we take a shortcut
+
+    try:
+        import pyquickhelper
+    except ImportError:
+        sys.path.append ( os.path.normpath (os.path.abspath(os.path.join("..", "pyquickhelper", "src" ))))
+        try:
+            import pyquickhelper
+        except ImportError as e :
+            raise ImportError("module pyquickhelper is needed to build the documentation") from e
+
+    if "--help" in sys.argv:
+        print(pyquickhelper.get_help_usage())
+    else :
+
+        if not os.path.exists("_doc/sphinxdoc/source"):
+            raise FileNotFoundError("you must get the source from GitHub to build the documentation")
+
+        from pyquickhelper import fLOG, generate_help_sphinx
+
+        fLOG (OutputPrint = True)
+        project_name = os.path.split(os.path.split(os.path.abspath(__file__))[0])[-1]
+        # remove this line
+        project_name = "project_name"
+        generate_help_sphinx(project_name)
+
+elif "unittests" in sys.argv:
+
+    if not os.path.exists("_unittests"):
+        raise FileNotFoundError("you must get the source from GitHub to run the unittests")
+
+    fold  = os.path.abspath(os.path.dirname(__file__))
+    foldu = os.path.join(fold, "_unittests")
+    docu  = os.path.join(fold, "_doc")
+    dest  = os.path.join(fold, "_doc","sphinxdoc","source", "coverage")
+    if not os.path.exists(dest):
+        os.mkdir(dest)
+
+    sys.path.append(foldu)
+
+    from coverage import coverage
+    cov = coverage(source = ["src/" + project_var_name])
+    cov.exclude ('if __name__ == "__main__"')
+    cov.start()
+
+    from run_unittests import main
+    main()
+
+    cov.stop()
+    cov.html_report(directory=dest)
+
+else :
     
-    
+    setup(
+        name                    = project_var_name,
+        version                 = '%s.%s' %(sversion, subversion) if "register" in sys.argv or "bdist_msi" in sys.argv else 'py%s-%s.%s' % (versionPython, sversion, subversion),
+        author                  = 'author',
+        author_email            = 'author AT something.any',
+        url                     = "http://...",
+        download_url            = "https://github.com/.../",
+        description             = DESCRIPTION,
+        long_description        = long_description,
+        keywords                = KEYWORDS,
+        classifiers             = CLASSIFIERS,
+        packages                = packages,
+        package_dir             = package_dir,
+        package_data            = package_data,
+        #data_files              = data_files,
+        #install_requires                = [  "numpy (>= 1.7.1)", ],
+        ext_modules             = EXT_MODULES,
+        #include_package_data    = True,
+        )
+
+        
+        
