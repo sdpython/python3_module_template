@@ -1,29 +1,29 @@
 #-*- coding: utf-8 -*-
 #  Copyright (C) 2014 ---------------
 #  All rights reserved.
-# 
+#
 #  Redistribution and use in source and binary forms, with or without
 #  modification, are permitted provided that the following conditions
 #  are met:
-# 
+#
 #  1. Redistributions of source code must retain the above copyright
 #     notice, this list of conditions and the following disclaimer.
-# 
+#
 #  2. Redistributions in binary form must reproduce the above copyright
 #     notice, this list of conditions and the following disclaimer in
 #     the documentation and/or other materials provided with the
 #     distribution.
-# 
+#
 #  3. All advertising materials mentioning features or use of this
 #     software must display the following acknowledgment:
 #     "This product includes software developed by
 #      --------------- <--------------- AT --------------->"
-# 
+#
 #  4. Redistributions of any form whatsoever must retain the following
 #     acknowledgment:
 #     "This product includes software developed by
 #      --------------- <--------------- AT --------------->."
-# 
+#
 #  THIS SOFTWARE IS PROVIDED BY --------------- ``AS IS'' AND ANY
 #  EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 #  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
@@ -46,7 +46,7 @@ if os.path.exists("version.txt") :
     with open("version.txt", "r") as f : lines = f.readlines()
     subversion = lines[0].strip("\r\n ")
 else :
-    subversion = 1   
+    subversion = 1
 
 project_var_name    = "project_name"
 sversion            = "0.0"
@@ -106,8 +106,7 @@ if "--verbose" in sys.argv :
     print ("current     =", os.path.abspath(os.getcwd()))
     print ("---------------------------------")
 
-if "clean_space" in sys.argv:
-    # clean the extra space in all files
+def import_pyquickhelper():
     try:
         import pyquickhelper
     except ImportError:
@@ -115,24 +114,22 @@ if "clean_space" in sys.argv:
         try:
             import pyquickhelper
         except ImportError as e :
-            raise ImportError("module pyquickhelper is needed to build the documentation") from e
+            raise ImportError("module pyquickhelper is needed to build the documentation ({0})".format(sys.executable)) from e
+    return pyquickhelper
 
+if "clean_space" in sys.argv:
+    pyquickhelper = import_pyquickhelper()
     fold = os.path.dirname(__file__)
     fold = os.path.abspath(fold)
     rem  = pyquickhelper.remove_extra_spaces_folder(fold, extensions=[".py","rst",".bat",".sh"])
     print("number of impacted files", len(rem))
 
-elif "build_sphinx" in sys.argv:
-    # we take a shortcut
+elif "clean_pyd" in sys.argv:
+    pyquickhelper = import_pyquickhelper()
+    pyquickhelper.clean_exts()
 
-    try:
-        import pyquickhelper
-    except ImportError:
-        sys.path.append ( os.path.normpath (os.path.abspath(os.path.join("..", "pyquickhelper", "src" ))))
-        try:
-            import pyquickhelper
-        except ImportError as e :
-            raise ImportError("module pyquickhelper is needed to build the documentation") from e
+elif "build_sphinx" in sys.argv:
+    pyquickhelper = import_pyquickhelper()
 
     if "--help" in sys.argv:
         print(pyquickhelper.get_help_usage())
@@ -154,28 +151,15 @@ elif "unittests" in sys.argv:
     if not os.path.exists("_unittests"):
         raise FileNotFoundError("you must get the source from GitHub to run the unittests")
 
-    fold  = os.path.abspath(os.path.dirname(__file__))
-    foldu = os.path.join(fold, "_unittests")
-    docu  = os.path.join(fold, "_doc")
-    dest  = os.path.join(fold, "_doc","sphinxdoc","source", "coverage")
-    if not os.path.exists(dest):
-        os.mkdir(dest)
+    run_unit = os.path.join("_unittests", "run_unittests.py")
+    if not os.path.exists(run_unit):
+        raise FileNotFoundError("the folder should contain run_unittests.py")
 
-    sys.path.append(foldu)
-
-    from coverage import coverage
-    cov = coverage(source = ["src/" + project_var_name])
-    cov.exclude ('if __name__ == "__main__"')
-    cov.start()
-
-    from run_unittests import main
-    main()
-
-    cov.stop()
-    cov.html_report(directory=dest)
+    pyquickhelper = import_pyquickhelper()
+    pyquickhelper.main_wrapper_tests(run_unit, add_coverage=True)
 
 else :
-    
+
     setup(
         name                    = project_var_name,
         version                 = '%s.%s' %(sversion, subversion) if "register" in sys.argv or "bdist_msi" in sys.argv or "install" in sys.argv  else 'py%s-%s.%s' % (versionPython, sversion, subversion),
@@ -195,6 +179,3 @@ else :
         ext_modules             = EXT_MODULES,
         #include_package_data    = True,
         )
-
-        
-        
