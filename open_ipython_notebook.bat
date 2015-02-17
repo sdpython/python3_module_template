@@ -6,4 +6,5 @@ goto custom_python:
 set path=%path%;c:\Python34;c:\Python34\Scripts
 
 :custom_python:
-%pythonexe% setup.py sdist register upload
+ipython3 notebook --notebook-dir=_doc\notebooks
+rem ipython3 help notebook

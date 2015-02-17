@@ -144,7 +144,7 @@ elif "build_sphinx" in sys.argv:
         project_name = os.path.split(os.path.split(os.path.abspath(__file__))[0])[-1]
         # remove this line
         project_name = "project_name"
-        generate_help_sphinx(project_name)
+        generate_help_sphinx(project_name, module_name = project_var_name)
 
 elif "unittests" in sys.argv:
 
