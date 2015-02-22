@@ -229,4 +229,5 @@ _doc/sphinxdoc/source/project_name/
 _doc/sphinxdoc/source/license.rst
 _doc/sphinxdoc/source/coverage/*
 */sphinxdoc/source/all*.rst
+_doc/sphinxdoc/source/notebooks/*
 

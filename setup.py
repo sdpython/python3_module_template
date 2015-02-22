@@ -141,9 +141,7 @@ elif "build_sphinx" in sys.argv:
         from pyquickhelper import fLOG, generate_help_sphinx
 
         fLOG (OutputPrint = True)
-        project_name = os.path.split(os.path.split(os.path.abspath(__file__))[0])[-1]
-        # remove this line
-        project_name = "project_name"
+        project_name =  os.path.split(os.path.split(os.path.abspath(__file__))[0])[-1]
         generate_help_sphinx(project_name, module_name = project_var_name)
 
 elif "unittests" in sys.argv:
