@@ -2,7 +2,8 @@
 Documentation for this file.
 """
 
-def check( log = False):
+
+def check(log=False):
     """
     Checks the library is working.
     It raises an exception.
