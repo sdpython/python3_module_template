@@ -6,10 +6,14 @@
 PROJECT_NAME documentation
 ==========================
 
+.. image:: https://travis-ci.org/sdpython/python_project_template .svg?branch=master
+    :target: https://travis-ci.org/sdpython/python_project_template
+    :alt: Build status
+    
 
-**Links:**
-    * `GitHub/pymyinstall <https://github.com/sdpython/python_project_template/>`_
-    * `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python_project_template>`_
+**Links:** `github <https://github.com/sdpython/python_project_template/>`_,
+`documentation <http://www.xavierdupre.fr/site2013/index_code.html#python_project_template>`_,
+`travis <https://travis-ci.org/sdpython/python_project_template>`_
 
 
 Introduction

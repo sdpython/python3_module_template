@@ -4,10 +4,15 @@
 README / Changes
 ================
 
+.. image:: https://travis-ci.org/sdpython/python_project_template .svg?branch=master
+    :target: https://travis-ci.org/sdpython/python_project_template
+    :alt: Build status
+    
 
 **Links:**
     * `GitHub/python_project_template <https://github.com/sdpython/python_project_template/>`_
     * `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python_project_template>`_
+    * `Travis/python_project_template <https://travis-ci.org/sdpython/python_project_template>`_
 
 
 
