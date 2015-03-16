@@ -6,9 +6,13 @@
 PROJECT_NAME documentation
 ==========================
 
-.. image:: https://travis-ci.org/sdpython/python_project_template .svg?branch=master
+.. image:: https://travis-ci.org/sdpython/python_project_template.svg?branch=master
     :target: https://travis-ci.org/sdpython/python_project_template
     :alt: Build status
+    
+.. image:: https://badge.fury.io/py/python_project_template.svg
+    :target: http://badge.fury.io/py/python_project_template    
+
     
 
 **Links:** `github <https://github.com/sdpython/python_project_template/>`_,
