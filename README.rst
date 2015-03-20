@@ -4,22 +4,22 @@
 README / Changes
 ================
 
-.. image:: https://travis-ci.org/sdpython/python_project_template.svg?branch=master
-    :target: https://travis-ci.org/sdpython/python_project_template
+.. image:: https://travis-ci.org/sdpython/python3_module_template.svg?branch=master
+    :target: https://travis-ci.org/sdpython/python3_module_template
     :alt: Build status
     
-.. image:: https://badge.fury.io/py/python_project_template.svg
-    :target: http://badge.fury.io/py/python_project_template    
+.. image:: https://badge.fury.io/py/python3_module_template.svg
+    :target: http://badge.fury.io/py/python3_module_template    
 
-.. image:: http://img.shields.io/pypi/dm/python_project_template.png
+.. image:: http://img.shields.io/pypi/dm/python3_module_template.png
     :alt: PYPI Package
-    :target: https://pypi.python.org/pypi/python_project_template
+    :target: https://pypi.python.org/pypi/python3_module_template
 
 
 **Links:**
-    * `GitHub/python_project_template <https://github.com/sdpython/python_project_template/>`_
-    * `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python_project_template>`_
-    * `Travis/python_project_template <https://travis-ci.org/sdpython/python_project_template>`_
+    * `GitHub/python3_module_template <https://github.com/sdpython/python3_module_template/>`_
+    * `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_
+    * `Travis/python3_module_template <https://travis-ci.org/sdpython/python3_module_template>`_
 
 
 
@@ -40,7 +40,7 @@ All theses steps were only tested on Windows. Suppot for linux will be added lat
     
 The project is also hosted `here <http://www.xavierdupre.fr/site2013/index_code.html>`_ 
 where you can find a 
-`link <http://www.xavierdupre.fr/app/python_project_template/helpsphinx/index.html>`_ 
+`link <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/index.html>`_ 
 to the generated documentation based on this template.
     
 Automation

@@ -6,22 +6,22 @@
 PROJECT_NAME documentation
 ==========================
 
-.. image:: https://travis-ci.org/sdpython/python_project_template.svg?branch=master
-    :target: https://travis-ci.org/sdpython/python_project_template
+.. image:: https://travis-ci.org/sdpython/python3_module_template.svg?branch=master
+    :target: https://travis-ci.org/sdpython/python3_module_template
     :alt: Build status
     
-.. image:: https://badge.fury.io/py/python_project_template.svg
-    :target: http://badge.fury.io/py/python_project_template    
+.. image:: https://badge.fury.io/py/python3_module_template.svg
+    :target: http://badge.fury.io/py/python3_module_template    
 
-.. image:: http://img.shields.io/pypi/dm/python_project_template.png
+.. image:: http://img.shields.io/pypi/dm/python3_module_template.png
     :alt: PYPI Package
-    :target: https://pypi.python.org/pypi/python_project_template
+    :target: https://pypi.python.org/pypi/python3_module_template
 
     
 
-**Links:** `github <https://github.com/sdpython/python_project_template/>`_,
-`documentation <http://www.xavierdupre.fr/site2013/index_code.html#python_project_template>`_,
-`travis <https://travis-ci.org/sdpython/python_project_template>`_
+**Links:** `github <https://github.com/sdpython/python3_module_template/>`_,
+`documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_,
+`travis <https://travis-ci.org/sdpython/python3_module_template>`_
 
 
 Introduction
