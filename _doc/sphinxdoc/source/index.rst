@@ -10,12 +10,12 @@ PROJECT_NAME documentation
     :target: https://travis-ci.org/sdpython/python3_module_template
     :alt: Build status
     
-.. image:: https://badge.fury.io/py/python3_module_template.svg
-    :target: http://badge.fury.io/py/python3_module_template    
+.. image:: https://badge.fury.io/py/project_name.svg
+    :target: http://badge.fury.io/py/project_name    
 
-.. image:: http://img.shields.io/pypi/dm/python3_module_template.png
+.. image:: http://img.shields.io/pypi/dm/project_name.png
     :alt: PYPI Package
-    :target: https://pypi.python.org/pypi/python3_module_template
+    :target: https://pypi.python.org/pypi/project_name
 
     
 
