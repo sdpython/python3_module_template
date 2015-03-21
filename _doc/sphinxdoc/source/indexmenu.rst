@@ -9,12 +9,12 @@ table of contents
     generatedoc
     generatesetup
     installation
-    all_example
-    all_FAQ
-    all_notebooks
     glossary
-    index_module
     license
     filechanges
     README
     all_indexes
+    all_FAQ
+    all_example
+    all_notebooks
+    index_module

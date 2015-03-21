@@ -37,8 +37,8 @@ Quick overview
     * example:  :class:`myclass <subproject.myexample.myclass>`
 
     
-Indices and tables
-------------------
+Navigation
+----------
 
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 | :ref:`l-modules`     |  :ref:`l-functions` | :ref:`l-classes`    | :ref:`l-methods`   | :ref:`l-staticmethods` | :ref:`l-properties`                            |
@@ -48,11 +48,10 @@ Indices and tables
 | :ref:`genindex`      |  :ref:`l-FAQ`       | :ref:`l-notebooks`  | :ref:`ext-tohelp`  | :ref:`l-statcode`      | `Unit Test Coverage <coverage/index.html>`_    |
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 
-Navigation
-----------
+
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     
     indexmenu
 
