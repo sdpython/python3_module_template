@@ -19,3 +19,21 @@ class myclassb(myclass):
         @param      pa      first parameter
         """
         myclass.__init__(self, pa)
+
+    def method_napoleon(self, v1, v2):
+        """
+        Example of a docstring used by *sphinx.ext.napoleon* extension.
+
+        Args:
+            v1 (int): a integer
+            v2 (float): a float
+
+        Returns:
+            float: the sum
+
+        Raises:
+            TypeError: for a type mismatch
+
+        See `google style <http://sphinx-doc.org/ext/example_google.html#example-google>`_
+        """
+        return v1 + v2

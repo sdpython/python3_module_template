@@ -34,7 +34,7 @@ Quick overview
 --------------
 
 * **Example**
-    * example:  :class:`myclass <subproject.myexample.myclass>`
+    * example:  :class:`myclass <python3_module_template.subproject.myexample.myclass>`
 
     
 Navigation
