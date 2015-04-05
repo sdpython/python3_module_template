@@ -18,3 +18,4 @@ table of contents
     all_example
     all_notebooks
     index_module
+    blog/blogindex

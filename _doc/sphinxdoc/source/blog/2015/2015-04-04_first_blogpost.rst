@@ -1,10 +1,12 @@
+
+
 .. blogpost::
     :title: An example of a blog post included in the documentation
     :keywords: example, blogpost, documentation
     :date: 2015-04-04
     :categories: documentation, example
     
-    This blogpost is an example of a blogpost 
+    This blog post is an example of a blogpost 
     which can be added to the documentation.
     Unfortunately, it does not rely on an existing python blog generator
     as it was difficult to entirely change the existing framework
@@ -12,7 +14,7 @@
 
     It is just a *rst* file which starts with a header like the following::
 
-        .. blog::
+        .. blogpost::
             :title: An example of a blog post included in the documentation
             :keywords: example, blogpost, documentation
             :date: 2015-04-04

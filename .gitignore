@@ -231,3 +231,4 @@ _doc/sphinxdoc/source/coverage/*
 */sphinxdoc/source/all*.rst
 _doc/sphinxdoc/source/notebooks/*
 build_help.bat
+_doc/sphinxdoc/source/blog/*.rst
