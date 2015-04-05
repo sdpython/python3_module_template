@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 This the documentation of this module.
 """
@@ -18,6 +19,8 @@ class myclass:
     @FAQ(How to add a question ?)
     Just look a this section.
     @endFAQ
+
+    An accent, é, to check it is working.
     """
 
     def __init__(self, pa):
