@@ -21,7 +21,8 @@ PROJECT_NAME documentation
 
 **Links:** `github <https://github.com/sdpython/python3_module_template/>`_,
 `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_,
-`travis <https://travis-ci.org/sdpython/python3_module_template>`_
+`travis <https://travis-ci.org/sdpython/python3_module_template>`_,
+:ref:`blog <ap-main-0>`
 
 
 Introduction
