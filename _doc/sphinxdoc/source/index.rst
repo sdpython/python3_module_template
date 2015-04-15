@@ -22,6 +22,7 @@ PROJECT_NAME documentation
 **Links:** `github <https://github.com/sdpython/python3_module_template/>`_,
 `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_,
 `travis <https://travis-ci.org/sdpython/python3_module_template>`_,
+:ref:`l-README`,
 :ref:`blog <ap-main-0>`
 
 
@@ -29,13 +30,18 @@ Introduction
 ------------
 
 This project is a template to start a new project. See :ref:`l-README`.
+
+Installation
+------------
+
+``pip install <project_name>``
     
         
 Quick overview
 --------------
 
 * **Example**
-    * example:  :class:`myclass <python3_module_template.subproject.myexample.myclass>`
+    * example:  :class:`myclass <project_name.subproject.myexample.myclass>`
 
     
 Navigation
@@ -52,7 +58,7 @@ Navigation
 
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     
     indexmenu
 

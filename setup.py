@@ -195,10 +195,7 @@ else:
 
     setup(
         name=project_var_name,
-        version='%s.%s' % (sversion,
-                           subversion) if "register" in sys.argv or "sdist" in sys.argv or "bdist_wheel" in sys.argv or "bdist_msi" in sys.argv or "install" in sys.argv else 'py%s-%s.%s' % (versionPython,
-                                                                                                                                                                                              sversion,
-                                                                                                                                                                                              subversion),
+        version='%s.%s' % (sversion, subversion),
         author='author',
         author_email='author AT something.any',
         url="http://...",
