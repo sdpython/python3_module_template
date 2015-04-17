@@ -14,7 +14,6 @@ import unittest
 
 try:
     import src
-    import pyquickhelper
 except ImportError:
     path = os.path.normpath(
         os.path.abspath(
@@ -24,6 +23,11 @@ except ImportError:
                 "..")))
     if path not in sys.path:
         sys.path.append(path)
+    import src
+
+try:
+    import pyquickhelper
+except ImportError:
     path = os.path.normpath(
         os.path.abspath(
             os.path.join(
@@ -35,7 +39,6 @@ except ImportError:
                 "src")))
     if path not in sys.path:
         sys.path.append(path)
-    import src
     import pyquickhelper
 
 

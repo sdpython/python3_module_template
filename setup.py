@@ -91,9 +91,9 @@ package_data = {project_var_name + ".subproject": ["*.tohelp"]}
 
 if os.path.exists(readme):
     try:
-        with open(readme, "r", encoding='utf-8') as f:
+        with open(readme, "r", encoding='utf-8-sig') as f:
             long_description = f.read()
-        long_description = long_description.replace("\ufeff", "")
+        long_description = long_description
     except:
         try:
             with open(readme, "r") as f:
@@ -116,13 +116,24 @@ def import_pyquickhelper():
     try:
         import pyquickhelper
     except ImportError:
-        sys.path.append(
-            os.path.normpath(
-                os.path.abspath(
-                    os.path.join(
-                        "..",
-                        "pyquickhelper",
-                        "src"))))
+        if sys.version_info[0] == 2:
+            sys.path.append(
+                os.path.normpath(
+                    os.path.abspath(
+                        os.path.join(
+                            "..",
+                            "..",
+                            "pyquickhelper",
+                            "dist_module27",
+                            "src"))))
+        else:
+            sys.path.append(
+                os.path.normpath(
+                    os.path.abspath(
+                        os.path.join(
+                            "..",
+                            "pyquickhelper",
+                            "src"))))
         try:
             import pyquickhelper
         except ImportError as e:
@@ -190,6 +201,18 @@ elif "unittests" in sys.argv:
 
     pyquickhelper = import_pyquickhelper()
     pyquickhelper.main_wrapper_tests(run_unit, add_coverage=True)
+
+elif "copy27" in sys.argv:
+
+    if sys.version_info[0] < 3:
+        raise Exception("Python needs to be Python3")
+
+    pyquickhelper = import_pyquickhelper()
+    root = os.path.abspath(os.path.dirname(__file__))
+    root = os.path.normpath(root)
+    dest = os.path.join(root, "dist_module27")
+    pyquickhelper.py3to2_convert_tree(root, dest, unittest_modules=["pyquickhelper"],
+                                      pattern_copy=".*[.]((ico)|(dll)|(rst)|(ipynb)|(png)|(txt)|(zip)|(gz)|(tohelp))$")
 
 else:
 
