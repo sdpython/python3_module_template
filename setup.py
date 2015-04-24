@@ -191,6 +191,6 @@ if not r:
         package_dir=package_dir,
         package_data=package_data,
         #data_files              = data_files,
-        #install_requires                = [  "numpy (>= 1.7.1)", ],
+        #install_requires                = [  'numpy', 'ipython'],
         #include_package_data    = True,
     )
