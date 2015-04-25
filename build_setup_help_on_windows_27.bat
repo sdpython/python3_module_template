@@ -1,8 +1,6 @@
 echo off
 IF EXIST dist del /Q dist\*.*
 
-set PYTHONPATH=
-
 if "%1"=="" goto default_value:
 set pythonexe27="%1"
 goto py34:

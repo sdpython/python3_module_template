@@ -22,6 +22,8 @@ def main():
                         "..",
                         "pyquickhelper",
                         "src"))))
+        if "PYQUICKHELPER" in os.environ and len(os.environ["PYQUICKHELPER"]) > 0:
+            sys.path.append(os.environ["PYQUICKHELPER"])
         import pyquickhelper
 
     from pyquickhelper import fLOG, run_cmd, main_wrapper_tests

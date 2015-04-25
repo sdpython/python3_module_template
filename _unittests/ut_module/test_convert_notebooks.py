@@ -35,6 +35,8 @@ except ImportError:
                 "src")))
     if path not in sys.path:
         sys.path.append(path)
+    if "PYQUICKHELPER" in os.environ and len(os.environ["PYQUICKHELPER"]) > 0:
+        sys.path.append(os.environ["PYQUICKHELPER"])
     import pyquickhelper
 
 

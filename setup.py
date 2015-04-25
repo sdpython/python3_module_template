@@ -143,7 +143,8 @@ if is_local():
         from pyquickhelper import write_version_for_setup
         return write_version_for_setup(__file__)
 
-    write_version()
+    if sys.version_info[0] != 2:
+        write_version()
 
     if os.path.exists("version.txt"):
         with open("version.txt", "r") as f:
@@ -160,6 +161,8 @@ else:
 ##############
 
 if os.path.exists(readme):
+    if sys.version_info[0] == 2:
+        from codecs import open
     with open(readme, "r", encoding='utf-8-sig') as f:
         long_description = f.read()
 else:
@@ -171,7 +174,8 @@ if "--verbose" in sys.argv:
 if is_local():
     pyquickhelper = import_pyquickhelper()
     r = pyquickhelper.process_standard_options_for_setup(
-        sys.argv, __file__, project_var_name)
+        sys.argv, __file__, project_var_name,
+        unittest_modules=["pyquickhelper"])
 else:
     r = False
 
