@@ -34,7 +34,13 @@ This project is a template to start a new project. See :ref:`l-README`.
 Installation
 ------------
 
-``pip install <project_name>``
+::
+
+    pip install <project_name>
+    
+To avoid the dependencies::
+    
+    pip install <project_name> --no-deps
     
         
 Quick overview
