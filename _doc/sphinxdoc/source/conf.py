@@ -25,3 +25,5 @@ set_sphinx_variables(__file__,
                      "wild",
                      wild_sphinx_theme.get_theme_dir(),
                      locals())
+
+blog_root = "http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/"
