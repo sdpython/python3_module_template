@@ -19,7 +19,7 @@ README / Changes
 **Links:**
     * `GitHub/python3_module_template <https://github.com/sdpython/python3_module_template/>`_
     * `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_
-    * `Travis/python3_module_template <https://travis-ci.org/sdpython/python3_module_template>`_
+    * `Travis <https://travis-ci.org/sdpython/python3_module_template>`_
     * `Blog <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/blog/main_0000.html#ap-main-0>`_
 
 
