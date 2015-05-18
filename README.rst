@@ -15,6 +15,14 @@ README / Changes
     :alt: PYPI Package
     :target: https://pypi.python.org/pypi/project_name
 
+.. image:: http://img.shields.io/github/issues/sdpython/python3_module_template.png
+    :alt: GitHub Issues
+    :target: https://github.com/sdpython/python3_module_template/issues
+    
+.. image:: https://img.shields.io/badge/license-MIT-blue.svg
+    :alt: MIT License
+    :target: http://opensource.org/licenses/MIT
+
 
 **Links:**
     * `GitHub/python3_module_template <https://github.com/sdpython/python3_module_template/>`_

@@ -17,7 +17,13 @@ PROJECT_NAME documentation
     :alt: PYPI Package
     :target: https://pypi.python.org/pypi/project_name
 
+.. image:: http://img.shields.io/github/issues/sdpython/python3_module_template.png
+    :alt: GitHub Issues
+    :target: https://github.com/sdpython/python3_module_template/issues
     
+.. image:: https://img.shields.io/badge/license-MIT-blue.svg
+    :alt: MIT License
+    :target: http://opensource.org/licenses/MIT    
 
 **Links:** `github <https://github.com/sdpython/python3_module_template/>`_,
 `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_,
