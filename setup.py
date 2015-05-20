@@ -149,7 +149,8 @@ if is_local():
     r = pyquickhelper.process_standard_options_for_setup(
         sys.argv, __file__, project_var_name,
         unittest_modules=["pyquickhelper"],
-        extra_ext=["tohelp"])
+        extra_ext=["tohelp"],
+        add_htmlhelp=sys.platform.startswith("win"))
 else:
     r = False
 
