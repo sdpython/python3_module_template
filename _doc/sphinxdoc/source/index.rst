@@ -48,7 +48,7 @@ To avoid the dependencies::
     
     pip install <project_name> --no-deps
     
-        
+    
 Quick overview
 --------------
 
@@ -56,6 +56,16 @@ Quick overview
     * example:  :class:`myclass <project_name.subproject.myexample.myclass>`
 
     
+Tutorial
+--------
+
+.. toctree::
+    :max_depth: 1
+    
+    all_example
+    all_notebooks
+            
+        
 Navigation
 ----------
 
