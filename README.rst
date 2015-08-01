@@ -36,16 +36,20 @@ Introduction
 ------------
 
 This project is a skeleton for any new project. It contains:
-   * a source folder: ``src``
-   * a unit test folder: ``_unittests``, go to this folder and run ``run_unittests.py``
-   * a _doc folder: ``_doc``, it will contains the documentation
-   * a file ``setup.py`` to build and to install the module
+
+* a source folder: ``src``
+* a unit test folder: ``_unittests``, go to this folder and run ``run_unittests.py``
+* a _doc folder: ``_doc``, it will contains the documentation
+* a file ``setup.py`` to build and to install the module
     
-All theses steps were only tested on Windows. Suppot for linux will be added later. To create your own project, you need to rename the folder ``project_name`` in ``src`` by your true module name. You also need to replace ``project_name`` wherever it is found:
-   * ``project_var_name  = 'project_name'`` in ``setup.py``, ``make_help.py`` and ``_doc/sphinxdoc/source/conf.py``
-   * ``from src.project_name.subproject.myexample import myclass`` in ``_unittests/ut_example/test_example.py``
-   * many places in ``_doc/sphinxdoc/source/index.rst``
-   * many places in ``README.rst``
+All theses steps were only tested on Windows. Suppot for linux will be added later. 
+To create your own project, you need to rename the folder ``project_name`` in ``src`` 
+by your true module name. You also need to replace ``project_name`` wherever it is found:
+
+* ``project_var_name  = 'project_name'`` in ``setup.py``, ``make_help.py`` and ``_doc/sphinxdoc/source/conf.py``
+* ``from src.project_name.subproject.myexample import myclass`` in ``_unittests/ut_example/test_example.py``
+* many places in ``_doc/sphinxdoc/source/index.rst``
+* many places in ``README.rst``
     
 The project is also hosted `here <http://www.xavierdupre.fr/site2013/index_code.html>`_ 
 where you can find a 
@@ -55,10 +59,10 @@ to the generated documentation based on this template.
 Automation
 ----------
 
-    * `Generating the setup with pyquickhelper <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/generatesetup.html>`_
-    * `Generating the documention with pyquickhelper <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/generatedoc.html>`_
-    * `Installation <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/installation.html>`_
-    * `Unit tests with pyquickhelper <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/doctestunit.html>`_
+* `Generating the setup with pyquickhelper <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/generatesetup.html>`_
+* `Generating the documention with pyquickhelper <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/generatedoc.html>`_
+* `Installation <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/installation.html>`_
+* `Unit tests with pyquickhelper <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/doctestunit.html>`_
 
 Adding a new module or subpackage
 +++++++++++++++++++++++++++++++++

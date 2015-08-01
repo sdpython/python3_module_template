@@ -32,10 +32,16 @@ PROJECT_NAME documentation
 :ref:`blog <ap-main-0>`
 
 
-Introduction
-------------
+What is it?
+-----------
 
 This project is a template to start a new project. See :ref:`l-README`.
+
+See some examples:
+
+* **Example**
+    * example:  :class:`myclass <project_name.subproject.myexample.myclass>`
+
 
 Installation
 ------------
@@ -49,15 +55,9 @@ To avoid the dependencies::
     pip install <project_name> --no-deps
     
     
-Quick overview
---------------
-
-* **Example**
-    * example:  :class:`myclass <project_name.subproject.myexample.myclass>`
-
     
-Tutorial
---------
+Quick start
+-----------
 
 .. toctree::
     :maxdepth: 1
