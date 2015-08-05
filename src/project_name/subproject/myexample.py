@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-This the documentation of this module.
+@file
+@brief This the documentation of this module (myexampleb).
 """
 
 

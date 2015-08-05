@@ -1,5 +1,24 @@
 """
-This the documentation of this module.
+@file
+@brief This the documentation of this module (myexample2).
+
+
+The following documentation comes from a directive ``runpython``
+which outputs documentation on the standard output::
+
+    print("::")
+    for l in range(0,10):
+        print("    line", l)
+
+Which gives:
+
+.. runpython::
+    :indent: 0
+
+    print("::")
+    for l in range(0,10):
+        print("    line", l)
+
 """
 from ..subproject.myexample import myclass
 

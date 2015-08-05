@@ -1,5 +1,6 @@
 """
-This the documentation of this module.
+@file
+@brief This the documentation of this module (myexampleb).
 """
 
 from .myexample import myclass
