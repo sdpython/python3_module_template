@@ -15,6 +15,7 @@ local.properties
 .classpath
 .settings/
 .loadpath
+*.pyproj
 
 # External tool builders
 .externalToolBuilders/
