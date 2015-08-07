@@ -7,6 +7,4 @@ install:
 script:
   - python setup.py unittests
 after_success:
-  - ls _doc/sphinxdoc/source/*
-  - coveralls --help
-  - coveralls --verbose
+  coveralls --verbose
