@@ -22,6 +22,9 @@ README / Changes
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :alt: MIT License
     :target: http://opensource.org/licenses/MIT
+    
+.. image:: https://coveralls.io/repos/sdpython/python3_module_template/badge.svg?branch=master&service=github 
+    :target: https://coveralls.io/github/sdpython/python3_module_template?branch=master     
 
 
 **Links:**

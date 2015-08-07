@@ -1,0 +1,5 @@
+[html]
+directory = ./_doc/sphinxdoc/source/coverage
+
+[xml]
+output = ./_doc/sphinxdoc/source/coverage/coverage_report.xml

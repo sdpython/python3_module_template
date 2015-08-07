@@ -23,7 +23,11 @@ PROJECT_NAME documentation
     
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :alt: MIT License
-    :target: http://opensource.org/licenses/MIT    
+    :target: http://opensource.org/licenses/MIT  
+
+.. image:: https://coveralls.io/repos/sdpython/python3_module_template/badge.svg?branch=master&service=github 
+    :target: https://coveralls.io/github/sdpython/python3_module_template?branch=master     
+
 
 **Links:** `github <https://github.com/sdpython/python3_module_template/>`_,
 `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_,
