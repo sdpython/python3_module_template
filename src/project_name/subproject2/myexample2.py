@@ -6,18 +6,38 @@
 The following documentation comes from a directive ``runpython``
 which outputs documentation on the standard output::
 
-    print("::")
-    for l in range(0,10):
-        print("    line", l)
+    .. runpython::
+        :showcode:
+
+        for l in range(0,10):
+            print("    line", l)
 
 Which gives:
 
 .. runpython::
-    :indent: 0
+    :showcode:
 
-    print("::")
     for l in range(0,10):
         print("    line", l)
+
+You can also add option *rst*::
+
+    .. runpython::
+        :rst:
+
+        for l in range(0,10):
+            print("**line**", "*" +str(l)+"*")
+            print('')
+
+Which displays interpreted RST:
+
+.. runpython::
+    :rst:
+
+    for l in range(0,10):
+        print("**line**", "*" +str(l)+"*")
+        print('')
+
 
 """
 from ..subproject.myexample import myclass
