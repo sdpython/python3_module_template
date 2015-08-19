@@ -61,7 +61,7 @@ class TestRunNotebooks(unittest.TestCase):
             # IPython is not recnt enough
             return
 
-        kernel_name = install_python_kernel_for_unittest(
+        kernel_name = None if "travis" in sys.executable else install_python_kernel_for_unittest(
             "python3_module_template")
 
         temp = get_temp_folder(__file__, "temp_run_notebooks")
@@ -93,7 +93,8 @@ class TestRunNotebooks(unittest.TestCase):
         ]
 
         # creation of a kernel
-        kernel_name = install_python_kernel_for_unittest("pyquickhelper")
+        kernel_name = None if "travis" in sys.executable else install_python_kernel_for_unittest(
+            "pyquickhelper")
 
         # run the notebooks
         res = execute_notebook_list(
