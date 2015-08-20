@@ -21,7 +21,7 @@ from pyquickhelper.helpgen.default_conf import set_sphinx_variables
 set_sphinx_variables(__file__,
                      "project_name",
                      "author(s)",
-                     2014,
+                     2015,
                      "wild",
                      wild_sphinx_theme.get_theme_dir(),
                      locals())
