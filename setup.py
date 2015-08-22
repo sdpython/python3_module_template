@@ -158,7 +158,8 @@ if is_local():
         sys.argv, __file__, project_var_name,
         unittest_modules=["pyquickhelper"],
         extra_ext=["tohelp"],
-        add_htmlhelp=sys.platform.startswith("win"))
+        add_htmlhelp=sys.platform.startswith("win"),
+        coverage_options=dict(omit=["*exclude*.py"]))
 else:
     r = False
 
