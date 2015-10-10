@@ -49,6 +49,19 @@ class myclass2 (myclass):
     This is the documentation for this class.
 
     @var   pa   an example of an attribute.
+
+    An equation (a test):
+
+    .. math::
+
+        x^2 + y
+
+    Another equation:
+
+    .. math::
+
+        \\sum_{i=1}^n x^2
+
     """
 
     def __init__(self, pa):
