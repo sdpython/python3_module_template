@@ -50,13 +50,11 @@ class myclass2 (myclass):
 
     @var   pa   an example of an attribute.
 
-    An equation (a test):
+    Inline :math:`x^2 + y + z`. Another equation to test:
 
     .. math::
 
         x^2 + y
-
-    Another equation:
 
     .. math::
 
