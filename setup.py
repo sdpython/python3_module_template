@@ -164,6 +164,8 @@ if is_local():
         extra_ext=["tohelp"],
         add_htmlhelp=sys.platform.startswith("win"),
         coverage_options=dict(omit=["*exclude*.py"]))
+    if not r:
+        raise Exception("unable to interpret command line: " + str(sys.argv))
 else:
     r = False
 
