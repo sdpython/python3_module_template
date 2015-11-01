@@ -10,6 +10,10 @@ PROJECT_NAME documentation
     :target: https://travis-ci.org/sdpython/python3_module_template
     :alt: Build status
     
+.. image:: https://ci.appveyor.com/api/projects/status/6qp50sxl22aqwtb5?svg=true
+    :target: https://ci.appveyor.com/project/sdpython/python3_module_template
+    :alt: Build Status Windows
+    
 .. image:: https://badge.fury.io/py/project_name.svg
     :target: http://badge.fury.io/py/project_name    
 
