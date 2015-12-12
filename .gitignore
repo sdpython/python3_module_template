@@ -245,3 +245,5 @@ auto_*.sh
 auto_*.py
 auto_*.xml
 auto_*.db3
+_doc/sphinxdoc/source/phdoc_static/require.js
+_doc/sphinxdoc/require.js

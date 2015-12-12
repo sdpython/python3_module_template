@@ -30,6 +30,10 @@ README / Changes
 .. image:: https://coveralls.io/repos/sdpython/python3_module_template/badge.svg?branch=master&service=github 
     :target: https://coveralls.io/github/sdpython/python3_module_template?branch=master     
 
+.. image:: https://landscape.io/github/sdpython/python3_module_template/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/sdpython/python3_module_template/master
+   :alt: Code Health
+   
 
 **Links:**
     * `GitHub/python3_module_template <https://github.com/sdpython/python3_module_template/>`_
