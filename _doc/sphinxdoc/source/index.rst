@@ -76,7 +76,7 @@ Quick start
     
     all_example
     all_notebooks
-            
+        
         
 Navigation
 ----------
