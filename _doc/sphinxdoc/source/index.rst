@@ -36,6 +36,11 @@ PROJECT_NAME documentation
    :target: https://landscape.io/github/sdpython/python3_module_template/master
    :alt: Code Health
 
+.. image:: https://requires.io/github/sdpython/python3_module_template/requirements.svg?branch=master
+     :target: https://requires.io/github/sdpython/python3_module_template/requirements/?branch=master
+     :alt: Requirements Status   
+    
+   
 
 **Links:** `github <https://github.com/sdpython/python3_module_template/>`_,
 `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_,

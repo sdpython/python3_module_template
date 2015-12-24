@@ -34,6 +34,11 @@ README / Changes
    :target: https://landscape.io/github/sdpython/python3_module_template/master
    :alt: Code Health
    
+.. image:: https://requires.io/github/sdpython/python3_module_template/requirements.svg?branch=master
+     :target: https://requires.io/github/sdpython/python3_module_template/requirements/?branch=master
+     :alt: Requirements Status   
+    
+   
 
 **Links:**
     * `GitHub/python3_module_template <https://github.com/sdpython/python3_module_template/>`_
