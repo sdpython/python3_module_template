@@ -40,8 +40,8 @@ PROJECT_NAME documentation
      :target: https://requires.io/github/sdpython/python3_module_template/requirements/?branch=master
      :alt: Requirements Status   
     
-.. image:: https://codecov.io/github/codecov/python3_module_template/coverage.svg?branch=master
-    :target: https://codecov.io/github/codecov/python3_module_template?branch=master
+.. image:: https://codecov.io/github/sdpython/python3_module_template/coverage.svg?branch=master
+    :target: https://codecov.io/github/sdpython/python3_module_template?branch=master
     
    
 
