@@ -38,7 +38,10 @@ README / Changes
      :target: https://requires.io/github/sdpython/python3_module_template/requirements/?branch=master
      :alt: Requirements Status   
     
-   
+.. image:: https://codecov.io/github/codecov/python3_module_template/coverage.svg?branch=master
+    :target: https://codecov.io/github/codecov/python3_module_template?branch=master
+    
+      
 
 **Links:**
     * `GitHub/python3_module_template <https://github.com/sdpython/python3_module_template/>`_
@@ -99,7 +102,7 @@ should add relative imports in every ``__init__.py`` along the way.
 Versions
 --------
 
-* **0.1 - 2015/??/??**
+* **0.1 - 2016/??/??**
     * **new:** first version
     * **fix:** the setup does not need the file ``README.rst`` anymore
     * **add:** unit test to check the file ``README.rst`` follows the syntax of docutils 0.8 (for pipy)
