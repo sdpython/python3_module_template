@@ -12,9 +12,9 @@ class myclassb(myclass):
     This is the documentation for this class.
 
     Inherits from @see cl myclass.
-    
+
     An example on how to share: :sharenet:`facebook-linkedin-twitter-20-body`.
-    
+
     """
 
     def __init__(self, pa):
