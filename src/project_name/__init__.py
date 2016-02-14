@@ -1,5 +1,6 @@
 """
-Documentation for this file.
+@file
+@brief Documentation for this file.
 """
 
 __version__ = "0.1"
