@@ -20,6 +20,13 @@ Which gives:
     for l in range(0,10):
         print("    line", l)
 
+And without the input code:
+
+.. runpython::
+
+    for l in range(0,10):
+        print("    line", l)
+
 You can also add option *rst*::
 
     .. runpython::
