@@ -45,6 +45,15 @@ Which displays interpreted RST:
         print("**line**", "*" +str(l)+"*")
         print('')
 
+It can be run in a separate process with option ``:process:` 
+(click on source):
+
+.. runpython::
+    :process:
+    
+    import project_name
+    import os
+    print(os.path.split(project_name.__file__)[-1])
 
 """
 from ..subproject.myexample import myclass
