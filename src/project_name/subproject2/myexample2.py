@@ -50,7 +50,7 @@ It can be run in a separate process with option ``:process:`
 
 .. runpython::
     :process:
-    
+
     import project_name
     import os
     print(os.path.split(project_name.__file__)[-1])
