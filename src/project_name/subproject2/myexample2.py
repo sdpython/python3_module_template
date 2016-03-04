@@ -46,7 +46,7 @@ Which displays interpreted RST:
         print("**line**", "*" +str(l)+"*")
         print('')
 
-It can be run in a separate process with option ``:process:` 
+It can be run in a separate process with option ``:process:``
 (click on source):
 
 .. runpython::
