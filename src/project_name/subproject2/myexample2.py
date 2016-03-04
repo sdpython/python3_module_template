@@ -3,7 +3,8 @@
 @brief This the documentation of this module (myexample2).
 
 
-The following documentation comes from a directive ``runpython``
+The following documentation comes from a directive 
+`runpython <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/pyquickhelper/helpgen/sphinx_runpython_extension.html>`_
 which outputs documentation on the standard output::
 
     .. runpython::
