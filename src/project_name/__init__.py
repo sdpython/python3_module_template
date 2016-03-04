@@ -7,7 +7,7 @@ __version__ = "0.1"
 __author__ = "Author"
 __github__ = "https://github.com/sdpython/python3_module_template"
 __url__ = "http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/index.html"
-__downloadUrl__ = "http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template"
+__downloadUrl__ = "https://github.com/sdpython/python3_module_template"
 __license__ = "MIT License"
 __blog__ = """
 <?xml version="1.0" encoding="UTF-8"?>
