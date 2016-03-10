@@ -11,7 +11,7 @@ PROJECT_NAME documentation
     :alt: Build status
     
 .. image:: https://ci.appveyor.com/api/projects/status/6qp50sxl22aqwtb5?svg=true
-    :target: https://ci.appveyor.com/project/sdpython/python3_module_template
+    :target: https://ci.appveyor.com/project/sdpython/python3-module-template
     :alt: Build Status Windows
     
 .. image:: https://badge.fury.io/py/project_name.svg
