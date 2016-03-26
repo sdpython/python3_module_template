@@ -31,7 +31,7 @@ The following snippet produces a table.
     :rst:
     :showcode:
     
-    from pyquickhelper import df2rst
+    from pyquickhelper.pandashelper import df2rst
     import pandas
     df = pandas.DataFrame([{"x": 3, "y":4}, {"x": 3.5, "y":5}])
     print(df2rst(df))

@@ -25,7 +25,7 @@ except ImportError:
     import src
 
 try:
-    import pyquickhelper
+    import pyquickhelper as skip_
 except ImportError:
     path = os.path.normpath(
         os.path.abspath(
@@ -40,13 +40,10 @@ except ImportError:
         sys.path.append(path)
     if "PYQUICKHELPER" in os.environ and len(os.environ["PYQUICKHELPER"]) > 0:
         sys.path.append(os.environ["PYQUICKHELPER"])
-    import pyquickhelper
+    import pyquickhelper as skip_
 
 
-from pyquickhelper import fLOG
-from src.project_name.subproject.myexample import myclass
-from src.project_name.subproject.myexampleb import myclassb
-from src.project_name.subproject2.myexample2 import myclass2
+from pyquickhelper.loghelper import fLOG
 
 
 class TestLONGExample (unittest.TestCase):

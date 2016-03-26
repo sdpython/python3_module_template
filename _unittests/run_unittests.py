@@ -3,15 +3,13 @@
 @brief run all unit tests
 """
 
-import unittest
 import os
 import sys
-import io
 
 
 def main():
     try:
-        import pyquickhelper
+        import pyquickhelper as skip_
     except ImportError:
         sys.path.append(
             os.path.normpath(
@@ -24,9 +22,10 @@ def main():
                         "src"))))
         if "PYQUICKHELPER" in os.environ and len(os.environ["PYQUICKHELPER"]) > 0:
             sys.path.append(os.environ["PYQUICKHELPER"])
-        import pyquickhelper
+        import pyquickhelper as skip_
 
-    from pyquickhelper import fLOG, run_cmd, main_wrapper_tests
+    from pyquickhelper.loghelper import fLOG
+    from pyquickhelper.pycode import main_wrapper_tests
     fLOG(OutputPrint=True)
     main_wrapper_tests(__file__)
 

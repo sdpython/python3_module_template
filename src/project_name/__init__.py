@@ -3,7 +3,7 @@
 @brief Documentation for this file.
 """
 
-__version__ = "0.1"
+__version__ = "0.2"
 __author__ = "Author"
 __github__ = "https://github.com/sdpython/python3_module_template"
 __url__ = "http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/index.html"
