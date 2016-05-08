@@ -94,7 +94,8 @@ def import_pyquickhelper():
                     os.path.join(
                         os.path.dirname(__file__),
                         "..",
-                        "pyquickhelper",
+                        "pyquickhelper" if sys.version_info[
+                            0] >= 3 else "py27_pyquickhelper_27",
                         "src"))))
         try:
             import pyquickhelper
