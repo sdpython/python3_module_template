@@ -49,7 +49,8 @@ PROJECT_NAME documentation
 `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_,
 `travis <https://travis-ci.org/sdpython/python3_module_template>`_,
 :ref:`l-README`,
-:ref:`blog <ap-main-0>`
+:ref:`blog <ap-main-0>`,
+:ref:`l-issues-todolist`
 
 
 What is it?
