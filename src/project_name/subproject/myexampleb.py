@@ -15,12 +15,11 @@ class myclassb(myclass):
 
     An example on how to share: :sharenet:`facebook-linkedin-twitter-20-body`.
 
-
     .. todoext::
         :title: An example of a todo
         :tag: enhancement
         :issue: 1
-        
+
         Check the documentation to see how it is rendered.
     """
 
