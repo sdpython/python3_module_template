@@ -1,8 +1,8 @@
 
 .. _l-README:
 
-README / Changes
-================
+README
+======
 
 .. image:: https://travis-ci.org/sdpython/python3_module_template.svg?branch=master
     :target: https://travis-ci.org/sdpython/python3_module_template
@@ -97,17 +97,3 @@ to add something like the following::
 You should use relative imports as much as possible.
 To add a module at deeper level than the previous one, you
 should add relative imports in every ``__init__.py`` along the way.
-
-
-Versions
---------
-
-* **0.2 - 2016/??/??**
-    * **change:** update for pyquickhelper >= 1.4
-
-* **0.1 - 2016/03/26**
-    * **new:** first version
-    * **fix:** the setup does not need the file ``README.rst`` anymore
-    * **add:** unit test to check the file ``README.rst`` follows the syntax of docutils 0.8 (for pipy)
-    * **add:** add a unit test to run all notebooks offlines
-    
