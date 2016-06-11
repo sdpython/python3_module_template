@@ -1,6 +1,9 @@
 """
 @file
 @brief This the documentation of this module (myexample2).
+
+To make a reference to a blog post, just read :ref:`label-to-this-blogpost`.
+
 The following documentation comes from a directive
 `runpython <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/pyquickhelper/helpgen/sphinx_runpython_extension.html>`_
 which outputs documentation on the standard output::
@@ -53,7 +56,6 @@ It can be run in a separate process with option ``:process:``
     import project_name
     import os
     print(os.path.split(project_name.__file__)[-1])
-
 """
 from ..subproject.myexample import myclass
 
