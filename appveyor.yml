@@ -21,6 +21,7 @@ install:
   - "%PYTHON%\\Scripts\\pymy_install3 --set=pyquickhelper"
   - "%PYTHON%\\Scripts\\pip install pyquickhelper"
   - "%PYTHON%\\Scripts\\pip install pycryptodome"
+  - "%PYTHON%\\Scripts\\pip install pycodestyle"
 
 build: off
 
