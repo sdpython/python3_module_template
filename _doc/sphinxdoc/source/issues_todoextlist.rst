@@ -8,7 +8,7 @@ Issues and enhancements
 .. index:: issues, todo
 
 .. contents::
-
+    :local:
 
 Issues
 ++++++

@@ -19,6 +19,7 @@ class myclassb(myclass):
         :title: An example of a todo
         :tag: enhancement
         :issue: 1
+        :index: todoext example
 
         Check the documentation to see how it is rendered.
     """
