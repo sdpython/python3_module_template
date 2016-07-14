@@ -17,9 +17,11 @@ class myclass:
     @endcode
     @endexample
 
-    @FAQ(How to add a question ?)
-    Just look a this section.
-    @endFAQ
+    .. faqref::
+        :title: How to add a question ?
+        :tag: main
+
+        Just look a this section.
 
     An accent, é, to check it is working.
     """
