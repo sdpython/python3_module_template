@@ -14,7 +14,6 @@ through documentation
     filechanges
     README
     all_indexes
-    i_FAQ
     all_example
     all_notebooks
     index_module

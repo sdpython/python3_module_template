@@ -6,12 +6,19 @@ FAQ
 
 .. contents::
     :local:
+    
+Questions
++++++++++
 
 .. faqreflist::
-    :tag: main
     :sort: title
+    :contents: 1
     
+Blocs
++++++
     
 .. blocreflist::
     :tag: aaaa
     :sort: title
+    :contents: 1
+    

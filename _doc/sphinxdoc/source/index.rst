@@ -81,6 +81,8 @@ Quick start
     
     all_example
     all_notebooks
+    i_faq
+    i_nb
     issues_todoextlist
     completed_todoextlist
         

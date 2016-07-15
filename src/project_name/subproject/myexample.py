@@ -21,7 +21,6 @@ class myclass:
 
     .. faqref::
         :title: How to add a question ?
-        :tag: main
 
         Just look a this section.
         Look also :ref:`l-FAQ2`.
