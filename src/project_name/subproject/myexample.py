@@ -10,12 +10,16 @@ class myclass:
     """
     This is the documentation for this class.
 
-    @example(an example of use)
-    Just for documentation purpose.
-    @code
-    m = myclass(0)
-    @endcode
-    @endexample
+    **example**
+
+    .. exref::
+        :title: an example of use
+
+        Just for documentation purpose.
+
+        ::
+
+            m = myclass(0)
 
     **FAQ**
 
