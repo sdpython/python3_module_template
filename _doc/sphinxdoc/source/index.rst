@@ -46,7 +46,8 @@ PROJECT_NAME documentation
 `travis <https://travis-ci.org/sdpython/python3_module_template>`_,
 :ref:`l-README`,
 :ref:`blog <ap-main-0>`,
-:ref:`l-issues-todolist`
+:ref:`l-issues-todolist`,
+:ref:`l-completed-todolist`
 
 
 What is it?
