@@ -17,11 +17,23 @@ class myclass:
     @endcode
     @endexample
 
+    **FAQ**
+
     .. faqref::
         :title: How to add a question ?
         :tag: main
 
         Just look a this section.
+        Look also :ref:`l-FAQ2`.
+
+    **BLOC**
+
+    .. blocref::
+        :title: How to add a bloc
+        :tag: aaaa
+
+        Just look a this bloc.
+        Look also :ref:`l-FAQ2`.
 
     An accent, é, to check it is working.
     """
