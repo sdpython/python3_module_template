@@ -21,7 +21,7 @@ generation. The documentation generation is using pyquickhelper."""
 
 
 CLASSIFIERS = [
-    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: %d' % sys.version_info[0],
     'Intended Audience :: Developers',
     'Topic :: Scientific/Engineering',
     'Topic :: Education',
@@ -133,6 +133,8 @@ if is_local():
         with open("version.txt", "r") as f:
             lines = f.readlines()
         subversion = "." + lines[0].strip("\r\n ")
+        if subversion == ".0":
+            raise Exception("subversion is wrong: " + subversion)
     else:
         raise FileNotFoundError("version.txt")
 else:
@@ -156,7 +158,7 @@ if "--verbose" in sys.argv:
 
 if is_local():
     pyquickhelper = import_pyquickhelper()
-    from pyquickhelper.loghelper import fLOG as logging_function
+    logging_function = pyquickhelper.get_fLOG()
     from pyquickhelper.pycode import process_standard_options_for_setup
     logging_function(OutputPrint=True)
     r = process_standard_options_for_setup(
@@ -182,6 +184,11 @@ if len(sys.argv) == 1 and "--help" in sys.argv:
     process_standard_options_for_setup_help()
 
 if not r:
+    if len(sys.argv) in (1, 2) and sys.argv[-1] in ("--help-commands",):
+        pyquickhelper = import_pyquickhelper()
+        from pyquickhelper.pycode import process_standard_options_for_setup_help
+        process_standard_options_for_setup_help(sys.argv)
+
     setup(
         name=project_var_name,
         version='%s%s' % (sversion, subversion),
