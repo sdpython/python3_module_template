@@ -67,6 +67,7 @@ def is_local():
        "unittests" in sys.argv or \
        "unittests_LONG" in sys.argv or \
        "unittests_SKIP" in sys.argv or \
+       "unittests_GUI" in sys.argv or \
        "run27" in sys.argv or \
        "sdist" in sys.argv or \
        "setupdep" in sys.argv or \
@@ -120,7 +121,7 @@ def verbose():
 # version
 ##########
 
-if is_local():
+if is_local() and "--help" not in sys.argv and "--help-commands" not in sys.argv:
     def write_version():
         pyquickhelper = import_pyquickhelper()
         from pyquickhelper.pycode import write_version_for_setup
@@ -177,11 +178,6 @@ if is_local():
         raise Exception("unable to interpret command line: " + str(sys.argv))
 else:
     r = False
-
-if len(sys.argv) == 1 and "--help" in sys.argv:
-    pyquickhelper = import_pyquickhelper()
-    from pyquickhelper.pycode import process_standard_options_for_setup_help
-    process_standard_options_for_setup_help()
 
 if not r:
     if len(sys.argv) in (1, 2) and sys.argv[-1] in ("--help-commands",):
