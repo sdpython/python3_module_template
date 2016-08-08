@@ -29,6 +29,12 @@ class myclass:
         Just look a this section.
         Look also :ref:`l-FAQ2`.
 
+    .. faqref::
+        :title: Add a label
+        :lid: label1
+
+        Look also :ref:`l-FAQ2`.
+
     **BLOC**
 
     .. blocref::

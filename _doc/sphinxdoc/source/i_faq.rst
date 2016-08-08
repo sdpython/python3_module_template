@@ -12,7 +12,7 @@ Questions
 
 .. faqreflist::
     :sort: title
-    :contents: 1
+    :contents:
     
 Blocs
 +++++
