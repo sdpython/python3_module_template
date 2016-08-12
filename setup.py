@@ -88,24 +88,12 @@ def is_local():
 def import_pyquickhelper():
     try:
         import pyquickhelper
-    except ImportError:
-        sys.path.append(
-            os.path.normpath(
-                os.path.abspath(
-                    os.path.join(
-                        os.path.dirname(__file__),
-                        "..",
-                        "pyquickhelper" if sys.version_info[
-                            0] >= 3 else "py27_pyquickhelper_27",
-                        "src"))))
-        try:
-            import pyquickhelper
-        except ImportError as e:
-            message = "module pyquickhelper is needed to build the documentation ({0}), not found in path {1}".format(
-                sys.executable,
-                sys.path[
-                    -1])
-            raise ImportError(message) from e
+    except ImportError as e:
+        message = "module pyquickhelper is needed to build the documentation ({0}), not found in path {1}".format(
+            sys.executable,
+            sys.path[
+                -1])
+        raise ImportError(message) from e
     return pyquickhelper
 
 
