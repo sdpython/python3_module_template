@@ -17,7 +17,7 @@ readme = 'README.rst'
 
 KEYWORDS = project_var_name + ', first name, last name'
 DESCRIPTION = """This a project template including a setup and the generation of sphinx
-generation. The documentation generation is using pyquickhelper."""
+generation. The documentation generation and the unit test are using pyquickhelper."""
 
 
 CLASSIFIERS = [
@@ -76,25 +76,10 @@ def is_local():
        "setup_hook" in sys.argv or \
        "copy_sphinx" in sys.argv or \
        "write_version" in sys.argv:
-        try:
-            import_pyquickhelper()
-        except ImportError:
-            return False
+        import pyquickhelper
         return True
     else:
         return False
-
-
-def import_pyquickhelper():
-    try:
-        import pyquickhelper
-    except ImportError as e:
-        message = "module pyquickhelper is needed to build the documentation ({0}), not found in path {1}".format(
-            sys.executable,
-            sys.path[
-                -1])
-        raise ImportError(message) from e
-    return pyquickhelper
 
 
 def verbose():
@@ -111,7 +96,6 @@ def verbose():
 
 if is_local() and "--help" not in sys.argv and "--help-commands" not in sys.argv:
     def write_version():
-        pyquickhelper = import_pyquickhelper()
         from pyquickhelper.pycode import write_version_for_setup
         return write_version_for_setup(__file__)
 
@@ -146,16 +130,12 @@ if "--verbose" in sys.argv:
     verbose()
 
 if is_local():
-    pyquickhelper = import_pyquickhelper()
-    logging_function = pyquickhelper.get_fLOG()
+    from pyquickhelper import get_fLOG
+    logging_function = get_fLOG()
     from pyquickhelper.pycode import process_standard_options_for_setup
     logging_function(OutputPrint=True)
     r = process_standard_options_for_setup(
         sys.argv, __file__, project_var_name,
-        unittest_modules=["pyquickhelper"],
-        additional_notebook_path=["pyquickhelper"],
-        additional_local_path=["pyquickhelper"],
-        requirements=["pyquickhelper"],
         extra_ext=["tohelp"],
         add_htmlhelp=sys.platform.startswith("win"),
         coverage_options=dict(omit=["*exclude*.py"]),
@@ -169,7 +149,6 @@ else:
 
 if not r:
     if len(sys.argv) in (1, 2) and sys.argv[-1] in ("--help-commands",):
-        pyquickhelper = import_pyquickhelper()
         from pyquickhelper.pycode import process_standard_options_for_setup_help
         process_standard_options_for_setup_help(sys.argv)
 
@@ -187,7 +166,7 @@ if not r:
         packages=packages,
         package_dir=package_dir,
         package_data=package_data,
-        #data_files              = data_files,
-        #install_requires                = [  'numpy', 'ipython'],
-        #include_package_data    = True,
+        # data_files=data_files,
+        # install_requires=['numpy', 'ipython'],
+        # include_package_data=True,
     )
