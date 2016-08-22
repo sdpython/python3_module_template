@@ -33,6 +33,7 @@ mccabe
 mechanize
 metakernel
 mistune
+nbconvert
 nbformat
 nbpresent
 nose
