@@ -7,24 +7,6 @@ import sys
 import os
 import unittest
 
-
-try:
-    import pyquickhelper as skip_
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..",
-                "..",
-                "pyquickhelper",
-                "src")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import pyquickhelper as skip_
-
-
 try:
     import src
 except ImportError:
@@ -39,10 +21,8 @@ except ImportError:
     import src
 
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder
-from pyquickhelper.ipythonhelper import execute_notebook_list
-from pyquickhelper.pycode import compare_module_version
-from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
+from pyquickhelper.pycode import get_temp_folder, compare_module_version
+from pyquickhelper.ipythonhelper import execute_notebook_list, install_python_kernel_for_unittest
 import IPython
 
 
@@ -89,8 +69,6 @@ class TestRunNotebooks(unittest.TestCase):
         # additionnal path to add
         addpaths = [os.path.normpath(os.path.join(
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "src")),
-            os.path.normpath(os.path.join(
-                os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "pyquickhelper", "src"))
         ]
 
         # creation of a kernel
