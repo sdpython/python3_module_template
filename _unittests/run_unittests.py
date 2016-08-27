@@ -3,9 +3,6 @@
 @brief run all unit tests
 """
 
-import os
-import sys
-
 
 def main():
     from pyquickhelper.loghelper import fLOG
