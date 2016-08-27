@@ -50,6 +50,7 @@ dummy.py
 [Rr]elease/
 x64/
 build/
+build2/
 [Bb]in/
 [Oo]bj/
 
@@ -238,6 +239,7 @@ _doc/sphinxdoc/source/blog/rss.xml
 _doc/sphinxdoc/source/phdoc_templates/*.html
 _doc/sphinxdoc/source/blog/feed-icon*.png
 _doc/sphinxdoc/source/phdoc_static/reveal.js/*
+_doc/sphinxdoc/source/phdoc_static2/reveal.js/*
 _doc/notebooks/.ipynb_checkpoints/*
 dist_module27/*
 auto_*.bat
@@ -246,4 +248,8 @@ auto_*.py
 auto_*.xml
 auto_*.db3
 _doc/sphinxdoc/source/phdoc_static/require.js
+_doc/sphinxdoc/source/phdoc_static2/require.js
 _doc/sphinxdoc/require.js
+_doc/sphinxdoc/source/phdoc_static2/moduletoc.html
+_doc/sphinxdoc/source/phdoc_static2/blogtoc.html
+_doc/sphinxdoc/source/phdoc_static2/searchbox.html
