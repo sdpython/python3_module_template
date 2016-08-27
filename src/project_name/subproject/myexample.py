@@ -10,7 +10,9 @@ class myclass:
     """
     This is the documentation for this class.
 
-    **example**
+    **example with a sphinx directives**
+
+    It works everywhere in the documentation.
 
     .. exref::
         :title: an example of use
@@ -20,6 +22,22 @@ class myclass:
         ::
 
             m = myclass(0)
+
+    The old way:
+
+    @example(an old example of use)
+
+    This only works from the code,
+    not inserted in a RST file. The source
+    documentation is parsed and every such example is
+    collected and placed in a page ``all_examples.rst``
+    (look at the source).
+
+    @code
+    m = myclass(0)
+    @endcode
+
+    @endexample
 
     **FAQ**
 
