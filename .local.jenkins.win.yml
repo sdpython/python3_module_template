@@ -13,7 +13,7 @@ install:
   - pip install -r requirements.txt
   - pip freeze
 before_script:
-  - if [ ${VERSION} == "2.7" ] then {{Python35}}\python setup.py copy27 fi
+  - if [ ${VERSION} == "2.7" ] then {{Python35pyq}}\python setup.py copy27 fi
   - if [ ${VERSION} == "2.7" ] then cd dist_module27 fi
 script:
   - { CMD: "python setup.py unittests", NAME: "UT" }
