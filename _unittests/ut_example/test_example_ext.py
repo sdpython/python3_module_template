@@ -34,7 +34,7 @@ from src.project_name import _setup_hook
 class TestExampleExt (unittest.TestCase):
 
     def test_static(self):
-        fLOG( __file__, self._testMethodName, OutputPrint=__name__ == True)
+        fLOG(__file__, self._testMethodName, OutputPrint=True)
 
         fLOG("comment to test fLOG")
         assert myclass2.static_example()
