@@ -13,17 +13,17 @@ install:
   - pip install -r requirements.txt
   - pip freeze
 before_script:
-  - if [ ${VERSION} == "2.7" ] then {{Python35pyq}}\python setup.py copy27 fi
+  - if [ ${VERSION} == "2.7" ] then {{Python35pyq}}\python -u setup.py copy27 fi
   - if [ ${VERSION} == "2.7" ] then cd dist_module27 fi
 script:
-  - { CMD: "python setup.py unittests", NAME: "UT" }
+  - { CMD: "python -u setup.py unittests", NAME: "UT" }
 after_script:
   - python setup.py bdist_wheel
   - if [ ${VERSION} == "2.7" and ${DIST} != "conda" ] then copy dist\*.whl ..\..\..\local_pypi\local_pypi_server fi
   - if [ ${VERSION} == "2.7" ] then cd .. fi
   - if [ ${VERSION} != "2.7" and ${DIST} != "conda" and ${VERSION} != "3.4" and ${NAME} == "UT" ] then copy dist\*.whl ..\..\local_pypi\local_pypi_server fi
 documentation:
-  - if [ ${PYTHON} == "{{Python35}}" and ${NAME} == "UT" ] then python setup.py build_sphinx fi
+  - if [ ${PYTHON} == "{{Python35}}" and ${NAME} == "UT" ] then python -u setup.py build_sphinx fi
   - if [ ${PYTHON} == "{{Python35}}" and ${NAME} == "UT" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build\html dist\html fi
   - if [ ${PYTHON} == "{{Python35}}" and ${NAME} == "UT" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build2\html dist\html2 fi
   - if [ ${PYTHON} == "{{Python35}}" and ${NAME} == "UT" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build\latex\*.pdf dist\html fi
