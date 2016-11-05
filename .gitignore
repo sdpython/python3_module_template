@@ -254,3 +254,4 @@ _doc/sphinxdoc/source/phdoc_static2/moduletoc.html
 _doc/sphinxdoc/source/phdoc_static2/blogtoc.html
 _doc/sphinxdoc/source/phdoc_static2/searchbox.html
 _unittests/run_unittests.py.out
+_unittests/ut_documentation/test_run_notebooks.py.err
