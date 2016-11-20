@@ -63,6 +63,8 @@ class myclass:
         Look also :ref:`l-FAQ2`.
 
     An accent, é, to check it is working.
+
+    A link to github source: :githublink:`source|py`.
     """
 
     def __init__(self, pa):
