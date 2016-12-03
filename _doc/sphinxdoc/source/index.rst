@@ -13,10 +13,6 @@ PROJECT_NAME documentation
 .. image:: https://badge.fury.io/py/project_name.svg
     :target: http://badge.fury.io/py/project_name    
 
-.. image:: http://img.shields.io/pypi/dm/project_name.png
-    :alt: PYPI Package
-    :target: https://pypi.python.org/pypi/project_name
-
 .. image:: http://img.shields.io/github/issues/sdpython/python3_module_template.png
     :alt: GitHub Issues
     :target: https://github.com/sdpython/python3_module_template/issues
