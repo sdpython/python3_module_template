@@ -16,8 +16,8 @@ readme = 'README.rst'
 
 
 KEYWORDS = project_var_name + ', first name, last name'
-DESCRIPTION = """This a project template including a setup and the generation of sphinx
-generation. The documentation generation and the unit test are using pyquickhelper."""
+DESCRIPTION = "This a project template including a setup and the generation of sphinx " + \
+              "generation. The documentation generation and the unit test are using pyquickhelper."
 
 
 CLASSIFIERS = [
@@ -139,7 +139,7 @@ if not r:
         name=project_var_name,
         version='%s%s' % (sversion, subversion),
         author='author',
-        author_email='author AT something.any',
+        author_email='author@something.any',
         url="http://...",
         download_url="https://github.com/.../",
         description=DESCRIPTION,
