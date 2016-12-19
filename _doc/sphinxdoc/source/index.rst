@@ -76,14 +76,24 @@ Quick start
 .. toctree::
     :maxdepth: 1
 
-    examples/index
     i_ex
     all_notebooks
     i_faq
     i_nb
     issues_todoextlist
     completed_todoextlist
-        
+    
+Galleries
+---------
+
+.. toctree::
+    :maxdepth: 2
+    
+    gyexamples/index
+    gynotebooks/index
+
+
+
 Navigation
 ----------
 
