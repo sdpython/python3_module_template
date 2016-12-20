@@ -22,6 +22,8 @@ def custom_latex_processing(latex):
     @param      latex       string
     @return                 string
     """
+    print("******", len(latex))
+    stop
     if latex is None:
         raise ValueError("Latex is null")
     # this weird modification is only needed when jenkins run a unit test in pyquickhelper (pycode)
