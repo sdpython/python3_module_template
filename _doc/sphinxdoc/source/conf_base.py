@@ -13,3 +13,16 @@ set_sphinx_variables(__file__, "project_name", "author(s)", 2016,
                      extlinks=dict(issue=('https://github.com/sdpython/python3_module_template/issues/%s', 'issue')))
 
 blog_root = "http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/"
+
+
+def custom_latex_processing(latex):
+    """
+    process a latex file and returned the modified version
+    
+    @param      latex       string
+    @return                 string
+    """
+    if latex is None:
+        raise ValueError("Latex is null")
+    # this weird modification is only needed when jenkins run a unit test in pyquickhelper (pycode)
+    return latex.replace("gynotebooks\\Python_logo_and_wordmark", "Python_logo_and_wordmark")
