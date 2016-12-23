@@ -260,3 +260,5 @@ _doc/sphinxdoc/source/phdoc_static2/blogtoc.html
 _doc/sphinxdoc/source/phdoc_static2/searchbox.html
 _unittests/run_unittests.py.out
 _unittests/ut_documentation/test_run_notebooks.py.err
+_doc/sphinxdoc/source/phdoc_static2/style_notebook_snippet.css
+_doc/sphinxdoc/source/phdoc_static/style_notebook_snippet.css

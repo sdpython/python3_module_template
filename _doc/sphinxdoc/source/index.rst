@@ -77,7 +77,6 @@ Quick start
     :maxdepth: 1
 
     i_ex
-    all_notebooks
     i_faq
     i_nb
     issues_todoextlist
@@ -90,7 +89,7 @@ Galleries
     :maxdepth: 2
     
     gyexamples/index
-    gynotebooks/index
+    all_notebooks
 
 
 
