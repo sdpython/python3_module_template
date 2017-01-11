@@ -9,13 +9,14 @@ python:
 virtualenv:
   - path: {{ospathjoin(root_path, pickname("%NAME_JENKINS%", project_name + "_%VERSION%_%DIST%_%NAME%"), "_venv")}}
 install:
-  - pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper
+  - pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper --extra-index-url=https://pypi.python.org/simple/
   - pip install -r requirements.txt
   - pip freeze
   - pip freeze > pip_freeze.txt
 before_script:
   - if [ ${VERSION} == "2.7" ] then {{Python35pyq}}\python -u setup.py copy27 fi
   - if [ ${VERSION} == "2.7" ] then cd dist_module27 fi
+  - if [ ${VERSION} == "2.7" ] then pip install backports.shutil_get_terminal_size fi
 script:
   - { CMD: "python -u setup.py unittests", NAME: "UT" }
 after_script:
@@ -24,7 +25,7 @@ after_script:
   - if [ ${VERSION} == "2.7" ] then cd .. fi
   - if [ ${VERSION} != "2.7" and ${DIST} != "conda" and ${VERSION} == "3.5" and ${NAME} == "UT" ] then copy dist\*.whl ..\..\local_pypi\local_pypi_server fi
 documentation:
-  - if [ ${NAME} == "UT" ] then python -u setup.py build_sphinx fi
-  - if [ ${NAME} == "UT" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build\html dist\html fi
-  - if [ ${NAME} == "UT" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build2\html dist\html2 fi
-  - if [ ${NAME} == "UT" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build\latex\*.pdf dist\html fi
+  - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then python -u setup.py build_sphinx fi
+  - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build\html dist\html fi
+  - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build2\html dist\html2 fi
+  - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build\latex\*.pdf dist\html fi
