@@ -8,7 +8,7 @@ README
     :target: https://travis-ci.org/sdpython/python3_module_template
     :alt: Build status
     
-.. image:: https://ci.appveyor.com/api/projects/status/6qp50sxl22aqwtb5?svg=true
+.. image:: https://ci.appveyor.com/api/projects/status/8yv4brsckay4374a?svg=true
     :target: https://ci.appveyor.com/project/sdpython/python3-module-template
     :alt: Build Status Windows
     
