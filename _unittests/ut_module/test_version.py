@@ -21,7 +21,7 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from src.project_name import __version__
+from src.project_name import __version__, check
 
 
 class TestVersion (unittest.TestCase):
@@ -40,6 +40,9 @@ class TestVersion (unittest.TestCase):
         if len(f) != 1:
             raise Exception("not only one version")
         assert f[0] == __version__
+
+    def test_check(self):
+        assert check()
 
 
 if __name__ == "__main__":

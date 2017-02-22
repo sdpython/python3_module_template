@@ -21,5 +21,3 @@ print('one line out')
 
 print('one line out')
 print('second line out')
-
-

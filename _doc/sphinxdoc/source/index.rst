@@ -1,29 +1,28 @@
 
-
 PROJECT_NAME documentation
 ==========================
 
 .. image:: https://travis-ci.org/sdpython/python3_module_template.svg?branch=master
     :target: https://travis-ci.org/sdpython/python3_module_template
     :alt: Build status
-    
+
 .. image:: https://ci.appveyor.com/api/projects/status/8yv4brsckay4374a?svg=true
     :target: https://ci.appveyor.com/project/sdpython/python3-module-template
     :alt: Build Status Windows
-    
+
 .. image:: https://badge.fury.io/py/project_name.svg
-    :target: http://badge.fury.io/py/project_name    
+    :target: http://badge.fury.io/py/project_name
 
 .. image:: http://img.shields.io/github/issues/sdpython/python3_module_template.png
     :alt: GitHub Issues
     :target: https://github.com/sdpython/python3_module_template/issues
-    
+
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :alt: MIT License
-    :target: http://opensource.org/licenses/MIT  
+    :target: http://opensource.org/licenses/MIT
 
-.. image:: https://coveralls.io/repos/sdpython/python3_module_template/badge.svg?branch=master&service=github 
-    :target: https://coveralls.io/github/sdpython/python3_module_template?branch=master     
+.. image:: https://coveralls.io/repos/sdpython/python3_module_template/badge.svg?branch=master&service=github
+    :target: https://coveralls.io/github/sdpython/python3_module_template?branch=master
 
 .. image:: https://landscape.io/github/sdpython/python3_module_template/master/landscape.svg?style=flat
    :target: https://landscape.io/github/sdpython/python3_module_template/master
@@ -31,12 +30,10 @@ PROJECT_NAME documentation
 
 .. image:: https://requires.io/github/sdpython/python3_module_template/requirements.svg?branch=master
      :target: https://requires.io/github/sdpython/python3_module_template/requirements/?branch=master
-     :alt: Requirements Status   
-    
+     :alt: Requirements Status
+
 .. image:: https://codecov.io/github/sdpython/python3_module_template/coverage.svg?branch=master
     :target: https://codecov.io/github/sdpython/python3_module_template?branch=master
-    
-   
 
 **Links:** `github <https://github.com/sdpython/python3_module_template/>`_,
 `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_,
@@ -45,7 +42,6 @@ PROJECT_NAME documentation
 :ref:`blog <ap-main-0>`,
 :ref:`l-issues-todolist`,
 :ref:`l-completed-todolist`
-
 
 What is it?
 -----------
@@ -57,20 +53,17 @@ See some examples:
 * **Example**
     * example:  :class:`myclass <project_name.subproject.myexample.myclass>`
 
-
 Installation
 ------------
 
 ::
 
     pip install <project_name>
-    
+
 To avoid the dependencies::
-    
+
     pip install <project_name> --no-deps
-    
-    
-    
+
 Quick start
 -----------
 
@@ -82,33 +75,29 @@ Quick start
     i_nb
     issues_todoextlist
     completed_todoextlist
-    
+
 Galleries
 ---------
 
 .. toctree::
     :maxdepth: 2
-    
+
     gyexamples/index
     all_notebooks
-
-
 
 Navigation
 ----------
 
 .. toctree::
     :maxdepth: 1
-    
-    indexmenu
 
+    indexmenu
 
 .. toctree::
     :hidden:
-    
+
     blog/index_blog
     all_reports
-
 
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 | :ref:`l-modules`     |  :ref:`l-functions` | :ref:`l-classes`    | :ref:`l-methods`   | :ref:`l-staticmethods` | :ref:`l-properties`                            |

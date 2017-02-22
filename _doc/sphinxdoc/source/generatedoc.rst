@@ -1,17 +1,14 @@
 Generate this documentation
 ===========================
 
-
 .. generatedoc:
 
 See `Generating the documention with pyquickhelper <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/generatedoc.html>`_.
 
-
 Configuration:
 
 .. literalinclude:: conf.py
- 
- 
+
 Extensions to install
 +++++++++++++++++++++
 
@@ -22,15 +19,15 @@ Tips
 ++++
 
 Module `pyquickhelper <https://pypi.python.org/pypi/pyquickhelper/>`_
-defines sphinx command 
+defines sphinx command
 `runpython <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/pyquickhelper/helpgen/sphinx_runpython_extension.html>`_
-which generates from a python script included in the documentation itself. 
+which generates from a python script included in the documentation itself.
 The following snippet produces a table.
 
 .. runpython::
     :rst:
     :showcode:
-    
+
     from pyquickhelper.pandashelper import df2rst
     import pandas
     df = pandas.DataFrame([{"x": 3, "y":4}, {"x": 3.5, "y":5}])

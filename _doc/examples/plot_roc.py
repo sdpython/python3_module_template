@@ -27,21 +27,21 @@ clf.fit(X_train, y_train)
 import numpy
 ypred = clf.predict(X_test)
 yprob = clf.predict_proba(X_test)
-score = numpy.array(list(yprob[i,ypred[i]] for i in range(len(ypred))))
+score = numpy.array(list(yprob[i, ypred[i]] for i in range(len(ypred))))
 
 #####################################
 data = numpy.zeros((len(ypred), 2))
-data[:,0] = score.ravel()
-data[ypred==y_test,1] = 1
+data[:, 0] = score.ravel()
+data[ypred == y_test, 1] = 1
 data[:5]
 
 #####################################
 # ROC - TPR / FPR
-# 
+#
 # * TPR = True Positive Rate
 # * FPR = False Positive Rate
-# 
-# You can see as TPR the distribution function of a score for a positive example 
+#
+# You can see as TPR the distribution function of a score for a positive example
 # and the FPR the same for a negative example.
 from sklearn import metrics
 import matplotlib.pyplot as plt

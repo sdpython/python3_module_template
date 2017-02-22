@@ -7,45 +7,41 @@ README
 .. image:: https://travis-ci.org/sdpython/python3_module_template.svg?branch=master
     :target: https://travis-ci.org/sdpython/python3_module_template
     :alt: Build status
-    
+
 .. image:: https://ci.appveyor.com/api/projects/status/8yv4brsckay4374a?svg=true
     :target: https://ci.appveyor.com/project/sdpython/python3-module-template
     :alt: Build Status Windows
-    
+
 .. image:: https://badge.fury.io/py/project_name.svg
-    :target: http://badge.fury.io/py/project_name    
+    :target: http://badge.fury.io/py/project_name
 
 .. image:: http://img.shields.io/github/issues/sdpython/python3_module_template.png
     :alt: GitHub Issues
     :target: https://github.com/sdpython/python3_module_template/issues
-    
+
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :alt: MIT License
     :target: http://opensource.org/licenses/MIT
-    
-.. image:: https://coveralls.io/repos/sdpython/python3_module_template/badge.svg?branch=master&service=github 
-    :target: https://coveralls.io/github/sdpython/python3_module_template?branch=master     
+
+.. image:: https://coveralls.io/repos/sdpython/python3_module_template/badge.svg?branch=master&service=github
+    :target: https://coveralls.io/github/sdpython/python3_module_template?branch=master
 
 .. image:: https://landscape.io/github/sdpython/python3_module_template/master/landscape.svg?style=flat
    :target: https://landscape.io/github/sdpython/python3_module_template/master
    :alt: Code Health
-   
+
 .. image:: https://requires.io/github/sdpython/python3_module_template/requirements.svg?branch=master
      :target: https://requires.io/github/sdpython/python3_module_template/requirements/?branch=master
-     :alt: Requirements Status   
-    
+     :alt: Requirements Status
+
 .. image:: https://codecov.io/github/sdpython/python3_module_template/coverage.svg?branch=master
     :target: https://codecov.io/github/sdpython/python3_module_template?branch=master
-    
-      
 
 **Links:**
 
 * `GitHub/python3_module_template <https://github.com/sdpython/python3_module_template/>`_
 * `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_
 * `Blog <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/blog/main_0000.html#ap-main-0>`_
-
-
 
 Introduction
 ------------
@@ -56,21 +52,21 @@ This project is a skeleton for any new project. It contains:
 * a unit test folder: ``_unittests``, go to this folder and run ``run_unittests.py``
 * a _doc folder: ``_doc``, it will contains the documentation
 * a file ``setup.py`` to build and to install the module
-    
-All theses steps were only tested on Windows. Suppot for linux will be added later. 
-To create your own project, you need to rename the folder ``project_name`` in ``src`` 
+
+All theses steps were only tested on Windows. Suppot for linux will be added later.
+To create your own project, you need to rename the folder ``project_name`` in ``src``
 by your true module name. You also need to replace ``project_name`` wherever it is found:
 
 * ``project_var_name  = 'project_name'`` in ``setup.py``, ``make_help.py`` and ``_doc/sphinxdoc/source/conf.py``
 * ``from src.project_name.subproject.myexample import myclass`` in ``_unittests/ut_example/test_example.py``
 * many places in ``_doc/sphinxdoc/source/index.rst``
 * many places in ``README.rst``
-    
-The project is also hosted `here <http://www.xavierdupre.fr/site2013/index_code.html>`_ 
-where you can find a 
-`link <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/index.html>`_ 
+
+The project is also hosted `here <http://www.xavierdupre.fr/site2013/index_code.html>`_
+where you can find a
+`link <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/index.html>`_
 to the generated documentation based on this template.
-    
+
 Automation
 ----------
 
@@ -89,7 +85,7 @@ to add something like the following::
     import os,sys
 
     from ..subproject.myexample import myclass
-    
+
 You should use relative imports as much as possible.
 To add a module at deeper level than the previous one, you
 should add relative imports in every ``__init__.py`` along the way.

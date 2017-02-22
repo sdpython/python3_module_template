@@ -4,7 +4,6 @@
 Examples
 ========
 
-
 .. exreflist::
     :sort: title
     :contents: 1

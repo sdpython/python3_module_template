@@ -1,4 +1,3 @@
-# coding: latin-1
 """
 @brief      test log(time=1s)
 
@@ -46,6 +45,8 @@ class TestExample (unittest.TestCase):
         my3 = myclassb(4)
         assert my2
         assert my3
+        mul = my2.get_value(3)
+        self.assertEqual(mul, 15)
 
 
 if __name__ == "__main__":
