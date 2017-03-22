@@ -31,7 +31,6 @@ Markdown
 MarkupSafe
 matplotlib
 mccabe
-mechanize
 metakernel
 mistune
 nbconvert
