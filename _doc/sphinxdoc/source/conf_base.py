@@ -19,6 +19,8 @@ html_context = {
     'css_files': get_default_stylesheet(),
 }
 
+nblinks = {'slideshowrst': 'http://www.xavierdupre.fr/'}
+
 
 def custom_latex_processing(latex):
     """
