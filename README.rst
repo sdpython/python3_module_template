@@ -43,6 +43,13 @@ README
 * `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_
 * `Blog <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/blog/main_0000.html#ap-main-0>`_
 
+Quick startup
+-------------
+
+* install: ``python setup.py install``
+* documentation: ``python setup.py build_sphinx``
+* unit tests: ``python setup.py unittests``
+
 Introduction
 ------------
 
@@ -70,9 +77,9 @@ to the generated documentation based on this template.
 Automation
 ----------
 
-* `Generating the setup with pyquickhelper <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/generatesetup.html>`_
-* `Generating the documention with pyquickhelper <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/generatedoc.html>`_
-* `Installation <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/installation.html>`_
+* `Generating the setup with pyquickhelper <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/contribute.html?generate-the-setup#generate-the-setup>`_
+* `Generating the documention with pyquickhelper <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/contribute.html?generate-the-setup#documentation>`_
+* `Installation <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/contribute.html?generate-the-setup#installation>`_
 * `Unit tests with pyquickhelper <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/doctestunit.html>`_
 
 Adding a new module or subpackage
