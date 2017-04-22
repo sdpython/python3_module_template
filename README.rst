@@ -43,8 +43,8 @@ README
 * `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_
 * `Blog <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/blog/main_0000.html#ap-main-0>`_
 
-Quick startup
--------------
+Quick start
+-----------
 
 * install: ``python setup.py install``
 * documentation: ``python setup.py build_sphinx``
