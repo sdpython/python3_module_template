@@ -19,7 +19,7 @@ before_script:
   - if [ ${VERSION} == "2.7" ] then cd dist_module27 fi
   - if [ ${VERSION} == "2.7" ] then pip install backports.shutil_get_terminal_size fi
 script:
-  - { CMD: "python -X faulthandler -X showrefcount -u setup.py unittests", NAME: "UT" }
+  - { CMD: "python -u setup.py unittests", NAME: "UT" }
 after_script:
   - python setup.py bdist_wheel
   - if [ ${VERSION} == "2.7" and ${DIST} != "conda" ] then copy dist\*.whl ..\..\..\local_pypi\local_pypi_server fi
