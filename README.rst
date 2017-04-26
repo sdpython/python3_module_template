@@ -40,7 +40,7 @@ README
 **Links:**
 
 * `GitHub/python3_module_template <https://github.com/sdpython/python3_module_template/>`_
-* `documentation <http://www.xavierdupre.fr/site2013/index_code.html#python3_module_template>`_
+* `documentation <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx2/index.html>`_
 * `Blog <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/blog/main_0000.html#ap-main-0>`_
 
 Quick start
@@ -69,10 +69,6 @@ by your true module name. You also need to replace ``project_name`` wherever it 
 * many places in ``_doc/sphinxdoc/source/index.rst``
 * many places in ``README.rst``
 
-The project is also hosted `here <http://www.xavierdupre.fr/site2013/index_code.html>`_
-where you can find a
-`link <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/index.html>`_
-to the generated documentation based on this template.
 
 Automation
 ----------
@@ -93,6 +89,6 @@ to add something like the following::
 
     from ..subproject.myexample import myclass
 
-You should use relative imports as much as possible.
+You must use relative imports.
 To add a module at deeper level than the previous one, you
 should add relative imports in every ``__init__.py`` along the way.
