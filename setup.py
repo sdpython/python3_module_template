@@ -122,7 +122,7 @@ if is_local():
         add_htmlhelp=sys.platform.startswith("win"),
         coverage_options=dict(omit=["*exclude*.py"]),
         fLOG=logging_function, covtoken=(
-            "ce1fc48d-9081-44b3-ae09-8b4665e28e86", "'_UT_35_std' in outfile"),
+            "ce1fc48d-9081-44b3-ae09-8b4665e28e86", "'_UT_36_std' in outfile"),
         layout=["pdf", "epub", "html",
                 ("html", "build2", {"html_theme": "alabaster"}, "source/phdoc_static2")])
     if not r and not ({"bdist_msi", "sdist",
