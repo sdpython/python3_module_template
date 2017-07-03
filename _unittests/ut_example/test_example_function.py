@@ -36,6 +36,8 @@ class TestExample (unittest.TestCase):
             OutputPrint=__name__ == "__main__")
 
         self.assertTrue(onefunction(3, 4), 7)
+        with self.assertRaises(TypeError):
+            onefunction(3.3, 4)
 
 
 if __name__ == "__main__":
