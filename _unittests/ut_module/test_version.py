@@ -39,10 +39,10 @@ class TestVersion (unittest.TestCase):
         f = reg.findall(c)
         if len(f) != 1:
             raise Exception("not only one version")
-        assert f[0] == __version__
+        self.assertEqual(f[0], __version__)
 
     def test_check(self):
-        assert check()
+        self.assertTrue(check())
 
 
 if __name__ == "__main__":

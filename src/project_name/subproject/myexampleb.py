@@ -48,3 +48,14 @@ class myclassb(myclass):
         See `google style <http://sphinx-doc.org/ext/example_google.html#example-google>`_
         """
         return v1 + v2
+
+
+def onefunction(a, b):
+    """
+    Return the addition of ``a+b``.
+
+    @param      a       first element
+    @param      b       second element
+    @return             ``a + b``
+    """
+    return a + b

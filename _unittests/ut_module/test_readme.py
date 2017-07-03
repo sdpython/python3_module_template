@@ -37,11 +37,11 @@ class TestReadme(unittest.TestCase):
 
         fold = os.path.dirname(os.path.abspath(__file__))
         readme = os.path.join(fold, "..", "..", "README.rst")
-        assert os.path.exists(readme)
+        self.assertTrue(os.path.exists(readme))
         with open(readme, "r", encoding="utf8") as f:
             content = f.read()
 
-        assert len(content) > 0
+        self.assertTrue(len(content) > 0)
         temp = get_temp_folder(__file__, "temp_readme")
 
         if __name__ != "__main__":

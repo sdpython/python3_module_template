@@ -1,5 +1,5 @@
 """
-@brief      test log(time=101s)
+@brief      test log(time=1s)
 
 You should indicate a time in seconds. The program ``run_unittests.py``
 will sort all test files by increasing time and run them.
@@ -9,7 +9,6 @@ will sort all test files by increasing time and run them.
 import sys
 import os
 import unittest
-
 
 try:
     import src
@@ -25,16 +24,18 @@ except ImportError:
     import src
 
 from pyquickhelper.loghelper import fLOG
+from src.project_name.subproject.myexampleb import onefunction
 
 
-class TestLONGExample (unittest.TestCase):
+class TestExample (unittest.TestCase):
 
-    def test_long_void(self):
+    def test_onefunction(self):
         fLOG(
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
-        self.assertTrue(True)
+
+        self.assertTrue(onefunction(3, 4), 7)
 
 
 if __name__ == "__main__":

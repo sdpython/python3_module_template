@@ -53,7 +53,7 @@ class TestLONGExample (unittest.TestCase):
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
-        assert True
+        self.assertTrue(True)
 
 
 if __name__ == "__main__":

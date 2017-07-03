@@ -71,7 +71,6 @@ by your true module name. You also need to replace ``project_name`` wherever it 
 * many places in ``_doc/sphinxdoc/source/index.rst``
 * many places in ``README.rst``
 
-
 Automation
 ----------
 

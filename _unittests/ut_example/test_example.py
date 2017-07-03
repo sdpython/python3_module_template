@@ -43,8 +43,8 @@ class TestExample (unittest.TestCase):
             raise Exception("we expect %f, not %f" % (ex, r))
         my2 = myclass2(5)
         my3 = myclassb(4)
-        assert my2
-        assert my3
+        self.assertTrue(my2 is not None)
+        self.assertTrue(my3 is not None)
         mul = my2.get_value(3)
         self.assertEqual(mul, 15)
 

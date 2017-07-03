@@ -54,7 +54,7 @@ class TestRunNotebooks(unittest.TestCase):
         for f in os.listdir(fnb):
             if os.path.splitext(f)[-1] == ".ipynb":
                 keepnote.append(os.path.join(fnb, f))
-        assert len(keepnote) > 0
+        self.assertTrue(len(keepnote) > 0)
 
         # function to tell that a can be run
         def valid(cell):
@@ -80,7 +80,7 @@ class TestRunNotebooks(unittest.TestCase):
             temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths, kernel_name=kernel_name)
 
         # final checkings
-        assert len(res) > 0
+        self.assertTrue(len(res) > 0)
         fails = [(os.path.split(k)[-1], v)
                  for k, v in sorted(res.items()) if not v[0]]
         for f in fails:

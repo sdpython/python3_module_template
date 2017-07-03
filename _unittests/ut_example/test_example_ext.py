@@ -36,9 +36,9 @@ class TestExampleExt (unittest.TestCase):
         fLOG(__file__, self._testMethodName, OutputPrint=__name__ == "__main__")
 
         fLOG("comment to test fLOG")
-        assert myclass2.static_example()
+        self.assertTrue(myclass2.static_example() is not None)
         cl = myclass2(1)
-        assert cl.property_example
+        self.assertTrue(cl.property_example is not None)
 
     def test_hook(self):
         fLOG(

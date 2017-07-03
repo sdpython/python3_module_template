@@ -1,6 +1,6 @@
 
-PROJECT_NAME documentation
-==========================
+PROJECT_NAME
+============
 
 .. only:: html
 
@@ -66,12 +66,13 @@ To avoid the dependencies::
 
     pip install <project_name> --no-deps
 
-Quick start
------------
+Documentation
+-------------
 
 .. toctree::
     :maxdepth: 1
 
+    api/index
     i_ex
     i_faq
     i_nb
