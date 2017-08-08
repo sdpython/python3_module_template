@@ -142,6 +142,7 @@ if not r:
         version='%s%s' % (sversion, subversion),
         author='author',
         author_email='author@something.any',
+        license="MIT",
         url="http://...",
         download_url="https://github.com/.../",
         description=DESCRIPTION,
