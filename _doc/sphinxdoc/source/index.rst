@@ -85,7 +85,8 @@ Galleries
 .. toctree::
     :maxdepth: 2
 
-    gyexamples/index
+    gallery1/index
+    gallery2/index
     all_notebooks
 
 Navigation
