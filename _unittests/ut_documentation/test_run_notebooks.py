@@ -78,18 +78,8 @@ class TestRunNotebooks(unittest.TestCase):
         # run the notebooks
         res = execute_notebook_list(
             temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths, kernel_name=kernel_name)
-
-        # final checkings
-        self.assertTrue(len(res) > 0)
-        fails = [(os.path.split(k)[-1], v)
-                 for k, v in sorted(res.items()) if not v[0]]
-        for f in fails:
-            fLOG(f)
-        for k, v in sorted(res.items()):
-            name = os.path.split(k)[-1]
-            fLOG(name, v[0], v[1])
-        if len(fails) > 0:
-            raise fails[0][1][-1]
+        execute_notebook_list_finalize_ut(
+            res, fLOG=fLOG, dump=src.project_name)
 
 
 if __name__ == "__main__":
