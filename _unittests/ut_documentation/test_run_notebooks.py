@@ -22,7 +22,7 @@ except ImportError:
 
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder, compare_module_version
-from pyquickhelper.ipythonhelper import execute_notebook_list, install_python_kernel_for_unittest
+from pyquickhelper.ipythonhelper import execute_notebook_list, install_python_kernel_for_unittest, execute_notebook_list_finalize_ut
 import IPython
 
 
