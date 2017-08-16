@@ -39,6 +39,10 @@ README
     .. image:: https://codecov.io/github/sdpython/python3_module_template/coverage.svg?branch=master
         :target: https://codecov.io/github/sdpython/python3_module_template?branch=master
 
+.. image:: http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/nbcov.png
+    :target: http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/all_notebooks_coverage.html
+    :alt: Notebook Coverage
+    
 **Links:**
 
 * `GitHub/python3_module_template <https://github.com/sdpython/python3_module_template/>`_
