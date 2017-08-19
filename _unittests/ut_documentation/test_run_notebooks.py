@@ -38,7 +38,7 @@ class TestRunNotebooks(unittest.TestCase):
             return
 
         kernel_name = None if is_travis_or_appveyor(
-        ) != "appveyor" else install_python_kernel_for_unittest("python3_module_template")
+        ) not in ("appveyor", None) else install_python_kernel_for_unittest("python3_module_template")
         temp = get_temp_folder(__file__, "temp_run_notebooks")
 
         # selection of notebooks
