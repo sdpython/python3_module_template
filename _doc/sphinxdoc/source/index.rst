@@ -12,6 +12,9 @@ PROJECT_NAME
         :target: https://ci.appveyor.com/project/sdpython/python3-module-template
         :alt: Build Status Windows
 
+    .. image:: https://circleci.com/gh/sdpython/python3_module_template/tree/master.svg?style=svg
+        :target: https://circleci.com/gh/sdpython/python3_module_template/tree/master
+
     .. image:: https://badge.fury.io/py/project_name.svg
         :target: http://badge.fury.io/py/project_name
 
@@ -39,7 +42,7 @@ PROJECT_NAME
 
 .. image:: nbcov.png
     :target: http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/all_notebooks_coverage.html
-    :alt: Notebook Coverage        
+    :alt: Notebook Coverage
 
 **Links:** `github <https://github.com/sdpython/python3_module_template/>`_,
 `documentation <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx2/index.html>`_,

@@ -21,9 +21,8 @@ except ImportError:
     import src
 
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder, compare_module_version
+from pyquickhelper.pycode import get_temp_folder, is_travis_or_appveyor
 from pyquickhelper.ipythonhelper import execute_notebook_list, install_python_kernel_for_unittest, execute_notebook_list_finalize_ut
-import IPython
 
 
 class TestRunNotebooks(unittest.TestCase):
@@ -38,13 +37,8 @@ class TestRunNotebooks(unittest.TestCase):
             # notebooks are not converted into python 2.7, so not tested
             return
 
-        if compare_module_version(IPython.__version__, "4.0.0") < 0:
-            # IPython is not recnt enough
-            return
-
-        kernel_name = None if "travis" in sys.executable else install_python_kernel_for_unittest(
-            "python3_module_template")
-
+        kernel_name = None if is_travis_or_appveyor(
+        ) != "appveyor" else install_python_kernel_for_unittest("python3_module_template")
         temp = get_temp_folder(__file__, "temp_run_notebooks")
 
         # selection of notebooks
@@ -70,10 +64,6 @@ class TestRunNotebooks(unittest.TestCase):
         addpaths = [os.path.normpath(os.path.join(
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "src")),
         ]
-
-        # creation of a kernel
-        kernel_name = None if "travis" in sys.executable else install_python_kernel_for_unittest(
-            "python3_module_template")
 
         # run the notebooks
         res = execute_notebook_list(
