@@ -33,6 +33,19 @@ jobs:
             . venv/bin/activate
             python setup.py unittests
 
+      - run:
+          name: wheel
+          command: |
+            . venv/bin/activate
+            python setup.py bdist_wheel
+            cp dist/*.whl test-reports
+
+      - run:
+          name: documentation
+          command: |
+            . venv/bin/activate
+            python setup.py build_sphinx
+
       - store_artifacts:
           path: test-reports
           destination: test-reports
