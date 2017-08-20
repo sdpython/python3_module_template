@@ -6,8 +6,8 @@ except ImportError as e:
     import os
     import sys
     paths = "\n".join(sys.path)
-    raise ImportError("pyquickhelper is not installed. PYTHONPATH={0}\nsys.path=\n{1}".format(
-        os.environ.get("PYTHONPATH", None), paths))
+    raise ImportError("pyquickhelper is not installed. PYTHONPATH='{0}'\nsys.path=\n{1}".format(
+        os.environ.get("PYTHONPATH", ""), paths))
 
 set_sphinx_variables(__file__, "project_name", "author(s)", 2017,
                      "sphinx_rtd_theme", [
