@@ -93,7 +93,8 @@ Any new module or subpackage should be added in ``src/project_name``. Every subf
 contain a file ``__init__.py``. If the new file needs an existing submodule, you need
 to add something like the following::
 
-    import os,sys
+    import os
+    import sys
 
     from ..subproject.myexample import myclass
 
