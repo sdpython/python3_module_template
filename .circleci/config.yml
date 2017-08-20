@@ -15,12 +15,40 @@ jobs:
           - v1-dependencies-
 
       - run:
+          name: Install pandoc
+          command: |
+                    sudo apt-get update 
+                    wget https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb
+                    sudo dpkg -i pandoc-1.19.2.1-1-amd64.deb
+          
+      - run:
+          name: Install tex
+          command: |
+                    sudo apt-get install -y texlive
+                    sudo apt-get install -y texlive-latex-extra
+          
+      - run:
+          name: Install 7z, unrar
+          command: |
+                    sudo apt-get install -y p7zip-full
+          
+      - run:
+          name: Install InkScape
+          command: |
+                    sudo apt-get install -y inkscape
+          
+      - run:
+          name: Install graphviz
+          command: |
+                    sudo apt-get install -y graphviz
+          
+      - run:
           name: install dependencies
           command: |
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
-            pip install git+https://github.com/fancycode/pylzma.git
+            pip install git+https://github.com/sdpython/sphinxcontrib-images.git --upgrade --no-deps
 
       - save_cache:
           paths:
@@ -40,6 +68,17 @@ jobs:
             python setup.py bdist_wheel
             cp dist/*.whl test-reports
 
+      - run:
+          name: documentation
+          command: |
+            . venv/bin/activate
+            python setup.py build_sphinx
+            
+      - run:
+          name: copy documentation
+          command: |
+            cp -r  _doc/sphinxdoc/build/html test-reports/build
+            
       - store_artifacts:
           path: test-reports
           destination: test-reports
