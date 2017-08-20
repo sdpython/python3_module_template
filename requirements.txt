@@ -52,7 +52,7 @@ pyflakes
 Pygments
 pylzma
 pyparsing
-pyquickhelper
+pyquickhelper>=1.5.2122
 pyreadline
 python-dateutil
 python-jenkins
