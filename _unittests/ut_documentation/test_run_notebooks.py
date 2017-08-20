@@ -37,8 +37,10 @@ class TestRunNotebooks(unittest.TestCase):
             # notebooks are not converted into python 2.7, so not tested
             return
 
-        kernel_name = None if is_travis_or_appveyor(
-        ) not in ("appveyor", None) else install_python_kernel_for_unittest("python3_module_template")
+        if is_travis_or_appveyor() is None:
+            kernal_name = install_python_kernel_for_unittest("python3_module_template")
+        else:
+            kernel_name = None
         temp = get_temp_folder(__file__, "temp_run_notebooks")
 
         # selection of notebooks
