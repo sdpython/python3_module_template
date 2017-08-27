@@ -95,6 +95,7 @@ Galleries
     gallery1/index
     gallery2/index
     all_notebooks
+    blog/blogindex
 
 Navigation
 ----------
