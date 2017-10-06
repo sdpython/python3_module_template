@@ -1,6 +1,7 @@
 """
 @file
-@brief Documentation for this file.
+@brief Module *python3_module_template*.
+Empty module, template for others.
 """
 
 __version__ = "0.2"
