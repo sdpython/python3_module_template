@@ -31,10 +31,6 @@ README
     .. image:: https://coveralls.io/repos/sdpython/python3_module_template/badge.svg?branch=master&service=github
         :target: https://coveralls.io/github/sdpython/python3_module_template?branch=master
 
-    .. image:: https://landscape.io/github/sdpython/python3_module_template/master/landscape.svg?style=flat
-       :target: https://landscape.io/github/sdpython/python3_module_template/master
-       :alt: Code Health
-
     .. image:: https://requires.io/github/sdpython/python3_module_template/requirements.svg?branch=master
          :target: https://requires.io/github/sdpython/python3_module_template/requirements/?branch=master
          :alt: Requirements Status
