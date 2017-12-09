@@ -32,6 +32,9 @@ test_script:
   - "%PYTHON%\\python -u setup.py build_script"
   - "%PYTHON%\\python -u setup.py unittests"
 
+after_test:
+  - "%PYTHON%\\python -u setup.py bdist_wheel"
+
 artifacts:
   - path: dist
     name: python3_module_template
