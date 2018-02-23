@@ -4,39 +4,37 @@
 README
 ======
 
-.. only:: html
+.. image:: https://travis-ci.org/sdpython/python3_module_template.svg?branch=master
+    :target: https://travis-ci.org/sdpython/python3_module_template
+    :alt: Build status
 
-    .. image:: https://travis-ci.org/sdpython/python3_module_template.svg?branch=master
-        :target: https://travis-ci.org/sdpython/python3_module_template
-        :alt: Build status
+.. image:: https://ci.appveyor.com/api/projects/status/8yv4brsckay4374a?svg=true
+    :target: https://ci.appveyor.com/project/sdpython/python3-module-template
+    :alt: Build Status Windows
 
-    .. image:: https://ci.appveyor.com/api/projects/status/8yv4brsckay4374a?svg=true
-        :target: https://ci.appveyor.com/project/sdpython/python3-module-template
-        :alt: Build Status Windows
+.. image:: https://circleci.com/gh/sdpython/python3_module_template/tree/master.svg?style=svg
+    :target: https://circleci.com/gh/sdpython/python3_module_template/tree/master
 
-    .. image:: https://circleci.com/gh/sdpython/python3_module_template/tree/master.svg?style=svg
-        :target: https://circleci.com/gh/sdpython/python3_module_template/tree/master
+.. image:: https://badge.fury.io/py/project_name.svg
+    :target: http://badge.fury.io/py/project_name
 
-    .. image:: https://badge.fury.io/py/project_name.svg
-        :target: http://badge.fury.io/py/project_name
+.. image:: http://img.shields.io/github/issues/sdpython/python3_module_template.png
+    :alt: GitHub Issues
+    :target: https://github.com/sdpython/python3_module_template/issues
 
-    .. image:: http://img.shields.io/github/issues/sdpython/python3_module_template.png
-        :alt: GitHub Issues
-        :target: https://github.com/sdpython/python3_module_template/issues
+.. image:: https://img.shields.io/badge/license-MIT-blue.svg
+    :alt: MIT License
+    :target: http://opensource.org/licenses/MIT
 
-    .. image:: https://img.shields.io/badge/license-MIT-blue.svg
-        :alt: MIT License
-        :target: http://opensource.org/licenses/MIT
+.. image:: https://coveralls.io/repos/sdpython/python3_module_template/badge.svg?branch=master&service=github
+    :target: https://coveralls.io/github/sdpython/python3_module_template?branch=master
 
-    .. image:: https://coveralls.io/repos/sdpython/python3_module_template/badge.svg?branch=master&service=github
-        :target: https://coveralls.io/github/sdpython/python3_module_template?branch=master
+.. image:: https://requires.io/github/sdpython/python3_module_template/requirements.svg?branch=master
+     :target: https://requires.io/github/sdpython/python3_module_template/requirements/?branch=master
+     :alt: Requirements Status
 
-    .. image:: https://requires.io/github/sdpython/python3_module_template/requirements.svg?branch=master
-         :target: https://requires.io/github/sdpython/python3_module_template/requirements/?branch=master
-         :alt: Requirements Status
-
-    .. image:: https://codecov.io/github/sdpython/python3_module_template/coverage.svg?branch=master
-        :target: https://codecov.io/github/sdpython/python3_module_template?branch=master
+.. image:: https://codecov.io/github/sdpython/python3_module_template/coverage.svg?branch=master
+    :target: https://codecov.io/github/sdpython/python3_module_template?branch=master
 
 .. image:: http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/_images/nbcov.png
     :target: http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/all_notebooks_coverage.html

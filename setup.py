@@ -49,8 +49,26 @@ def is_local():
     file = os.path.abspath(__file__).replace("\\", "/").lower()
     if "/temp/" in file and "pip-" in file:
         return False
-    from pyquickhelper.pycode.setup_helper import available_commands_list
-    return available_commands_list(sys.argv)
+    for cname in {"bdist_msi", "build27", "build_script", "build_sphinx", "build_ext",
+                  "bdist_wheel", "bdist_egg", "bdist_wininst", "clean_pyd", "clean_space",
+                  "copy27", "copy_dist", "local_pypi", "notebook", "publish", "publish_doc",
+                  "register", "unittests", "unittests_LONG", "unittests_SKIP", "unittests_GUI",
+                  "run27", "sdist", "setupdep", "test_local_pypi", "upload_docs", "setup_hook",
+                  "copy_sphinx", "write_version"}:
+        if cname in sys.argv:
+            try:
+                import_pyquickhelper()
+            except ImportError:
+                return False
+            return True
+    else:
+        return False
+
+    return False
+
+
+def ask_help():
+    return "--help" in sys.argv or "--help-commands" in sys.argv
 
 
 def verbose():
@@ -66,7 +84,7 @@ def verbose():
 ##########
 
 
-if is_local() and "--help" not in sys.argv and "--help-commands" not in sys.argv:
+if is_local() and not ask_help():
     def write_version():
         from pyquickhelper.pycode import write_version_for_setup
         return write_version_for_setup(__file__)
@@ -87,13 +105,8 @@ else:
     # when the module is installed, no commit number is displayed
     subversion = ""
 
-if "upload" in sys.argv and not subversion:
+if "upload" in sys.argv and not subversion and not ask_help():
     # avoid uploading with a wrong subversion number
-    try:
-        import pyquickhelper
-        pyq = True
-    except ImportError:
-        pyq = False
     raise Exception(
         "subversion is empty, cannot upload, is_local()={0}, pyquickhelper={1}".format(is_local(), pyq))
 
@@ -120,8 +133,8 @@ if "--verbose" in sys.argv:
 if is_local():
     from pyquickhelper import get_fLOG
     logging_function = get_fLOG()
-    from pyquickhelper.pycode import process_standard_options_for_setup
     logging_function(OutputPrint=True)
+    from pyquickhelper.pycode import process_standard_options_for_setup
     r = process_standard_options_for_setup(
         sys.argv, __file__, project_var_name,
         extra_ext=["tohelp"],
@@ -142,6 +155,8 @@ if not r:
     if len(sys.argv) in (1, 2) and sys.argv[-1] in ("--help-commands",):
         from pyquickhelper.pycode import process_standard_options_for_setup_help
         process_standard_options_for_setup_help(sys.argv)
+    from pyquickhelper.pycode import clean_readme
+    long_description = clean_readme(long_description)
 
     setup(
         name=project_var_name,
