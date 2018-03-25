@@ -9,6 +9,7 @@ from setuptools import find_packages
 #########
 
 project_var_name = "project_name"
+project_owner = "owner"
 sversion = "0.2"
 versionPython = "%s.%s" % (sys.version_info.major, sys.version_info.minor)
 path = "Lib/site-packages/" + project_var_name
@@ -126,6 +127,7 @@ if is_local():
         extra_ext=["tohelp"],
         add_htmlhelp=sys.platform.startswith("win"),
         coverage_options=dict(omit=["*exclude*.py"]),
+        github_owner=project_owner,
         fLOG=logging_function, covtoken=(
             "ce1fc48d-9081-44b3-ae09-8b4665e28e86", "'_UT_36_std' in outfile"),
         layout=["rst", "pdf", "epub", "html",
