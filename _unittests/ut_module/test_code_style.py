@@ -37,7 +37,7 @@ class TestCodeStyle(unittest.TestCase):
         if sys.version_info[0] == 2 or "Anaconda" in sys.executable \
                 or "condavir" in sys.executable:
             warnings.warn(
-                "skipping test_flake8 because of Python 2 or " + sys.executable)
+                "skipping test_code_style because of Python 2 or " + sys.executable)
             return
 
         thi = os.path.abspath(os.path.dirname(__file__))
@@ -53,7 +53,7 @@ class TestCodeStyle(unittest.TestCase):
         if sys.version_info[0] == 2 or "Anaconda" in sys.executable \
                 or "condavir" in sys.executable:
             warnings.warn(
-                "skipping test_flake8 because of Python 2 or " + sys.executable)
+                "skipping test_code_style because of Python 2 or " + sys.executable)
             return
 
         thi = os.path.abspath(os.path.dirname(__file__))
