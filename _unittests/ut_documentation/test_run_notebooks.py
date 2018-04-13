@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 @brief      test log(time=33s)
 """
@@ -40,9 +40,11 @@ class TestRunNotebooks(unittest.TestCase):
         ci = is_travis_or_appveyor()
         if ci is None:
             try:
-                kernel_name = install_python_kernel_for_unittest("python3_module_template")
+                kernel_name = install_python_kernel_for_unittest(
+                    "python3_module_template")
             except PermissionError as e:
-                raise Exception("Unable to change the kernel name. ci='{0}'".format(ci)) from e
+                raise Exception(
+                    "Unable to change the kernel name. ci='{0}'".format(ci)) from e
         else:
             kernel_name = None
         temp = get_temp_folder(__file__, "temp_run_notebooks")

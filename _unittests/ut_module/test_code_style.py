@@ -26,9 +26,9 @@ from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import check_pep8
 
 
-class TestFlake8(unittest.TestCase):
+class TestCodeStyle(unittest.TestCase):
 
-    def test_flake8_src(self):
+    def test_style_src(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -44,7 +44,7 @@ class TestFlake8(unittest.TestCase):
         src_ = os.path.normpath(os.path.join(thi, "..", "..", "src"))
         check_pep8(src_, fLOG=fLOG)
 
-    def test_flake8_test(self):
+    def test_style_test(self):
         fLOG(
             __file__,
             self._testMethodName,
