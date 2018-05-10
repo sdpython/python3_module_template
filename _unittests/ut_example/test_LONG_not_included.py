@@ -9,7 +9,7 @@ will sort all test files by increasing time and run them.
 import sys
 import os
 import unittest
-
+from pyquickhelper.pycode import ExtTestCase
 
 try:
     import src
@@ -24,17 +24,11 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper import fLOG
 
-
-class TestLONGExample (unittest.TestCase):
+class TestLONGExample(ExtTestCase):
 
     def test_long_void(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-        self.assertTrue(True)
+        self.assertTrue(src is not None)
 
 
 if __name__ == "__main__":

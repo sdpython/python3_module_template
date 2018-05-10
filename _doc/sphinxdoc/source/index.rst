@@ -1,6 +1,6 @@
 
-PROJECT_NAME
-============
+python3_module_template
+=======================
 
 .. only:: html
 
@@ -15,8 +15,8 @@ PROJECT_NAME
     .. image:: https://circleci.com/gh/sdpython/python3_module_template/tree/master.svg?style=svg
         :target: https://circleci.com/gh/sdpython/python3_module_template/tree/master
 
-    .. image:: https://badge.fury.io/py/project_name.svg
-        :target: http://badge.fury.io/py/project_name
+    .. image:: https://badge.fury.io/py/python3_module_template.svg
+        :target: http://badge.fury.io/py/python3_module_template
 
     .. image:: http://img.shields.io/github/issues/sdpython/python3_module_template.png
         :alt: GitHub Issues
@@ -56,18 +56,18 @@ This project is a template to start a new project. See :ref:`l-README`.
 See some examples:
 
 * **Example**
-    * example:  :class:`myclass <project_name.subproject.myexample.myclass>`
+    * example:  :class:`myclass <python3_module_template.subproject.myexample.myclass>`
 
 Installation
 ------------
 
 ::
 
-    pip install <project_name>
+    pip install python3_module_template
 
 To avoid the dependencies::
 
-    pip install <project_name> --no-deps
+    pip install python3_module_template --no-deps
 
 Documentation
 -------------

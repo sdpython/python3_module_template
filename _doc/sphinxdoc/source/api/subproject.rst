@@ -8,10 +8,10 @@ subproject: a few examples
 example of a class
 ++++++++++++++++++
 
-.. autoclass:: project_name.subproject.myexample.myclass
+.. autoclass:: python3_module_template.subproject.myexample.myclass
     :members:
 
 example of a function
 +++++++++++++++++++++
 
-.. autofunction:: project_name.subproject.myexampleb.onefunction
+.. autofunction:: python3_module_template.subproject.myexampleb.onefunction

@@ -9,5 +9,5 @@ Example with a simple import.
 
 ##############################
 # import
-import project_name
-print(project_name.__version__)
+import python3_module_template
+print(python3_module_template.__version__)

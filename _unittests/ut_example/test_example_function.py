@@ -9,6 +9,7 @@ will sort all test files by increasing time and run them.
 import sys
 import os
 import unittest
+from pyquickhelper.pycode import ExtTestCase
 
 try:
     import src
@@ -23,18 +24,12 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper import fLOG
-from src.project_name.subproject.myexampleb import onefunction
+from src.python3_module_template.subproject.myexampleb import onefunction
 
 
-class TestExample (unittest.TestCase):
+class TestExample(ExtTestCase):
 
     def test_onefunction(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         self.assertTrue(onefunction(3, 4), 7)
         with self.assertRaises(TypeError):
             onefunction(3.3, 4)

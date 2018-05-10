@@ -5,8 +5,8 @@
 import sys
 import os
 import unittest
-import warnings
-
+from pyquickhelper.loghelper import fLOG
+from pyquickhelper.pycode import check_pep8, ExtTestCase
 
 try:
     import src
@@ -22,47 +22,29 @@ except ImportError:
     import src
 
 
-from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import check_pep8
-
-
-class TestCodeStyle(unittest.TestCase):
+class TestCodeStyle(ExtTestCase):
 
     def test_style_src(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
-        if sys.version_info[0] == 2 or "Anaconda" in sys.executable \
-                or "condavir" in sys.executable:
-            warnings.warn(
-                "skipping test_code_style because of Python 2 or " + sys.executable)
-            return
-
         thi = os.path.abspath(os.path.dirname(__file__))
         src_ = os.path.normpath(os.path.join(thi, "..", "..", "src"))
-        check_pep8(src_, fLOG=fLOG)
+        check_pep8(src_, fLOG=fLOG,
+                   skip=["myexampleb.py:61: C0123"])
 
     def test_style_test(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
-        if sys.version_info[0] == 2 or "Anaconda" in sys.executable \
-                or "condavir" in sys.executable:
-            warnings.warn(
-                "skipping test_code_style because of Python 2 or " + sys.executable)
-            return
-
         thi = os.path.abspath(os.path.dirname(__file__))
         test = os.path.normpath(os.path.join(thi, "..", ))
         check_pep8(test, fLOG=fLOG, neg_filter="temp_.*",
+                   pylint_ignore=('C0103', 'C1801', 'R0201', 'R1705', 'W0108', 'W0613',
+                                  'C0111'),
                    skip=["src' imported but unused",
                          "skip_' imported but unused",
                          "skip__' imported but unused",
                          "skip___' imported but unused",
+                         "Unused variable 'skip_'",
+                         "Unused import src",
+                         "Unused variable 'skip_",
+                         "imported as skip_",
+                         "Imports from package src are not grouped",
                          ])
 
 

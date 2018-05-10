@@ -9,7 +9,7 @@ will sort all test files by increasing time and run them.
 import sys
 import os
 import unittest
-
+from pyquickhelper.pycode import ExtTestCase
 
 try:
     import src
@@ -24,36 +24,22 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper import fLOG
-from src.project_name.subproject.myexampleb import myclassb
-from src.project_name.subproject2.myexample2 import myclass2
-from src.project_name import _setup_hook
+from src.python3_module_template.subproject.myexampleb import myclassb
+from src.python3_module_template.subproject2.myexample2 import myclass2
+from src.python3_module_template import _setup_hook
 
 
-class TestExampleExt (unittest.TestCase):
+class TestExampleExt(ExtTestCase):
 
     def test_static(self):
-        fLOG(__file__, self._testMethodName, OutputPrint=__name__ == "__main__")
-
-        fLOG("comment to test fLOG")
         self.assertTrue(myclass2.static_example() is not None)
         cl = myclass2(1)
         self.assertTrue(cl.property_example is not None)
 
     def test_hook(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         _setup_hook()
 
     def test_myclassb(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         b = myclassb(1)
         c = b.method_napoleon(1, 2)
         self.assertEqual(c, 3)

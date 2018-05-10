@@ -26,7 +26,6 @@ class myclassb(myclass):
 
     def __init__(self, pa):
         """
-        documentation for the constructor
         @param      pa      first parameter
         """
         myclass.__init__(self, pa)
@@ -52,7 +51,7 @@ class myclassb(myclass):
 
 def onefunction(a, b):
     """
-    Return the addition of ``a+b``.
+    Returns the addition of ``a+b``.
 
     :param a: first element
     :param b: second element

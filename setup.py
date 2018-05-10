@@ -8,8 +8,8 @@ from setuptools import find_packages
 # settings
 #########
 
-project_var_name = "project_name"
-project_owner = "owner"
+project_var_name = "python3_module_template"
+project_owner = "sdpython"
 sversion = "0.2"
 versionPython = "%s.%s" % (sys.version_info.major, sys.version_info.minor)
 path = "Lib/site-packages/" + project_var_name

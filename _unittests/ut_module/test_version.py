@@ -21,7 +21,7 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from src.project_name import __version__, check
+from src.python3_module_template import __version__, check
 
 
 class TestVersion (unittest.TestCase):

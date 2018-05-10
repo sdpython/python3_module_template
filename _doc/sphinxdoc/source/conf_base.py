@@ -9,7 +9,7 @@ except ImportError as e:
     raise ImportError("pyquickhelper is not installed. PYTHONPATH='{0}'\nsys.path=\n{1}".format(
         os.environ.get("PYTHONPATH", ""), paths))
 
-set_sphinx_variables(__file__, "project_name", "author(s)", 2018,
+set_sphinx_variables(__file__, "python3_module_template", "sdpython", 2018,
                      "sphinx_rtd_theme", [
                          sphinx_rtd_theme.get_html_theme_path()],
                      locals(), book=True,

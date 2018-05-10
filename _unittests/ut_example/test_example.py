@@ -9,6 +9,7 @@ will sort all test files by increasing time and run them.
 import sys
 import os
 import unittest
+from pyquickhelper.pycode import ExtTestCase
 
 try:
     import src
@@ -23,19 +24,14 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper import fLOG
-from src.project_name.subproject.myexample import myclass
-from src.project_name.subproject.myexampleb import myclassb
-from src.project_name.subproject2.myexample2 import myclass2
+from src.python3_module_template.subproject.myexample import myclass
+from src.python3_module_template.subproject.myexampleb import myclassb
+from src.python3_module_template.subproject2.myexample2 import myclass2
 
 
-class TestExample (unittest.TestCase):
+class TestExample(ExtTestCase):
 
     def test_split_cmp_command(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
         my = myclass(4)
         r = my.get_value(5)
         ex = 20

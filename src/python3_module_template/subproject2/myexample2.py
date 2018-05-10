@@ -53,14 +53,14 @@ It can be run in a separate process with option ``:process:``
 .. runpython::
     :process:
 
-    import project_name
+    import python3_module_template
     import os
-    print(os.path.split(project_name.__file__)[-1])
+    print(os.path.split(python3_module_template.__file__)[-1])
 """
 from ..subproject.myexample import myclass
 
 
-class myclass2 (myclass):
+class myclass2(myclass):
 
     """
     This is the documentation for this class.
@@ -81,10 +81,9 @@ class myclass2 (myclass):
 
     def __init__(self, pa):
         """
-        documentation for the constructor
         @param      pa      first parameter
         """
-        self.pa = pa
+        myclass.__init__(self, pa)
 
     def get_value(self, mul):
         """

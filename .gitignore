@@ -229,7 +229,7 @@ out_*
 version.txt
 _doc/sphinxdoc/source/python_template/
 _doc/sphinxdoc/source/python_name/
-_doc/sphinxdoc/source/project_name/
+_doc/sphinxdoc/source/python3_module_template/
 _doc/sphinxdoc/source/coverage/*
 */sphinxdoc/source/all*.rst
 _doc/sphinxdoc/source/notebooks/*

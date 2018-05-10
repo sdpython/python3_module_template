@@ -6,6 +6,6 @@
     :categories: documentation, example
 
     It just contains a link to a class of this module:
-    :class:`myclass <project_name.subproject.myexample.myclass>`.
+    :class:`myclass <python3_module_template.subproject.myexample.myclass>`.
     A link to the post should follow when this text
     is inserted into an aggregated page.

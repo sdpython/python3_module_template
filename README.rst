@@ -15,8 +15,8 @@ README
 .. image:: https://circleci.com/gh/sdpython/python3_module_template/tree/master.svg?style=svg
     :target: https://circleci.com/gh/sdpython/python3_module_template/tree/master
 
-.. image:: https://badge.fury.io/py/project_name.svg
-    :target: http://badge.fury.io/py/project_name
+.. image:: https://badge.fury.io/py/python3_module_template.svg
+    :target: http://badge.fury.io/py/python3_module_template
 
 .. image:: http://img.shields.io/github/issues/sdpython/python3_module_template.png
     :alt: GitHub Issues
@@ -64,11 +64,11 @@ This project is a skeleton for any new project. It contains:
 * a file ``setup.py`` to build and to install the module
 
 All theses steps were only tested on Windows. Suppot for linux will be added later.
-To create your own project, you need to rename the folder ``project_name`` in ``src``
-by your true module name. You also need to replace ``project_name`` wherever it is found:
+To create your own project, you need to rename the folder ``python3_module_template`` in ``src``
+by your true module name. You also need to replace ``python3_module_template`` wherever it is found:
 
-* ``project_var_name  = 'project_name'`` in ``setup.py``, ``make_help.py`` and ``_doc/sphinxdoc/source/conf.py``
-* ``from src.project_name.subproject.myexample import myclass`` in ``_unittests/ut_example/test_example.py``
+* ``project_var_name  = 'python3_module_template'`` in ``setup.py``, ``make_help.py`` and ``_doc/sphinxdoc/source/conf.py``
+* ``from src.python3_module_template.subproject.myexample import myclass`` in ``_unittests/ut_example/test_example.py``
 * many places in ``_doc/sphinxdoc/source/index.rst``
 * many places in ``README.rst``
 
@@ -83,7 +83,7 @@ Automation
 Adding a new module or subpackage
 +++++++++++++++++++++++++++++++++
 
-Any new module or subpackage should be added in ``src/project_name``. Every subfolder should
+Any new module or subpackage should be added in ``src/python3_module_template``. Every subfolder should
 contain a file ``__init__.py``. If the new file needs an existing submodule, you need
 to add something like the following::
 
