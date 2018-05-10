@@ -33,7 +33,7 @@ class TestCodeStyle(ExtTestCase):
     def test_style_test(self):
         thi = os.path.abspath(os.path.dirname(__file__))
         test = os.path.normpath(os.path.join(thi, "..", ))
-        check_pep8(test, fLOG=fLOG, neg_filter="temp_.*",
+        check_pep8(test, fLOG=fLOG, neg_pattern="temp_.*",
                    pylint_ignore=('C0103', 'C1801', 'R0201', 'R1705', 'W0108', 'W0613',
                                   'C0111'),
                    skip=["src' imported but unused",
