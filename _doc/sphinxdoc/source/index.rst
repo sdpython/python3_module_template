@@ -100,6 +100,7 @@ Navigation
     :maxdepth: 1
 
     indexmenu
+    HISTORY
 
 .. toctree::
     :hidden:
