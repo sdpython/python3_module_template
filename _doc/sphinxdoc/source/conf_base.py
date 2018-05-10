@@ -1,3 +1,4 @@
+import sphinx_gallery
 import sphinx_rtd_theme
 
 try:
