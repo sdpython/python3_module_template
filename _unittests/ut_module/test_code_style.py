@@ -26,13 +26,14 @@ class TestCodeStyle(ExtTestCase):
     """Test style."""
 
     def test_src(self):
+        "skip pylint"
         self.assertFalse(src is None)
 
     def test_style_src(self):
         thi = os.path.abspath(os.path.dirname(__file__))
         src_ = os.path.normpath(os.path.join(thi, "..", "..", "src"))
         check_pep8(src_, fLOG=fLOG,
-                   skip=["myexampleb.py:61: C0123"])
+                   skip=["myexampleb.py:61: C0123", "myexampleb.py:59: C0123"])
 
     def test_style_test(self):
         thi = os.path.abspath(os.path.dirname(__file__))

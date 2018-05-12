@@ -29,6 +29,7 @@ class TestRunNotebooks(ExtTestCase):
     """Runs notebooks in the documentation."""
 
     def test_src(self):
+        "skip pylint"
         self.assertFalse(src is None)
 
     def test_run_notebook(self):

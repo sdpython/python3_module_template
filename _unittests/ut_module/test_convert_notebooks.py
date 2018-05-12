@@ -30,6 +30,7 @@ class TestConvertNotebooks(unittest.TestCase):
     """Converts notebooks from v3 to v4. Should not be needed anymore."""
 
     def test_src(self):
+        "skip pylint"
         self.assertFalse(src is None)
 
     def test_convert_notebooks(self):

@@ -26,6 +26,7 @@ class TestReadme(ExtTestCase):
     """Test readme syntax with an old version of :epkg:`docutils`."""
 
     def test_src(self):
+        "skip pylint"
         self.assertFalse(src is None)
 
     def test_venv_docutils08_readme(self):

@@ -33,6 +33,7 @@ class TestExample(ExtTestCase):
     """Example of a test."""
 
     def test_src(self):
+        "skip pylint"
         self.assertFalse(src is None)
 
     def test_split_cmp_command(self):

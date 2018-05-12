@@ -33,6 +33,7 @@ class TestExampleExt(ExtTestCase):
     """Second example of a test."""
 
     def test_src(self):
+        "skip pylint"
         self.assertFalse(src is None)
 
     def test_static(self):

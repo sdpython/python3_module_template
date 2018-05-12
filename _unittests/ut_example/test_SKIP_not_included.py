@@ -29,6 +29,7 @@ class TestSKIPExample(ExtTestCase):
     """Test in SKIP series, skipped by default."""
 
     def test_src(self):
+        "skip pylint"
         self.assertFalse(src is None)
 
     def test_skip_void(self):
