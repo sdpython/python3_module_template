@@ -47,7 +47,7 @@ class TestExampleExt(ExtTestCase):
     def test_myclassb(self):
         b = myclassb(1)
         c = b.method_napoleon(1, 2)
-        self.assertEqual(c, 3)
+        self.assertEqual(c, 4)
 
 
 if __name__ == "__main__":
