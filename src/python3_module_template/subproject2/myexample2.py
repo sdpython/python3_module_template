@@ -5,7 +5,8 @@
 To make a reference to a blog post, just read :ref:`label-to-this-blogpost`.
 
 The following documentation comes from a directive
-`runpython <http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/pyquickhelper/helpgen/sphinx_runpython_extension.html>`_
+`runpython
+<http://www.xavierdupre.fr/app/pyquickhelper/helpsphinx/pyquickhelper/helpgen/sphinx_runpython_extension.html>`_
 which outputs documentation on the standard output::
 
     .. runpython::
