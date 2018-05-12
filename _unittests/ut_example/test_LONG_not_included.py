@@ -26,6 +26,10 @@ except ImportError:
 
 
 class TestLONGExample(ExtTestCase):
+    """Test in LONG series, skipped by default."""
+
+    def test_src(self):
+        self.assertFalse(src is None)
 
     def test_long_void(self):
         self.assertTrue(src is not None)

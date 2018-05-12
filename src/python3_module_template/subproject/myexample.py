@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 """
 @file
 @brief This the documentation of this module (myexampleb).

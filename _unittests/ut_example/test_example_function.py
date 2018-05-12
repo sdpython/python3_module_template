@@ -28,6 +28,10 @@ from src.python3_module_template.subproject.myexampleb import onefunction
 
 
 class TestExample(ExtTestCase):
+    """Third  example of a test."""
+
+    def test_src(self):
+        self.assertFalse(src is None)
 
     def test_onefunction(self):
         self.assertTrue(onefunction(3, 4), 7)

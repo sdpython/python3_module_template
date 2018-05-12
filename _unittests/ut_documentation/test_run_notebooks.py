@@ -26,6 +26,10 @@ except ImportError:
 
 
 class TestRunNotebooks(ExtTestCase):
+    """Runs notebooks in the documentation."""
+
+    def test_src(self):
+        self.assertFalse(src is None)
 
     def test_run_notebook(self):
         fLOG(

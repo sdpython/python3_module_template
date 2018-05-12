@@ -10,9 +10,7 @@ class myclassb(myclass):
 
     """
     This is the documentation for this class.
-
     Inherits from @see cl myclass.
-
     An example on how to share: :sharenet:`facebook-linkedin-twitter-20-body`.
 
     .. todoext::
@@ -46,7 +44,7 @@ class myclassb(myclass):
 
         See `google style <http://sphinx-doc.org/ext/example_google.html#example-google>`_
         """
-        return v1 + v2
+        return self.pa + v1 + v2
 
 
 def onefunction(a, b):

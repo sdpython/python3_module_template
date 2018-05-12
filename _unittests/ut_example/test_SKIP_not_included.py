@@ -25,7 +25,11 @@ except ImportError:
     import src
 
 
-class TestLONGExample(ExtTestCase):
+class TestSKIPExample(ExtTestCase):
+    """Test in SKIP series, skipped by default."""
+
+    def test_src(self):
+        self.assertFalse(src is None)
 
     def test_skip_void(self):
         self.assertTrue(src is not None)

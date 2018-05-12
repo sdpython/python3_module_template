@@ -30,6 +30,10 @@ from src.python3_module_template.subproject2.myexample2 import myclass2
 
 
 class TestExample(ExtTestCase):
+    """Example of a test."""
+
+    def test_src(self):
+        self.assertFalse(src is None)
 
     def test_split_cmp_command(self):
         my = myclass(4)

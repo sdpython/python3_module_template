@@ -25,6 +25,10 @@ from src.python3_module_template import __version__, check
 
 
 class TestVersion (unittest.TestCase):
+    """Test version in *setup.py* is the same in the main *__init__.py*."""
+
+    def test_src(self):
+        self.assertFalse(src is None)
 
     def test_version(self):
         setup = os.path.join(

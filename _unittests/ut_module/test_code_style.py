@@ -23,6 +23,10 @@ except ImportError:
 
 
 class TestCodeStyle(ExtTestCase):
+    """Test style."""
+
+    def test_src(self):
+        self.assertFalse(src is None)
 
     def test_style_src(self):
         thi = os.path.abspath(os.path.dirname(__file__))

@@ -30,6 +30,10 @@ from src.python3_module_template import _setup_hook
 
 
 class TestExampleExt(ExtTestCase):
+    """Second example of a test."""
+
+    def test_src(self):
+        self.assertFalse(src is None)
 
     def test_static(self):
         self.assertTrue(myclass2.static_example() is not None)
