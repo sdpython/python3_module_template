@@ -1,7 +1,5 @@
 import sys
 import os
-import datetime
-import re
 import alabaster
 
 source_path = os.path.normpath(

@@ -76,8 +76,7 @@ if is_local() and not ask_help():
         from pyquickhelper.pycode import write_version_for_setup
         return write_version_for_setup(__file__)
 
-    if sys.version_info[0] != 2:
-        write_version()
+    write_version()
 
     versiontxt = os.path.join(os.path.dirname(__file__), "version.txt")
     if os.path.exists(versiontxt):
@@ -85,7 +84,7 @@ if is_local() and not ask_help():
             lines = f.readlines()
         subversion = "." + lines[0].strip("\r\n ")
         if subversion == ".0":
-            raise Exception("Subversion is wrong: '{0}'.".format(subversion))
+            raise Exception("Git version is wrong: '{0}'.".format(subversion))
     else:
         raise FileNotFoundError(versiontxt)
 else:
@@ -95,22 +94,18 @@ else:
 if "upload" in sys.argv and not subversion and not ask_help():
     # avoid uploading with a wrong subversion number
     raise Exception(
-        "subversion is empty, cannot upload, is_local()={0}, pyquickhelper={1}".format(is_local(), pyq))
+        "Git veersion is empty, cannot upload, is_local()={0}".format(is_local()))
 
 ##############
 # common part
 ##############
 
 if os.path.exists(readme):
-    if sys.version_info[0] == 2:
-        from codecs import open
     with open(readme, "r", encoding='utf-8-sig') as f:
         long_description = f.read()
 else:
     long_description = ""
 if os.path.exists(history):
-    if sys.version_info[0] == 2:
-        from codecs import open
     with open(history, "r", encoding='utf-8-sig') as f:
         long_description += f.read()
 

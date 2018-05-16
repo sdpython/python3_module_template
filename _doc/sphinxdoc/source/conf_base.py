@@ -1,14 +1,6 @@
 import sphinx_gallery
 import sphinx_rtd_theme
-
-try:
-    from pyquickhelper.helpgen.default_conf import set_sphinx_variables, get_default_stylesheet
-except ImportError as e:
-    import os
-    import sys
-    paths = "\n".join(sys.path)
-    raise ImportError("pyquickhelper is not installed. PYTHONPATH='{0}'\nsys.path=\n{1}".format(
-        os.environ.get("PYTHONPATH", ""), paths))
+from pyquickhelper.helpgen.default_conf import set_sphinx_variables, get_default_stylesheet
 
 set_sphinx_variables(__file__, "python3_module_template", "sdpython", 2018,
                      "sphinx_rtd_theme", [
