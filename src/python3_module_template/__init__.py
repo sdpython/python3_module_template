@@ -20,8 +20,8 @@ __blog__ = """
         <outline text="python3_module_template"
             title="python3_module_template"
             type="rss"
-            xmlUrl="http://www.xavierdupre.fr/app/pyquickhelper/python3_module_template/_downloads/rss.xml"
-            htmlUrl="http://www.xavierdupre.fr/app/pyquickhelper/python3_module_template/blog/main_0000.html" />
+            xmlUrl="http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/_downloads/rss.xml"
+            htmlUrl="http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/blog/main_0000.html" />
     </body>
 </opml>
 """
