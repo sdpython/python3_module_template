@@ -1,7 +1,8 @@
-dist: trusty
+dist: xenial
+sudo: true
 language: python
 python:
-    - "3.5"
+    - "3.7"
     - "3.6"
 install: 
     - pip install -r requirements.txt
