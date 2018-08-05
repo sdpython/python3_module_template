@@ -47,6 +47,7 @@ class TestCodeStyle(ExtTestCase):
                          "skip___' imported but unused",
                          "Unused variable 'skip_'",
                          "imported as skip_",
+                         "Unused import src",
                          ])
 
 
