@@ -34,4 +34,4 @@ documentation:
   - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then python -u setup.py build_sphinx fi
   - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build\html dist\html fi
   - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build2\html dist\html2 fi
-  - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build\latex\*.pdf dist\html fi
+  - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build\elatex\*.pdf dist\html fi

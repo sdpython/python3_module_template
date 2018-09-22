@@ -81,6 +81,8 @@ jobs:
           command: |
             mkdir -p test-reports/doc
             zip -r -9  test-reports/doc/documentation_html.zip _doc/sphinxdoc/build/html
+            cp _doc/sphinxdoc/build/elatex/*.pdf test-reports/pdf
+            cp _doc/sphinxdoc/build/elatex/python*.tex* test-reports/pdf
             
       - store_artifacts:
           path: test-reports
