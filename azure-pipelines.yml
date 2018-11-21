@@ -65,18 +65,6 @@ jobs:
     inputs:
       versionSpec: '$(python.version)'
       architecture: 'x64'
-  - script: sudo brew update
-    displayName: 'Brew Update'
-  - script: brew install pandoc
-    displayName: 'Install Pandoc'
-  - script: sudo port install -y texlive texlive-latex-extra
-    displayName: 'Install Latex'
-  - script: brew install -y p7zip-full
-    displayName: 'Install 7z, rar'
-  - script: sudo apt-get install -y caskformula/caskformula/inkscape
-    displayName: 'Install Inkscape'
-  - script: brew install -y graphviz
-    displayName: 'Install Graphviz'
   - script: python -m pip install --upgrade pip setuptools wheel
     displayName: 'Install tools'
   - script: pip install -r requirements.txt
@@ -87,15 +75,6 @@ jobs:
     displayName: 'Runs Unit Tests'
   - script: python -u setup.py bdist_wheel
     displayName: 'Build Package'
-  - script: python -u setup.py build_sphinx
-    displayName: 'Builds Documentation'
-  - script: |
-      mkdir -p dist/doc
-      mkdir -p dist/pdf
-      zip -r -9  dist/doc/documentation_html.zip _doc/sphinxdoc/build/html
-      cp _doc/sphinxdoc/build/elatex/*.pdf dist/pdf
-      cp _doc/sphinxdoc/build/elatex/python*.tex* dist/pdf
-
   - task: PublishPipelineArtifact@0
     inputs:
       artifactName: 'wheel-$(AGENT_OS)-$(python.version)'
