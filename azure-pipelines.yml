@@ -16,9 +16,7 @@ jobs:
       versionSpec: '$(python.version)'
       architecture: 'x64'
   - script: sudo apt-get update
-    displayName: 'Install Pandoc'
-  - script: sudo apt-get install -y pandoc
-    displayName: 'Install Pandoc'
+    displayName: 'AptGet Update'
   - script: sudo apt-get install -y texlive texlive-latex-extra texlive-xetex dvipng
     displayName: 'Install Latex'
   - script: sudo apt-get install -y p7zip-full
@@ -56,8 +54,6 @@ jobs:
     vmImage: 'macOS-10.13' # other options: 'ubuntu-16.04', 'vs2017-win2016'
   strategy:
     matrix:
-      Python36:
-        python.version: '3.6'
       Python37:
         python.version: '3.7'
     maxParallel: 3
@@ -68,7 +64,7 @@ jobs:
       versionSpec: '$(python.version)'
       architecture: 'x64'
   - script: sudo apt-get update
-    displayName: 'Install Pandoc'
+    displayName: 'AptGet Update'
   - script: sudo apt-get install -y pandoc
     displayName: 'Install Pandoc'
   - script: sudo apt-get install -y texlive texlive-latex-extra texlive-xetex dvipng
