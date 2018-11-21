@@ -65,15 +65,17 @@ jobs:
     inputs:
       versionSpec: '$(python.version)'
       architecture: 'x64'
-  - script: sudo apt-get update
-    displayName: 'AptGet Update'
-  - script: sudo apt-get install -y texlive texlive-latex-extra texlive-xetex dvipng
+  - script: sudo brew update
+    displayName: 'Brew Update'
+  - script: brew install pandoc
+    displayName: 'Install Pandoc'
+  - script: sudo port install -y texlive texlive-latex-extra
     displayName: 'Install Latex'
-  - script: sudo apt-get install -y p7zip-full
+  - script: brew install -y p7zip-full
     displayName: 'Install 7z, rar'
-  - script: sudo apt-get install -y inkscape
+  - script: sudo apt-get install -y caskformula/caskformula/inkscape
     displayName: 'Install Inkscape'
-  - script: sudo apt-get install -y graphviz
+  - script: brew install -y graphviz
     displayName: 'Install Graphviz'
   - script: python -m pip install --upgrade pip setuptools wheel
     displayName: 'Install tools'
