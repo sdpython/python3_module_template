@@ -15,6 +15,9 @@ README
 .. image:: https://circleci.com/gh/sdpython/python3_module_template/tree/master.svg?style=svg
     :target: https://circleci.com/gh/sdpython/python3_module_template/tree/master
 
+.. image:: https://dev.azure.com/xavierdupre3/pyquickhelper/_apis/build/status/sdpython.python3_module_template
+    :target: https://dev.azure.com/xavierdupre3/python3_module_template/
+
 .. image:: https://badge.fury.io/py/python3_module_template.svg
     :target: http://badge.fury.io/py/python3_module_template
 

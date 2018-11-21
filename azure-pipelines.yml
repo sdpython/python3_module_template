@@ -48,5 +48,58 @@ jobs:
 
   - task: PublishPipelineArtifact@0
     inputs:
-      artifactName: 'wheel-$(vmImage)-$(python.version)'
+      artifactName: 'wheel-$(AGENT_OS)-$(python.version)'
+      targetPath: 'dist'
+
+jobs:
+- job: 'Test'
+  pool:
+    vmImage: 'macOS-10.13' # other options: 'ubuntu-16.04', 'vs2017-win2016'
+  strategy:
+    matrix:
+      Python36:
+        python.version: '3.6'
+      Python37:
+        python.version: '3.7'
+    maxParallel: 3
+
+  steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(python.version)'
+      architecture: 'x64'
+  - script: sudo apt-get update
+    displayName: 'Install Pandoc'
+  - script: sudo apt-get install -y pandoc
+    displayName: 'Install Pandoc'
+  - script: sudo apt-get install -y texlive texlive-latex-extra texlive-xetex dvipng
+    displayName: 'Install Latex'
+  - script: sudo apt-get install -y p7zip-full
+    displayName: 'Install 7z, rar'
+  - script: sudo apt-get install -y inkscape
+    displayName: 'Install Inkscape'
+  - script: sudo apt-get install -y graphviz
+    displayName: 'Install Graphviz'
+  - script: python -m pip install --upgrade pip setuptools wheel
+    displayName: 'Install tools'
+  - script: pip install -r requirements.txt
+    displayName: 'Install Requirements'
+  - script: python -m pip install scikit-learn
+    displayName: 'Install scipy scikit-learn'
+  - script: python -u setup.py unittests
+    displayName: 'Runs Unit Tests'
+  - script: python -u setup.py bdist_wheel
+    displayName: 'Build Package'
+  - script: python -u setup.py build_sphinx
+    displayName: 'Builds Documentation'
+  - script: |
+      mkdir -p dist/doc
+      mkdir -p dist/pdf
+      zip -r -9  dist/doc/documentation_html.zip _doc/sphinxdoc/build/html
+      cp _doc/sphinxdoc/build/elatex/*.pdf dist/pdf
+      cp _doc/sphinxdoc/build/elatex/python*.tex* dist/pdf
+
+  - task: PublishPipelineArtifact@0
+    inputs:
+      artifactName: 'wheel-$(AGENT_OS)-$(python.version)'
       targetPath: 'dist'
