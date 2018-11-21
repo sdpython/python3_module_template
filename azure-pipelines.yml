@@ -1,5 +1,5 @@
 jobs:
-- job: 'Test'
+- job: 'Test Linux'
   pool:
     vmImage: 'ubuntu-16.04' # other options: 'macOS-10.13', 'vs2017-win2016'
   strategy:
@@ -51,8 +51,7 @@ jobs:
       artifactName: 'wheel-$(AGENT_OS)-$(python.version)'
       targetPath: 'dist'
 
-jobs:
-- job: 'Test'
+- job: 'Test Mac'
   pool:
     vmImage: 'macOS-10.13' # other options: 'ubuntu-16.04', 'vs2017-win2016'
   strategy:
