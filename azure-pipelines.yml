@@ -48,7 +48,7 @@ jobs:
 
   - task: PublishPipelineArtifact@0
     inputs:
-      artifactName: 'wheel-$(AGENT_OS)-$(python.version)'
+      artifactName: 'wheel-linux-$(python.version)'
       targetPath: 'dist'
 
 - job: 'TestMac'
@@ -77,5 +77,5 @@ jobs:
     displayName: 'Build Package'
   - task: PublishPipelineArtifact@0
     inputs:
-      artifactName: 'wheel-$(AGENT_OS)-$(python.version)'
+      artifactName: 'wheel-mac-$(python.version)'
       targetPath: 'dist'
