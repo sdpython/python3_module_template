@@ -1,6 +1,6 @@
 coverage
 jyquickhelper
 Pillow
-pyquickhelper>=1.8.2814
+pyquickhelper>=1.8.2876
 sphinx_rtd_theme
 wheel

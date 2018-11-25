@@ -8,7 +8,7 @@ import os
 import unittest
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder, ExtTestCase
-from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut
+from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut, retrieve_notebooks_in_folder
 
 
 try:
@@ -23,6 +23,8 @@ except ImportError:
     if path not in sys.path:
         sys.path.append(path)
     import src
+
+import src.python3_module_template
 
 
 class TestRunNotebooks(ExtTestCase):
@@ -42,11 +44,7 @@ class TestRunNotebooks(ExtTestCase):
         # selection of notebooks
         fnb = os.path.normpath(os.path.join(
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "_doc", "notebooks"))
-        keepnote = []
-        for f in os.listdir(fnb):
-            if os.path.splitext(f)[-1] == ".ipynb":
-                keepnote.append(os.path.join(fnb, f))
-        self.assertTrue(len(keepnote) > 0)
+        keepnote = retrieve_notebooks_in_folder(fnb)
 
         # function to tell that a can be run
         def valid(cell):
