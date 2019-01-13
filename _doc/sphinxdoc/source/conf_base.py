@@ -2,7 +2,7 @@ import sphinx_gallery
 import sphinx_rtd_theme
 from pyquickhelper.helpgen.default_conf import set_sphinx_variables, get_default_stylesheet
 
-set_sphinx_variables(__file__, "python3_module_template", "sdpython", 2018,
+set_sphinx_variables(__file__, "python3_module_template", "sdpython", 2019,
                      "sphinx_rtd_theme", [
                          sphinx_rtd_theme.get_html_theme_path()],
                      locals(), book=True,
