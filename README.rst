@@ -1,9 +1,4 @@
 
-.. _l-README:
-
-README
-======
-
 .. image:: https://travis-ci.org/sdpython/python3_module_template.svg?branch=master
     :target: https://travis-ci.org/sdpython/python3_module_template
     :alt: Build status
@@ -40,11 +35,10 @@ README
     :target: http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/all_notebooks_coverage.html
     :alt: Notebook Coverage
 
-**Links:**
+.. _l-README:
 
-* `GitHub/python3_module_template <https://github.com/sdpython/python3_module_template/>`_
-* `documentation <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx2/index.html>`_
-* `Blog <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/blog/main_0000.html#ap-main-0>`_
+python3_module_template
+=======================
 
 Quick start
 -----------
@@ -95,3 +89,11 @@ to add something like the following::
 You must use relative imports.
 To add a module at deeper level than the previous one, you
 should add relative imports in every ``__init__.py`` along the way.
+
+Links
+-----
+
+* `GitHub/python3_module_template <https://github.com/sdpython/python3_module_template/>`_
+* `documentation <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx2/index.html>`_
+* `Blog <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/blog/main_0000.html#ap-main-0>`_
+
