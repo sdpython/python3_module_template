@@ -1,5 +1,6 @@
 coverage
 jyquickhelper
+git+https://github.com/sdpython/nbconvert.git@fixes
 Pillow
 pyquickhelper>=1.8.2876
 sphinx_rtd_theme
