@@ -96,4 +96,3 @@ Links
 * `GitHub/python3_module_template <https://github.com/sdpython/python3_module_template/>`_
 * `documentation <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx2/index.html>`_
 * `Blog <http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/blog/main_0000.html#ap-main-0>`_
-

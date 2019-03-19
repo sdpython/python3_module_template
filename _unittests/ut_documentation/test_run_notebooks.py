@@ -1,65 +1,41 @@
 # -*- coding: utf-8 -*-
 """
-@brief      test log(time=33s)
+@brief      test log(time=11s)
 """
 
-import sys
 import os
 import unittest
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder, ExtTestCase
-from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut, retrieve_notebooks_in_folder
+from pyquickhelper.pycode import ExtTestCase
+from pyquickhelper.pycode import add_missing_development_version
+from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
 
-
-try:
-    import src
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src
-
-import src.python3_module_template
+import python3_module_template
 
 
 class TestRunNotebooks(ExtTestCase):
     """Runs notebooks in the documentation."""
 
-    def test_src(self):
-        "skip pylint"
-        self.assertFalse(src is None)
+    def setUp(self):
+        add_missing_development_version(["jyquickhelper"], __file__, hide=True)
 
-    def test_run_notebook(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-        temp = get_temp_folder(__file__, "temp_run_notebooks")
+    def test_run_custom(self):
+        fLOG(__file__, self._testMethodName,
+             OutputPrint=__name__ == "__main__")
+        self.assertTrue(python3_module_template is not None)
+        folder = os.path.join(os.path.dirname(__file__),
+                              "..", "..", "_doc", "notebooks")
+        test_notebook_execution_coverage(
+            __file__, "custom", folder, 'python3_module_template', copy_files=[], fLOG=fLOG)
 
-        # selection of notebooks
-        fnb = os.path.normpath(os.path.join(
-            os.path.abspath(os.path.dirname(__file__)), "..", "..", "_doc", "notebooks"))
-        keepnote = retrieve_notebooks_in_folder(fnb)
-
-        # function to tell that a can be run
-        def valid(cell):
-            return True
-
-        # additionnal path to add
-        addpaths = [os.path.normpath(os.path.join(
-            os.path.abspath(os.path.dirname(__file__)), "..", "..", "src")),
-        ]
-
-        # run the notebooks
-        res = execute_notebook_list(
-            temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths)
-        execute_notebook_list_finalize_ut(
-            res, fLOG=fLOG, dump=src.python3_module_template)
+    def test_run_slide(self):
+        fLOG(__file__, self._testMethodName,
+             OutputPrint=__name__ == "__main__")
+        self.assertTrue(python3_module_template is not None)
+        folder = os.path.join(os.path.dirname(__file__),
+                              "..", "..", "_doc", "notebooks")
+        test_notebook_execution_coverage(
+            __file__, "slide", folder, 'python3_module_template', copy_files=[], fLOG=fLOG)
 
 
 if __name__ == "__main__":
