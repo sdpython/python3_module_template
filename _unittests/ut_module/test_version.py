@@ -8,7 +8,7 @@ import re
 from python3_module_template import __version__, check
 
 
-class TestVersion (unittest.TestCase):
+class TestVersion(unittest.TestCase):
     """Test version in *setup.py* is the same in the main *__init__.py*."""
 
     def test_version(self):
