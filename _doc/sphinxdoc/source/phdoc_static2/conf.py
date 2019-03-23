@@ -16,7 +16,7 @@ except ImportError:
 
 html_theme = 'alabaster'
 html_theme_path = ["."]
-templates_path = [os.path.join(source_path, 'phdoc_static2')]
+templates_path = [os.path.join(source_path, 'phdoc_templates')]
 html_static_path = ["phdoc_static2"]
 
 if not os.path.exists(templates_path[0]):
