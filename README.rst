@@ -61,7 +61,7 @@ All theses steps were only tested on Windows. Suppot for linux will be added lat
 To create your own project, you need to rename the folder ``python3_module_template`` in ``src``
 by your true module name. You also need to replace ``python3_module_template`` wherever it is found:
 
-* ``project_var_name  = 'python3_module_template'`` in ``setup.py``, ``make_help.py`` and ``_doc/sphinxdoc/source/conf.py``
+* ``project_var_name = 'python3_module_template'`` in ``setup.py``, ``make_help.py`` and ``_doc/sphinxdoc/source/conf.py``
 * ``from src.python3_module_template.subproject.myexample import myclass`` in ``_unittests/ut_example/test_example.py``
 * many places in ``_doc/sphinxdoc/source/index.rst``
 * many places in ``README.rst``
