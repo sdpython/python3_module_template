@@ -10,7 +10,6 @@ from setuptools import find_packages
 
 project_var_name = "python3_module_template"
 project_owner = "sdpython"
-sversion = "0.2"
 versionPython = "%s.%s" % (sys.version_info.major, sys.version_info.minor)
 path = "Lib/site-packages/" + project_var_name
 readme = 'README.rst'
@@ -139,7 +138,7 @@ if not r:
         from pyquickhelper.pycode import process_standard_options_for_setup_help
         process_standard_options_for_setup_help(sys.argv)
     from pyquickhelper.pycode import clean_readme
-    from pyquickhelper import __version__ as sversion
+    from python3_module_template import __version__ as sversion
     long_description = clean_readme(long_description)
 
     setup(
