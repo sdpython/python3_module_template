@@ -33,13 +33,17 @@ jobs:
     displayName: 'Install Requirements'
   - script: python -m pip install scikit-learn
     displayName: 'Install scipy scikit-learn'
-  - script: export PYTHONPATH=src
-    displayName: 'PYTHONPATH=src'
-  - script: python -u setup.py unittests
+  - script: |
+      export PYTHONPATH=src
+      python -u setup.py unittests
     displayName: 'Runs Unit Tests'
-  - script: python -u setup.py bdist_wheel
+  - script: |
+      export PYTHONPATH=src
+      python -u setup.py bdist_wheel
     displayName: 'Build Package'
-  - script: python -u setup.py build_sphinx
+  - script: |
+      export PYTHONPATH=src
+      python -u setup.py build_sphinx
     displayName: 'Builds Documentation'
   - script: |
       mkdir -p dist/doc
@@ -73,11 +77,13 @@ jobs:
     displayName: 'Install Requirements'
   - script: python -m pip install scikit-learn
     displayName: 'Install scipy scikit-learn'
-  - script: export PYTHONPATH=src
-    displayName: 'PYTHONPATH=src'
-  - script: python -u setup.py unittests
+  - script: |
+      export PYTHONPATH=src
+      python -u setup.py unittests
     displayName: 'Runs Unit Tests'
-  - script: python -u setup.py bdist_wheel
+  - script: |
+      export PYTHONPATH=src
+      python -u setup.py bdist_wheel
     displayName: 'Build Package'
   - task: PublishPipelineArtifact@0
     inputs:
