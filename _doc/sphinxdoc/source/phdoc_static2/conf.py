@@ -18,8 +18,4 @@ html_theme = 'alabaster'
 html_theme_path = ["."]
 templates_path = [os.path.join(source_path, 'phdoc_templates')]
 html_static_path = ["phdoc_static2"]
-
-if not os.path.exists(templates_path[0]):
-    raise FileNotFoundError(templates_path[0])
-
 blog_root = "http://www.xavierdupre.fr/app/python3_module_template/helpsphinx2/"
