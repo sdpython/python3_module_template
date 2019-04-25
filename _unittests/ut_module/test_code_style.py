@@ -12,7 +12,8 @@ class TestCodeStyle(ExtTestCase):
 
     def test_style_src(self):
         thi = os.path.abspath(os.path.dirname(__file__))
-        src_ = os.path.normpath(os.path.join(thi, "..", "..", "src"))
+        src_ = os.path.normpath(os.path.join(
+            thi, "..", "..", "python3_module_template"))
         check_pep8(src_,
                    skip=["myexampleb.py:61: C0123", "myexampleb.py:59: C0123"])
 

@@ -13,7 +13,7 @@ class TestCoverageCombine(ExtTestCase):
 
         temp = get_temp_folder(__file__, "temp_coverage_combine")
         source = os.path.normpath(os.path.abspath(
-            os.path.join(temp, "..", "..", "..", "src")))
+            os.path.join(temp, "..", "..", "..")))
         covs = [os.path.join(temp, "..", "data", "cov%d.txt" % i)
                 for i in range(1, 3)]
         coverage_combine(covs, temp, source=source)

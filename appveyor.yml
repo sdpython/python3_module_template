@@ -26,7 +26,6 @@ install:
   - "%PYTHON%\\Scripts\\pip install pycryptodome"
   - "%PYTHON%\\Scripts\\pip install pycodestyle"
   - "%PYTHON%\\Scripts\\pip install -r requirements.txt"
-  - set PYTHONPATH=src
 
 build: off
 

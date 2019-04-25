@@ -36,8 +36,9 @@ CLASSIFIERS = [
 #######
 
 
-packages = find_packages('src', exclude='src')
-package_dir = {k: "src/" + k.replace(".", "/") for k in packages}
+here = os.path.dirname(__file__)
+packages = find_packages(where=here)
+package_dir = {k: os.path.join(here, k.replace(".", "/")) for k in packages}
 package_data = {project_var_name + ".subproject": ["*.tohelp"]}
 
 ############

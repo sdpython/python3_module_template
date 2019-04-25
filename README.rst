@@ -52,17 +52,17 @@ Introduction
 
 This project is a skeleton for any new project. It contains:
 
-* a source folder: ``src``
+* a source folder: ``python3_module_template``
 * a unit test folder: ``_unittests``, go to this folder and run ``run_unittests.py``
 * a _doc folder: ``_doc``, it will contains the documentation
 * a file ``setup.py`` to build and to install the module
 
 All theses steps were only tested on Windows. Suppot for linux will be added later.
-To create your own project, you need to rename the folder ``python3_module_template`` in ``src``
+To create your own project, you need to rename the folder ``python3_module_template``
 by your true module name. You also need to replace ``python3_module_template`` wherever it is found:
 
 * ``project_var_name = 'python3_module_template'`` in ``setup.py``, ``make_help.py`` and ``_doc/sphinxdoc/source/conf.py``
-* ``from src.python3_module_template.subproject.myexample import myclass`` in ``_unittests/ut_example/test_example.py``
+* ``from python3_module_template.subproject.myexample import myclass`` in ``_unittests/ut_example/test_example.py``
 * many places in ``_doc/sphinxdoc/source/index.rst``
 * many places in ``README.rst``
 
@@ -77,7 +77,7 @@ Automation
 Adding a new module or subpackage
 +++++++++++++++++++++++++++++++++
 
-Any new module or subpackage should be added in ``src/python3_module_template``. Every subfolder should
+Any new module or subpackage should be added in ``python3_module_template``. Every subfolder should
 contain a file ``__init__.py``. If the new file needs an existing submodule, you need
 to add something like the following::
 
