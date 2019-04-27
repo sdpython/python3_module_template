@@ -1,7 +1,11 @@
 import sphinx_gallery
 import sphinx_rtd_theme
 from pyquickhelper.helpgen.default_conf import set_sphinx_variables, get_default_stylesheet
-import python3_module_template
+try:
+    import python3_module_template
+except ModuleNotFoundError:
+    raise ModuleNotFoundError("Cannot import python3_module_template\n{}".format(
+        "\n".join(sys.path)))
 
 
 set_sphinx_variables(__file__, "python3_module_template", "sdpython", 2019,
