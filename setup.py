@@ -15,11 +15,9 @@ path = "Lib/site-packages/" + project_var_name
 readme = 'README.rst'
 history = 'HISTORY.rst'
 
-
 KEYWORDS = project_var_name + ', first name, last name'
 DESCRIPTION = "This a project template including a setup and the generation of sphinx " + \
               "generation. The documentation generation and the unit test are using pyquickhelper."
-
 
 CLASSIFIERS = [
     'Programming Language :: Python :: %d' % sys.version_info[0],
