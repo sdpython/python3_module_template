@@ -60,13 +60,13 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python setup.py unittests
+            python ./setup.py unittests
 
       - run:
           name: wheel
           command: |
             . venv/bin/activate
-            python setup.py bdist_wheel
+            python ./setup.py bdist_wheel
             mkdir -p test-reports/dist
             cp dist/*.whl test-reports/dist
 
@@ -74,7 +74,7 @@ jobs:
           name: documentation
           command: |
             . venv/bin/activate
-            python setup.py build_sphinx
+            python ./setup.py build_sphinx
             
       - run:
           name: copy documentation

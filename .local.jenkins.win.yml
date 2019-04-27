@@ -15,21 +15,21 @@ install:
   - pip freeze > pip_freeze.txt
 
 before_script:
-  - if [ ${VERSION} == "2.7" ] then {{Python36pyq}}\python -u setup.py copy27 fi
+  - if [ ${VERSION} == "2.7" ] then {{Python36pyq}}\python -u .\setup.py copy27 fi
   - if [ ${VERSION} == "2.7" ] then cd dist_module27 fi
   - if [ ${VERSION} == "2.7" ] then pip install backports.shutil_get_terminal_size fi
 script:
-  - { CMD: "python -u setup.py unittests", NAME: "UT" }
-  - { CMD: "python -u setup.py unittests_LONG", NAME: "UT_LONG" }
-  - { CMD: "python -u setup.py unittests_SKIP", NAME: "UT_SKIP" }
+  - { CMD: "python -u .\setup.py unittests", NAME: "UT" }
+  - { CMD: "python -u .\setup.py unittests_LONG", NAME: "UT_LONG" }
+  - { CMD: "python -u .\setup.py unittests_SKIP", NAME: "UT_SKIP" }
 after_script:
-  - python -u setup.py bdist_wheel
+  - python -u .\setup.py bdist_wheel
   - if [ ${VERSION} == "2.7" and ${DIST} != "conda" ] then copy dist\*.whl {{root_path}}\..\..\local_pypi\local_pypi_server fi
   - if [ ${VERSION} == "2.7" ] then cd .. fi
   - if [ ${VERSION} != "2.7" and ${DIST} != "conda" and ${VERSION} == "3.7" and ${NAME} == "UT" ] then copy dist\*.whl {{root_path}}\..\..\local_pypi\local_pypi_server fi
 
 documentation:
-  - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then python -u setup.py build_sphinx fi
+  - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then python -u .\setup.py build_sphinx fi
   - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build\html dist\html fi
   - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build2\html dist\html2 fi
   - if [ ${NAME} == "UT" and ${VERSION} != "2.7" ] then xcopy /E /C /I /Y _doc\sphinxdoc\build\elatex\*.pdf dist\html fi

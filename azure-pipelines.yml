@@ -34,13 +34,13 @@ jobs:
   - script: python -m pip install scikit-learn
     displayName: 'Install scipy scikit-learn'
   - script: |
-      python -u setup.py unittests
+      python -u ./setup.py unittests
     displayName: 'Runs Unit Tests'
   - script: |
-      python -u setup.py bdist_wheel
+      python -u ./setup.py bdist_wheel
     displayName: 'Build Package'
   - script: |
-      python -u setup.py build_sphinx
+      python -u ./setup.py build_sphinx
     displayName: 'Builds Documentation'
   - script: |
       mkdir -p dist/doc
@@ -75,10 +75,10 @@ jobs:
   - script: python -m pip install scikit-learn
     displayName: 'Install scipy scikit-learn'
   - script: |
-      python -u setup.py unittests
+      python -u ./setup.py unittests
     displayName: 'Runs Unit Tests'
   - script: |
-      python -u setup.py bdist_wheel
+      python -u ./setup.py bdist_wheel
     displayName: 'Build Package'
   - task: PublishPipelineArtifact@0
     inputs:
