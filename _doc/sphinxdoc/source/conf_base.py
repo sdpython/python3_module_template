@@ -1,18 +1,25 @@
-import sphinx_gallery
-import sphinx_rtd_theme
+# -*- coding: utf-8 -*-
+import sys
+import os
 from pyquickhelper.helpgen.default_conf import set_sphinx_variables, get_default_stylesheet
+import python3_module_template
+
+source_path = os.path.normpath(os.path.join(
+    os.path.abspath(os.path.split(__file__)[0])))
+
 try:
-    import python3_module_template
-except ModuleNotFoundError:
-    raise ModuleNotFoundError("Cannot import python3_module_template\n{}".format(
-        "\n".join(sys.path)))
+    from conf_base import *
+except ImportError:
+    sys.path.append(source_path)
+    from conf_base import *
 
 
 set_sphinx_variables(__file__, "python3_module_template", "sdpython", 2019,
-                     "sphinx_rtd_theme", [
-                         sphinx_rtd_theme.get_html_theme_path()],
+                     "sphinx_rtd_theme", None,
                      locals(), book=True,
-                     extlinks=dict(issue=('https://github.com/sdpython/python3_module_template/issues/%s', 'issue')))
+                     github_repo="https://github.com/sdpython/python3_module_template.git",
+                     extlinks=dict(issue=('https://github.com/sdpython/python3_module_template/issues/%s', 'issue')),
+                     doc_version=python3_module_template.__version__)
 
 blog_root = "http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/"
 
