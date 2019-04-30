@@ -123,8 +123,7 @@ if is_local():
         github_owner=project_owner,
         fLOG=logging_function, covtoken=(
             "ce1fc48d-9081-44b3-ae09-8b4665e28e86", "'_UT_37_std' in outfile"),
-        layout=["rst", "pdf", "html",
-                ("html", "build2", {"html_theme": "alabaster"}, "source/phdoc_static2")])
+        layout=["rst", "pdf", "html"])
     if not r and not ({"bdist_msi", "sdist",
                        "bdist_wheel", "publish", "publish_doc", "register",
                        "upload_docs", "bdist_wininst", "build_ext"} & set(sys.argv)):
