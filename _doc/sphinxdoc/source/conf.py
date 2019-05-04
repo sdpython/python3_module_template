@@ -11,3 +11,9 @@ set_sphinx_variables(__file__, "python3_module_template", "Xavier Dupré", 2019,
                      extlinks=dict(issue=('https://github.com/sdpython/python3_module_template/issues/%s', 'issue')))
 
 blog_root = "http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/"
+
+notebooks_urls = "http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/notebooks/"
+
+nblinks = {
+    'slideshowrst': notebooks_urls + 'slide_show.html',
+}
