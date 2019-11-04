@@ -19,8 +19,8 @@ jobs:
     displayName: 'AptGet Update'
   - script: sudo apt-get install -y pandoc
     displayName: 'Install Pandoc'
-  - script: sudo apt-get install -y texlive texlive-latex-extra texlive-xetex dvipng
-    displayName: 'Install Latex'
+  # - script: sudo apt-get install -y texlive texlive-latex-extra texlive-xetex dvipng
+  #   displayName: 'Install Latex'
   - script: sudo apt-get install -y p7zip-full
     displayName: 'Install 7z, rar'
   - script: sudo apt-get install -y inkscape
@@ -39,15 +39,15 @@ jobs:
   - script: |
       python -u ./setup.py bdist_wheel
     displayName: 'Build Package'
-  - script: |
-      python -u ./setup.py build_sphinx
-    displayName: 'Builds Documentation'
-  - script: |
-      mkdir -p dist/doc
-      mkdir -p dist/pdf
-      zip -r -9  dist/doc/documentation_html.zip _doc/sphinxdoc/build/html
-      cp _doc/sphinxdoc/build/elatex/*.pdf dist/pdf
-      cp _doc/sphinxdoc/build/elatex/python*.tex* dist/pdf
+  #- script: |
+  #     python -u ./setup.py build_sphinx
+  #   displayName: 'Builds Documentation'
+  # - script: |
+  #     mkdir -p dist/doc
+  #     mkdir -p dist/pdf
+  #     zip -r -9  dist/doc/documentation_html.zip _doc/sphinxdoc/build/html
+  #     cp _doc/sphinxdoc/build/elatex/*.pdf dist/pdf
+  #     cp _doc/sphinxdoc/build/elatex/python*.tex* dist/pdf
 
   - task: PublishPipelineArtifact@0
     inputs:
