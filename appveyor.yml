@@ -20,17 +20,11 @@ init:
 
 install:
   - "%PYTHON%\\python -m pip install --upgrade pip"
-  - "%PYTHON%\\Scripts\\pip install pymyinstall"
-  - "%PYTHON%\\Scripts\\pymy_install3 --set=pyquickhelper"
-  - "%PYTHON%\\Scripts\\pip install pyquickhelper jyquickhelper"
-  - "%PYTHON%\\Scripts\\pip install pycryptodome"
-  - "%PYTHON%\\Scripts\\pip install pycodestyle"
   - "%PYTHON%\\Scripts\\pip install -r requirements.txt"
 
 build: off
 
 test_script:
-  - "%PYTHON%\\python -u .\\setup.py build_script"
   - "%PYTHON%\\python -u .\\setup.py unittests"
 
 after_test:
