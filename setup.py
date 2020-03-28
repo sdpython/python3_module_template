@@ -145,7 +145,7 @@ if not r:
 
     setup(
         name=project_var_name,
-        version='%s%s' % (sversion, subversion),
+        version=sversion,
         author='author',
         author_email='author@something.any',
         license="MIT",
