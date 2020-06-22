@@ -3,6 +3,7 @@ coverage
 jupyter_sphinx
 jyquickhelper
 matplotlib
+pandas
 Pillow
 pycodestyle
 pylint
