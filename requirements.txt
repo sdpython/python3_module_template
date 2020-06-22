@@ -1,6 +1,13 @@
+autopep8
 coverage
+jupyter_sphinx
 jyquickhelper
+matplotlib
 Pillow
-pyquickhelper>=1.9.3118
+pycodestyle
+pylint
+pyquickhelper
 sphinx_rtd_theme
+sphinx_gallery
+sphinxcontrib.imagesvg
 wheel
