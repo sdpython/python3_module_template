@@ -35,6 +35,10 @@
     :target: http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/all_notebooks_coverage.html
     :alt: Notebook Coverage
 
+.. image:: https://img.shields.io/github/repo-size/sdpython/python3_module_template
+    :target: https://github.com/sdpython/python3_module_template/
+    :alt: size
+
 .. _l-README:
 
 python3_module_template
