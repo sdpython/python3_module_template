@@ -4,7 +4,7 @@
 Empty module, template for others.
 """
 
-__version__ = "0.3"
+__version__ = "0.3.428"
 __author__ = "Author"
 __github__ = "https://github.com/sdpython/python3_module_template"
 __url__ = "http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/index.html"
