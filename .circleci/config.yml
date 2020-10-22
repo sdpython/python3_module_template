@@ -70,20 +70,20 @@ jobs:
             mkdir -p test-reports/dist
             cp dist/*.whl test-reports/dist
 
-      - run:
-          name: documentation
-          command: |
-            . venv/bin/activate
-            python ./setup.py build_sphinx
-            
-      - run:
-          name: copy documentation
-          command: |
-            mkdir -p test-reports/doc
-            mkdir -p test-reports/pdf
-            zip -r -9  test-reports/doc/documentation_html.zip _doc/sphinxdoc/build/html
-            cp _doc/sphinxdoc/build/elatex/*.pdf test-reports/pdf
-            cp _doc/sphinxdoc/build/elatex/python*.tex* test-reports/pdf
+#       - run:
+#           name: documentation
+#           command: |
+#             . venv/bin/activate
+#             python ./setup.py build_sphinx
+#             
+#       - run:
+#           name: copy documentation
+#           command: |
+#             mkdir -p test-reports/doc
+#             mkdir -p test-reports/pdf
+#             zip -r -9  test-reports/doc/documentation_html.zip _doc/sphinxdoc/build/html
+#             cp _doc/sphinxdoc/build/elatex/*.pdf test-reports/pdf
+#             cp _doc/sphinxdoc/build/elatex/python*.tex* test-reports/pdf
             
       - store_artifacts:
           path: test-reports
