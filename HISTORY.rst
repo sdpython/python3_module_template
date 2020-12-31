@@ -5,12 +5,13 @@
 History
 =======
 
-current - 2019-03-20 - 0.00Mb
+current - 2021-01-01 - 0.00Mb
 =============================
 
-0.0.0 - 2019-03-20 - 0.00Mb
+0.0.0 - 2021-01-01 - 0.00Mb
 ===========================
 
+* `6`: Remove use of subfolder src (2019-04-25)
 * `5`: refactor unit test (avoid import src...) (2019-03-20)
 * `4`: check style with pylint (2018-05-10)
 * `3`: use pylint to check style (2018-05-10)
