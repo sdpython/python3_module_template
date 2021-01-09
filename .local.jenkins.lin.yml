@@ -2,7 +2,7 @@
 language: python
 
 python:
-  - { PATH: "{{Python39}", VERSION: 3.9, DIST: std, PYINT: python3.9 }
+  - { PATH: "{{Python39}}", VERSION: 3.9, DIST: std, PYINT: python3.9 }
   
 virtualenv:
   - path: {{ospathjoin(root_path, pickname("$NAME_JENKINS", project_name + "_$VERSION_$DIST_$NAME"), "_venv")}}
