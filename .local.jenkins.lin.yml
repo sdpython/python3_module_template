@@ -14,6 +14,9 @@ install:
   - $PYINT --version
   - $PYINT -m pip freeze
 
+before_script:
+  - $PYINT -u setup.py write_version
+
 script:
   - { CMD: "$PYINT -u ./setup.py unittests --covtoken=ce1fc48d-9081-44b3-ae09-8b4665e28e86", NAME: "UT" }
   - { CMD: "$PYINT -u ./setup.py unittests_LONG", NAME: "UT_LONG" }
