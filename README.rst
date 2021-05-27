@@ -1,6 +1,6 @@
 
-.. image:: https://travis-ci.org/sdpython/python3_module_template.svg?branch=master
-    :target: https://travis-ci.org/sdpython/python3_module_template
+.. image:: https://travis-ci.com/sdpython/python3_module_template.svg?branch=master
+    :target: https://travis-ci.com/sdpython/python3_module_template
     :alt: Build status
 
 .. image:: https://ci.appveyor.com/api/projects/status/8yv4brsckay4374a?svg=true
