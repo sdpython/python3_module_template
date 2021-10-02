@@ -21,7 +21,7 @@ class TestExample(ExtTestCase):
         r = my.get_value(5)
         ex = 20
         if r != ex:
-            raise Exception("we expect %f, not %f" % (ex, r))
+            raise ValueError("We expect %f, not %f." % (ex, r))
         my2 = myclass2(5)
         my3 = myclassb(4)
         self.assertTrue(my2 is not None)
