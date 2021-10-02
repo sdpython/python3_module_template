@@ -57,5 +57,5 @@ def onefunction(a, b):
     :raises TypeError: if a and b have different types.
     """
     if type(a) != type(b):
-        raise TypeError("Different type {0} != {1}".format(a, b))
+        raise TypeError("Different type {0} != {1}".format(a, b))  # pylint: disable=C0209
     return a + b
