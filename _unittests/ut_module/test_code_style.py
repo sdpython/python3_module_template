@@ -15,6 +15,8 @@ class TestCodeStyle(ExtTestCase):
         src_ = os.path.normpath(os.path.join(
             thi, "..", "..", "python3_module_template"))
         check_pep8(src_,
+                   pylint_ignore=('C0103', 'C1801', 'R0201', 'R1705', 'W0108', 'W0613',
+                                  'C0111', 'C0209'),
                    skip=["myexampleb.py:61: C0123", "myexampleb.py:59: C0123"])
 
     def test_style_test(self):
