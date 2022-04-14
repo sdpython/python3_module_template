@@ -1,5 +1,6 @@
 autopep8
 coverage
+jinja2==3.0.3
 jupyter_sphinx
 jyquickhelper
 matplotlib
