@@ -15,7 +15,7 @@ class TestCodeStyle(ExtTestCase):
         src_ = os.path.normpath(os.path.join(
             thi, "..", "..", "python3_module_template"))
         check_pep8(src_,
-                   pylint_ignore=('C0103', 'C1801', 'R0201', 'R1705', 'W0108', 'W0613',
+                   pylint_ignore=('C0103', 'C1801', 'R1705', 'W0108', 'W0613',
                                   'C0111', 'C0209'),
                    skip=["myexampleb.py:61: C0123", "myexampleb.py:59: C0123"])
 
@@ -23,7 +23,7 @@ class TestCodeStyle(ExtTestCase):
         thi = os.path.abspath(os.path.dirname(__file__))
         test = os.path.normpath(os.path.join(thi, "..", ))
         check_pep8(test,
-                   pylint_ignore=('C0103', 'C1801', 'R0201', 'R1705', 'W0108', 'W0613',
+                   pylint_ignore=('C0103', 'C1801', 'R1705', 'W0108', 'W0613',
                                   'C0111', 'C0209'),
                    skip=[])
 
