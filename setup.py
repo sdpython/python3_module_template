@@ -10,7 +10,7 @@ from pyquicksetup import read_version, read_readme, default_cmdclass
 
 project_var_name = "python3_module_template"
 project_owner = "sdpython"
-versionPython = "%s.%s" % (sys.version_info.major, sys.version_info.minor)
+versionPython = f"{sys.version_info.major}.{sys.version_info.minor}"
 path = "Lib/site-packages/" + project_var_name
 readme = 'README.rst'
 history = 'HISTORY.rst'
@@ -47,7 +47,7 @@ setup(
     author_email='xavier.dupre@gmail.com',
     license="MIT",
     url="http://...",
-    download_url="https://github.com/sdpython/%s/" % project_var_name,
+    download_url=f"https://github.com/sdpython/{project_var_name}/",
     description=DESCRIPTION,
     long_description=read_readme(__file__),
     cmdclass=default_cmdclass(),

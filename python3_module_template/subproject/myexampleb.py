@@ -57,5 +57,5 @@ def onefunction(a, b):
     :raises TypeError: if a and b have different types.
     """
     if type(a) != type(b):
-        raise TypeError("Type mismatch %r != %r" % (a, b))
+        raise TypeError(f"Type mismatch {a!r} != {b!r}")
     return a + b
