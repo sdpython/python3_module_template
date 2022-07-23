@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.10.1
+      - image: cimg/python:3.10.5
     
     working_directory: ~/repo
     
@@ -47,8 +47,6 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
             pip install -r requirements.txt
             pip install scipy scikit-learn
 
@@ -60,13 +58,11 @@ jobs:
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
             python ./setup.py unittests
 
       - run:
           name: wheel
           command: |
-            . venv/bin/activate
             python ./setup.py bdist_wheel
             mkdir -p test-reports/dist
             cp dist/*.whl test-reports/dist
