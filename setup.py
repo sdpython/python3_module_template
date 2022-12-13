@@ -3,6 +3,7 @@ import sys
 import os
 from setuptools import find_packages, setup
 from pyquicksetup import read_version, read_readme, default_cmdclass
+from pyquicksetup.pyquick import SetupCommandSphinx
 
 #########
 # settings
@@ -40,6 +41,32 @@ package_dir = {k: os.path.join(here, k.replace(".", "/")) for k in packages}
 package_data = {project_var_name + ".subproject": ["*.tohelp"]}
 
 
+class MySetupCommandSphinx(SetupCommandSphinx):
+    description = "Builds documentation."
+
+    user_options = [
+        ('layout=', None, 'format generation, default is html,rst.'),
+        ('nbformats=', None,
+         'format generation, default is ipynb,slides,html,python,rst,github'),
+    ]
+
+    def initialize_options(self):
+        self.layout = "html,rst"
+        self.nbformats = "ipynb,slides,html,python,rst,github"
+
+    def run(self):
+        from pyquickhelper.pycode import process_standard_options_for_setup
+        parameters = self.get_parameters()
+        parameters['argv'] = ['build_sphinx']
+        parameters['layout'] = self.layout.split(',')
+        parameters['nbformats'] = self.nbformats.split(',')
+        process_standard_options_for_setup(**parameters)
+
+
+cmdclass = default_cmdclass()
+cmdclass['build_sphinx'] = MySetupCommandSphinx
+
+
 setup(
     name=project_var_name,
     version=read_version(__file__, project_var_name),
@@ -50,7 +77,7 @@ setup(
     download_url=f"https://github.com/sdpython/{project_var_name}/",
     description=DESCRIPTION,
     long_description=read_readme(__file__),
-    cmdclass=default_cmdclass(),
+    cmdclass=cmdclass,
     keywords=KEYWORDS,
     classifiers=CLASSIFIERS,
     packages=packages,

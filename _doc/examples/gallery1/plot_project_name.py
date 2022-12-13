@@ -5,7 +5,7 @@ Example with the project itself
 ===============================
 
 Example with a simple import and one equation
-:math:`y = `frac{ax + b}{2}`.
+:math:`y = \\frac{ax + b}{2}`.
 """
 
 ##############################
