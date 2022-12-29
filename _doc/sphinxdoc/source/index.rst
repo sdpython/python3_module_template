@@ -58,6 +58,8 @@ See some examples:
 * **Example**
     * example:  :class:`myclass <python3_module_template.subproject.myexample.myclass>`
 
+An equation: :math:`\sum_i x_i^2`.
+
 Installation
 ------------
 
