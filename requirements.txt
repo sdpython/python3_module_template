@@ -1,6 +1,6 @@
 autopep8
 coverage
-jinja2==3.0.3
+jinja2
 jupyter_sphinx
 jyquickhelper
 matplotlib
@@ -10,6 +10,7 @@ pycodestyle
 pylint>=2.14.0
 pyquickhelper
 pyquicksetup>=0.2
+sphinx>=6.1.1
 sphinx_rtd_theme
 sphinx_gallery
 sphinxcontrib.imagesvg
