@@ -20,6 +20,16 @@
             :categories: documentation, example
 
     However, you can check some of the following to power your blog:
-    `What's the best available static blog/website generator in Python <http://www.quora.com/Whats-the-best-available-static-blog-website-generator-in-Python>`_
+    `What's the best available static blog/website generator in Python
+    <http://www.quora.com/Whats-the-best-available-static-blog-website-generator-in-Python>`_
     or this page which gathers many framework to build a static website:
     `StaticGen Top Open-Source Static Site Generators <https://www.staticgen.com/>`_.
+
+    One image:
+
+    .. image:: https://github.com/sdpython/mlinsights/raw/master/_doc/sphinxdoc/source/phdoc_static/project_ico.png
+        :width: 100
+
+    And one link:
+
+    `python3_module_template <https://github.com/sdpython/python3_module_template>`_
