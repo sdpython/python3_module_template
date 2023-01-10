@@ -33,3 +33,5 @@
     And one link:
 
     `python3_module_template <https://github.com/sdpython/python3_module_template>`_
+
+    :epkg:`doc`

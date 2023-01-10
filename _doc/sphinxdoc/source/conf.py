@@ -19,3 +19,7 @@ notebooks_urls = "http://www.xavierdupre.fr/app/python3_module_template/helpsphi
 nblinks = {
     'slideshowrst': notebooks_urls + 'slide_show.html',
 }
+
+epkg_dictionary.update({
+    'doc': 'http://www.xavierdupre.fr/app/python3_module_template/helpsphinx/index.html',
+})
