@@ -27,7 +27,7 @@
 
     One image:
 
-    .. image:: https://github.com/sdpython/mlinsights/raw/master/_doc/sphinxdoc/source/phdoc_static/project_ico.png
+    .. image:: https://github.com/sdpython/mlinsights/raw/master/_doc/sphinxdoc/source/_static/project_ico.png
         :width: 100
 
     And one link:
